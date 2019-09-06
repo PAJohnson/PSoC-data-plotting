@@ -14,6 +14,7 @@
 #define DATALOGGER_H
 #include "stdio.h"
 #include "CyLib.h"
+#include "usb.h"
     
 #define LOG_SIZE 32
 #define LOG_BUFF_SIZE 64
@@ -39,6 +40,7 @@ enum types_e{
 typedef struct var{
     void * var_ptr;
     enum types_e type;
+    char name[64];
 }Var_ts;
 
 typedef struct circbuff{
@@ -54,7 +56,7 @@ typedef struct log{
 } Log_ts;
 
 void logger_init(Log_ts * log);
-void attach_variable(void * var, enum types_e type, Log_ts * log);
+void attach_variable(void * var, enum types_e type, const char * name, Log_ts * log);
 void logger(Log_ts * log);
 uint8 * get_buffer(Log_ts * log);
 int var_size(enum types_e type);
@@ -63,6 +65,7 @@ void circbuff_add_byte(uint8 data, CircBuff_ts * circbuff);
 int get_buffer_size(Log_ts * log);
 void _clear_circbuff(CircBuff_ts * circbuff);
 void clear_log(Log_ts * log);
+void get_command_usb(Log_ts * log, struct usb_ts * usb_s);
 
 #endif
 

@@ -27,7 +27,7 @@
 *  Place your includes, defines and code here 
 ********************************************************************************/
 /* `#START Loop_Interrupt_intc` */
-
+extern volatile uint8 main_flag;
 /* `#END` */
 
 #ifndef CYINT_IRQ_BASE
@@ -165,7 +165,7 @@ CY_ISR(Loop_Interrupt_Interrupt)
 
     /*  Place your Interrupt code here. */
     /* `#START Loop_Interrupt_Interrupt` */
-
+    main_flag = 1;
     /* `#END` */
 }
 

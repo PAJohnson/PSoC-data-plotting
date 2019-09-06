@@ -1,5 +1,5 @@
--- Project:   C:\Users\pajoh\projects\USB\cypress\USB_data\USB_first.cydsn\USB_first.cyprj
--- Generated: 09/03/2019 21:37:38
+-- Project:   C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\USB_first.cyprj
+-- Generated: 09/06/2019 16:02:57
 -- PSoC Creator  4.2
 
 ENTITY USB_first IS

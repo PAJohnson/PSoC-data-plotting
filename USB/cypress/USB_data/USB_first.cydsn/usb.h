@@ -15,6 +15,19 @@
 #include "stdio.h"
 #include "project.h"
     
+//usb command set
+#define NOCMD       0x00000000
+#define NUMVARS     0x00000001
+#define VARSIZE     0x00000002
+#define VARNAME     0x00000003
+#define VARMAX      0x00000004
+#define VARMIN      0x00000005
+#define VARSCALE    0x00000006
+#define VAROFFSET   0x00000007
+#define START       0x00000008
+#define STOP        0x00000009
+#define RESET       0x0000000A
+    
 struct usb_cmd_ts{
     int state;   
 };
@@ -26,6 +39,8 @@ struct usb_private{
 struct usb_public{
     //data to be used elsewhere
     struct usb_cmd_ts usb_cmd_s;
+    uint8 transmit_flag;
+    uint8 cmd_flag;
 };
 
 struct usb_input{
@@ -40,6 +55,8 @@ struct usb_input{
 
 struct usb_output{
     //outputs from the usb module
+    uint8 response[64];
+    uint8 out_flag;
 };
 
 struct usb_ts{
@@ -52,7 +69,10 @@ struct usb_ts{
     
 void usb_task(struct usb_ts * usb_s);
 void usb_stream(struct usb_ts * usb_s);
+void usb_set_stream(struct usb_ts * usb_s, uint8 * data);
+void usb_response(struct usb_ts * usb_s);
 void usb_commands(struct usb_ts * usb_s);
+void usb_init(struct usb_ts * usb_s);
     
     
 #endif

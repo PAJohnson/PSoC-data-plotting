@@ -17,26 +17,18 @@ if dev is None:
 dev.set_configuration()
 
 # get interface 0, alternate setting 0
-intf = dev.get_active_configuration()[(0, 0)]
+cfg = dev[0]
+intf = cfg[(0,0)]
+epInStream = intf[0]
+epOutStream = intf[1]
+epInCmd = intf[2]
+epOutCmd = intf[3]
 
-# find the first (and in this case only) OUT endpoint in our interface
-epOut = usb.util.find_descriptor(
-	intf,
-	custom_match= \
-	lambda e: \
-	usb.util.endpoint_direction(e.bEndpointAddress) == \
-	usb.util.ENDPOINT_OUT)
 
-# find the first (and in this case only) IN endpoint in our interface
-epIn = usb.util.find_descriptor(
-	intf,
-	custom_match= \
-	lambda e: \
-	usb.util.endpoint_direction(e.bEndpointAddress) == \
-	usb.util.ENDPOINT_IN)
 
 # make sure our endpoints were found
-assert epOut is not None
+assert epOutStream is not None
+assert epOutCmd is not None
 
 value = 0
 data_hist = []
@@ -44,16 +36,40 @@ data_hist = []
 csvfile = open('test.csv', 'w', newline='')
 spamwriter = csv.writer(csvfile, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
 
-assert epIn is not None
+assert epInStream is not None
+assert epInCmd is not None
 while 1:
 	#print("Message: ")
 	#t = input() # get the user input
 	#i = len(t)
 	#epOut.write(t) # send it
-	message = epIn.read(64,5000)
-	var_1 = message[0]
-	var_2 = message[1] + 256*message[2]
-	var_3 = message[3] + 256*message[4] + 256*256*message[5]
-	currentDT = datetime.datetime.now()
-	print(str(currentDT) + ' ' + str(var_1) + ' ' + str(var_2) + ' ' + str(var_3))
-	spamwriter.writerow([var_1,var_2,var_3])
+	#message = epInStream.read(64,5000)
+	print("Command: ")
+	cmd = input()
+	if cmd == "NUMVARS":
+		epOutCmd.write([0,0,0,1])
+		message = epInCmd.read(64,1000)
+		print(message[0])
+
+	if cmd == "VARSIZE":
+		arg = input()
+		epOutCmd.write([0,0,0,2,int(arg)])
+		message = epInCmd.read(64,1000)
+		print(message[0])
+
+	if cmd == "VARNAME":
+		arg = input()
+		epOutCmd.write([0,0,0,3,int(arg)])
+		message = epInCmd.read(64,1000)
+		print(''.join(map(chr,list(message))))
+		
+	if cmd == "START":
+		epOutCmd.write([0,0,0,8])
+		while 1:
+			message = epInStream.read(64,1000)
+			print(message[1]+message[2]*255)
+			
+	if cmd == "STOP":
+		epOutCmd.write([0,0,0,9])
+		
+

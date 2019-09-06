@@ -2,7 +2,7 @@
 --	Conversion of USB_first.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Tue Sep 03 21:37:35 2019
+--	Fri Sep 06 16:02:54 2019
 --
 
 USE cypress.cypress.all;

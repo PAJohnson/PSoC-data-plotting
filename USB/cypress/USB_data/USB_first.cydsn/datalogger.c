@@ -22,12 +22,13 @@ void logger_init(Log_ts * log){
     log->CircBuff.data_size = LOG_BUFF_SIZE;
 }
 
-void attach_variable(void * var, enum types_e type, Log_ts * log){
+void attach_variable(void * var, enum types_e type, const char * name, Log_ts * log){
     Var_ts temp_var;
     temp_var.type = type;
     temp_var.var_ptr = var;
     if(log->num_vars < LOG_SIZE){
         log->vars[log->num_vars] = temp_var;
+        memcpy(log->vars[log->num_vars].name,name,strlen(name)+1);
         log->num_vars++;
     }
     return;
@@ -159,6 +160,107 @@ void _clear_circbuff(CircBuff_ts * circbuff){
 
 void clear_log(Log_ts * log){
     _clear_circbuff(&log->CircBuff);
+}
+
+void get_command_usb(Log_ts * log, struct usb_ts * usb_s){
+    uint32 command;
+    uint8 argument;
+    if(usb_s->usb_pub.cmd_flag != 0){
+        command = usb_s->usb_in.command[3] +0xFF * usb_s->usb_in.command[2] + \
+                  0xFFFF * usb_s->usb_in.command[1] + 0xFFFFFF * usb_s->usb_in.command[0];
+                
+        switch(command){
+            case NOCMD:
+                ;
+            break;
+            
+            case NUMVARS:
+                //how many variables are being logged?
+                //reply with number of logged variables
+                usb_s->usb_out.response[0] = log->num_vars;
+                usb_s->usb_out.out_flag = 1;
+                usb_s->usb_pub.cmd_flag = 0;
+            break;
+            
+            case VARSIZE:
+                //size of variable in bits?
+                //variable number is the arg, argument is first byte after command
+                argument = usb_s->usb_in.command[4];
+                if(argument <= log->num_vars){
+                    usb_s->usb_out.response[0] = 8*var_size(log->vars[argument].type);
+                }
+                usb_s->usb_out.out_flag = 1;
+                usb_s->usb_pub.cmd_flag = 0;
+            break;
+            
+            case VARNAME:
+                //variable name? (string)
+                //variable number is the arg, first byte after command
+                argument = usb_s->usb_in.command[4];
+                if(argument <= log->num_vars){
+                    memcpy(usb_s->usb_out.response,log->vars[argument].name,strlen(log->vars[argument].name));
+                }
+                usb_s->usb_out.out_flag = 1;
+                usb_s->usb_pub.cmd_flag = 0;
+            break;
+            
+            case VARMAX:
+                //max value for variable?
+                //variable number is the arg, first byte after command
+                argument = usb_s->usb_in.command[4];
+                if(argument <= log->num_vars){
+                    ;
+                }
+                usb_s->usb_pub.cmd_flag = 0;
+            break;
+            
+            case VARMIN:
+                //min value for variable?
+                //variable number is the arg, first byte after command
+                argument = usb_s->usb_in.command[4];
+                if(argument <= log->num_vars){
+                    ;
+                }
+                usb_s->usb_pub.cmd_flag = 0;
+            break;
+            
+            case VARSCALE:
+                //multiplier for variable?
+                //variable number is the arg, first byte after command
+                argument = usb_s->usb_in.command[4];
+                if(argument <= log->num_vars){
+                    ;
+                }
+                usb_s->usb_pub.cmd_flag = 0;
+            break;
+            
+            case VAROFFSET:
+                //offset for variable?
+                //variable number is the arg, first byte after command
+                argument = usb_s->usb_in.command[4];
+                if(argument <= log->num_vars){
+                    ;
+                }
+                usb_s->usb_pub.cmd_flag = 0;
+            break;
+            
+            case START:
+                
+            break;
+            
+            case STOP:
+            
+            break;
+            
+            case RESET:
+            
+            break;
+            
+            default:
+                ;
+            
+        }
+    }
 }
 
 /* [] END OF FILE */

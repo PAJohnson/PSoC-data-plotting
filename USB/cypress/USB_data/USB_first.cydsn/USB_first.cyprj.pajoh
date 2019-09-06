@@ -11,6 +11,100 @@
 <CyGuid_f44455c5-3770-4452-b988-0a7a7ff46256 type_name="CyDesigner.Common.ProjMgmt.Model.CyConfigDependencies" version="1">
 <dependency_info name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3" xml_contents_version="2">
 <CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021 type_name="CyDesigner.Common.Base.CyFileDeps" version="1">
+<file name=".\CortexM3\ARM_GCC_541\Debug\datalogger.o">
+<dep name=".\Generated_Source\PSoC5\ADC_DelSig_1.h" />
+<dep name=".\Generated_Source\PSoC5\ADC_DelSig_1_AMux.h" />
+<dep name=".\Generated_Source\PSoC5\ADC_DelSig_1_Ext_CP_Clk.h" />
+<dep name=".\Generated_Source\PSoC5\ADC_DelSig_1_IRQ.h" />
+<dep name=".\Generated_Source\PSoC5\ADC_DelSig_1_theACLK.h" />
+<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\Loop_Clock.h" />
+<dep name=".\Generated_Source\PSoC5\Loop_Interrupt.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_1.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_1_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\SW2_2.h" />
+<dep name=".\Generated_Source\PSoC5\SW2_2_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_Dm.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_Dm_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_Dp.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_Dp_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_cydmac.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_hid.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
+<dep name=".\Generated_Source\PSoC5\cmsis_armcc.h" />
+<dep name=".\Generated_Source\PSoC5\cmsis_compiler.h" />
+<dep name=".\Generated_Source\PSoC5\cmsis_gcc.h" />
+<dep name=".\Generated_Source\PSoC5\core_cm3.h" />
+<dep name=".\Generated_Source\PSoC5\core_cm3_psoc5.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cy_em_eeprom.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cydisabledsheets.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC5\cypins.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\Generated_Source\PSoC5\project.h" />
+<dep name=".\cyapicallbacks.h" />
+<dep name=".\datalogger.c" />
+<dep name=".\datalogger.h" />
+<dep name=".\usb.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\ADC_DelSig_1.h" />
+<file name=".\Generated_Source\PSoC5\ADC_DelSig_1_AMux.h" />
+<file name=".\Generated_Source\PSoC5\ADC_DelSig_1_Ext_CP_Clk.h" />
+<file name=".\Generated_Source\PSoC5\ADC_DelSig_1_IRQ.h" />
+<file name=".\Generated_Source\PSoC5\ADC_DelSig_1_theACLK.h" />
+<file name=".\Generated_Source\PSoC5\CyDmac.h" />
+<file name=".\Generated_Source\PSoC5\CyFlash.h" />
+<file name=".\Generated_Source\PSoC5\CyLib.h" />
+<file name=".\Generated_Source\PSoC5\CySpc.h" />
+<file name=".\Generated_Source\PSoC5\Loop_Clock.h" />
+<file name=".\Generated_Source\PSoC5\Loop_Interrupt.h" />
+<file name=".\Generated_Source\PSoC5\Pin_1.h" />
+<file name=".\Generated_Source\PSoC5\Pin_1_aliases.h" />
+<file name=".\Generated_Source\PSoC5\SW2_2.h" />
+<file name=".\Generated_Source\PSoC5\SW2_2_aliases.h" />
+<file name=".\Generated_Source\PSoC5\USBFS.h" />
+<file name=".\Generated_Source\PSoC5\USBFS_Dm.h" />
+<file name=".\Generated_Source\PSoC5\USBFS_Dm_aliases.h" />
+<file name=".\Generated_Source\PSoC5\USBFS_Dp.h" />
+<file name=".\Generated_Source\PSoC5\USBFS_Dp_aliases.h" />
+<file name=".\Generated_Source\PSoC5\USBFS_audio.h" />
+<file name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
+<file name=".\Generated_Source\PSoC5\USBFS_cydmac.h" />
+<file name=".\Generated_Source\PSoC5\USBFS_hid.h" />
+<file name=".\Generated_Source\PSoC5\USBFS_midi.h" />
+<file name=".\Generated_Source\PSoC5\USBFS_msc.h" />
+<file name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
+<file name=".\Generated_Source\PSoC5\cmsis_armcc.h" />
+<file name=".\Generated_Source\PSoC5\cmsis_compiler.h" />
+<file name=".\Generated_Source\PSoC5\cmsis_gcc.h" />
+<file name=".\Generated_Source\PSoC5\core_cm3.h" />
+<file name=".\Generated_Source\PSoC5\core_cm3_psoc5.h" />
+<file name=".\Generated_Source\PSoC5\cyPm.h" />
+<file name=".\Generated_Source\PSoC5\cy_em_eeprom.h" />
+<file name=".\Generated_Source\PSoC5\cydevice.h" />
+<file name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<file name=".\Generated_Source\PSoC5\cydisabledsheets.h" />
+<file name=".\Generated_Source\PSoC5\cyfitter.h" />
+<file name=".\Generated_Source\PSoC5\cyfitter_cfg.h" />
+<file name=".\Generated_Source\PSoC5\cypins.h" />
+<file name=".\Generated_Source\PSoC5\cytypes.h" />
+<file name=".\Generated_Source\PSoC5\project.h" />
+<file name=".\cyapicallbacks.h" />
+<file name=".\datalogger.c" />
+<file name=".\datalogger.h" />
+<file name=".\usb.h" />
 <file name=".\CortexM3\ARM_GCC_541\Debug\main.o">
 <dep name=".\Generated_Source\PSoC5\ADC_DelSig_1.h" />
 <dep name=".\Generated_Source\PSoC5\ADC_DelSig_1_AMux.h" />
@@ -57,79 +151,9 @@
 <dep name=".\cyapicallbacks.h" />
 <dep name=".\datalogger.h" />
 <dep name=".\main.c" />
+<dep name=".\usb.h" />
 </file>
-<file name=".\Generated_Source\PSoC5\ADC_DelSig_1.h" />
-<file name=".\Generated_Source\PSoC5\ADC_DelSig_1_AMux.h" />
-<file name=".\Generated_Source\PSoC5\ADC_DelSig_1_Ext_CP_Clk.h" />
-<file name=".\Generated_Source\PSoC5\ADC_DelSig_1_IRQ.h" />
-<file name=".\Generated_Source\PSoC5\ADC_DelSig_1_theACLK.h" />
-<file name=".\Generated_Source\PSoC5\CyDmac.h" />
-<file name=".\Generated_Source\PSoC5\CyFlash.h" />
-<file name=".\Generated_Source\PSoC5\CyLib.h" />
-<file name=".\Generated_Source\PSoC5\CySpc.h" />
-<file name=".\Generated_Source\PSoC5\Loop_Clock.h" />
-<file name=".\Generated_Source\PSoC5\Loop_Interrupt.h" />
-<file name=".\Generated_Source\PSoC5\Pin_1.h" />
-<file name=".\Generated_Source\PSoC5\Pin_1_aliases.h" />
-<file name=".\Generated_Source\PSoC5\SW2_2.h" />
-<file name=".\Generated_Source\PSoC5\SW2_2_aliases.h" />
-<file name=".\Generated_Source\PSoC5\USBFS.h" />
-<file name=".\Generated_Source\PSoC5\USBFS_Dm.h" />
-<file name=".\Generated_Source\PSoC5\USBFS_Dm_aliases.h" />
-<file name=".\Generated_Source\PSoC5\USBFS_Dp.h" />
-<file name=".\Generated_Source\PSoC5\USBFS_Dp_aliases.h" />
-<file name=".\Generated_Source\PSoC5\USBFS_audio.h" />
-<file name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
-<file name=".\Generated_Source\PSoC5\USBFS_cydmac.h" />
-<file name=".\Generated_Source\PSoC5\USBFS_hid.h" />
-<file name=".\Generated_Source\PSoC5\USBFS_midi.h" />
-<file name=".\Generated_Source\PSoC5\USBFS_msc.h" />
-<file name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
-<file name=".\Generated_Source\PSoC5\cmsis_armcc.h" />
-<file name=".\Generated_Source\PSoC5\cmsis_compiler.h" />
-<file name=".\Generated_Source\PSoC5\cmsis_gcc.h" />
-<file name=".\Generated_Source\PSoC5\core_cm3.h" />
-<file name=".\Generated_Source\PSoC5\core_cm3_psoc5.h" />
-<file name=".\Generated_Source\PSoC5\cyPm.h" />
-<file name=".\Generated_Source\PSoC5\cy_em_eeprom.h" />
-<file name=".\Generated_Source\PSoC5\cydevice.h" />
-<file name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<file name=".\Generated_Source\PSoC5\cydisabledsheets.h" />
-<file name=".\Generated_Source\PSoC5\cyfitter.h" />
-<file name=".\Generated_Source\PSoC5\cyfitter_cfg.h" />
-<file name=".\Generated_Source\PSoC5\cypins.h" />
-<file name=".\Generated_Source\PSoC5\cytypes.h" />
-<file name=".\Generated_Source\PSoC5\project.h" />
-<file name=".\cyapicallbacks.h" />
-<file name=".\datalogger.h" />
 <file name=".\main.c" />
-<file name=".\CortexM3\ARM_GCC_541\Debug\Loop_Interrupt.o">
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\Loop_Interrupt.c" />
-<dep name=".\Generated_Source\PSoC5\Loop_Interrupt.h" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-<dep name=".\cyapicallbacks.h" />
-</file>
-<file name=".\Generated_Source\PSoC5\Loop_Interrupt.c" />
-<file name=".\CortexM3\ARM_GCC_541\Debug\datalogger.o">
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-<dep name=".\datalogger.c" />
-<dep name=".\datalogger.h" />
-</file>
-<file name=".\datalogger.c" />
 <file name=".\CortexM3\ARM_GCC_541\Debug\usb.o">
 <dep name=".\Generated_Source\PSoC5\ADC_DelSig_1.h" />
 <dep name=".\Generated_Source\PSoC5\ADC_DelSig_1_AMux.h" />
@@ -137,7 +161,11 @@
 <dep name=".\Generated_Source\PSoC5\ADC_DelSig_1_IRQ.h" />
 <dep name=".\Generated_Source\PSoC5\ADC_DelSig_1_theACLK.h" />
 <dep name=".\Generated_Source\PSoC5\CyDmac.h" />
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
 <dep name=".\Generated_Source\PSoC5\Loop_Clock.h" />
+<dep name=".\Generated_Source\PSoC5\Loop_Interrupt.h" />
 <dep name=".\Generated_Source\PSoC5\Pin_1.h" />
 <dep name=".\Generated_Source\PSoC5\Pin_1_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\SW2_2.h" />
@@ -159,14 +187,316 @@
 <dep name=".\Generated_Source\PSoC5\cmsis_gcc.h" />
 <dep name=".\Generated_Source\PSoC5\core_cm3.h" />
 <dep name=".\Generated_Source\PSoC5\core_cm3_psoc5.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
 <dep name=".\Generated_Source\PSoC5\cy_em_eeprom.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
 <dep name=".\Generated_Source\PSoC5\cydisabledsheets.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
 <dep name=".\Generated_Source\PSoC5\cyfitter_cfg.h" />
 <dep name=".\Generated_Source\PSoC5\cypins.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
 <dep name=".\Generated_Source\PSoC5\project.h" />
+<dep name=".\cyapicallbacks.h" />
+<dep name=".\usb.c" />
+<dep name=".\usb.h" />
+</file>
+<file name=".\usb.c" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_descr.o">
+<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
 <dep name=".\Generated_Source\PSoC5\CyFlash.h" />
 <dep name=".\Generated_Source\PSoC5\CyLib.h" />
 <dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_descr.c" />
+<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\cyapicallbacks.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\USBFS_descr.c" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS.o">
+<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS.c" />
+<dep name=".\Generated_Source\PSoC5\USBFS.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_Dp.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_Dp_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_cydmac.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_hid.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cypins.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\cyapicallbacks.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\USBFS.c" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_audio.o">
+<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_audio.c" />
+<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\cyapicallbacks.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\USBFS_audio.c" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_boot.o">
+<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_boot.c" />
+<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\cyapicallbacks.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\USBFS_boot.c" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_cdc.o">
+<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_cdc.c" />
+<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\cyapicallbacks.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\USBFS_cdc.c" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_cls.o">
+<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_cls.c" />
+<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\cyapicallbacks.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\USBFS_cls.c" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_drv.o">
+<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_drv.c" />
+<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\cyapicallbacks.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\USBFS_drv.c" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_episr.o">
+<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_cydmac.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_episr.c" />
+<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\cyapicallbacks.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\USBFS_episr.c" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_hid.o">
+<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_hid.c" />
+<dep name=".\Generated_Source\PSoC5\USBFS_hid.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\cyapicallbacks.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\USBFS_hid.c" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_midi.o">
+<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_midi.c" />
+<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\cyapicallbacks.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\USBFS_midi.c" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_msc.o">
+<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_msc.c" />
+<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\cyapicallbacks.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\USBFS_msc.c" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_pm.o">
+<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_Dp.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_Dp_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_pm.c" />
+<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cypins.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\cyapicallbacks.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\USBFS_pm.c" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_std.o">
+<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_std.c" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\cyapicallbacks.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\USBFS_std.c" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_vnd.o">
+<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
+<dep name=".\Generated_Source\PSoC5\USBFS_vnd.c" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\cyapicallbacks.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\USBFS_vnd.c" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\Loop_Interrupt.o">
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\Loop_Interrupt.c" />
 <dep name=".\Generated_Source\PSoC5\Loop_Interrupt.h" />
 <dep name=".\Generated_Source\PSoC5\cyPm.h" />
 <dep name=".\Generated_Source\PSoC5\cydevice.h" />
@@ -174,11 +504,8 @@
 <dep name=".\Generated_Source\PSoC5\cyfitter.h" />
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 <dep name=".\cyapicallbacks.h" />
-<dep name=".\usb.c" />
-<dep name=".\usb.h" />
 </file>
-<file name=".\usb.c" />
-<file name=".\usb.h" />
+<file name=".\Generated_Source\PSoC5\Loop_Interrupt.c" />
 <file name=".\CortexM3\ARM_GCC_541\Debug\ADC_DelSig_1.o">
 <dep name=".\Generated_Source\PSoC5\ADC_DelSig_1.c" />
 <dep name=".\Generated_Source\PSoC5\ADC_DelSig_1.h" />
@@ -360,31 +687,6 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\SW2_2.c" />
-<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS.o">
-<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS.c" />
-<dep name=".\Generated_Source\PSoC5\USBFS.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_Dp.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_Dp_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_cydmac.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_hid.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cypins.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-<dep name=".\cyapicallbacks.h" />
-</file>
-<file name=".\Generated_Source\PSoC5\USBFS.c" />
 <file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_Dm.o">
 <dep name=".\Generated_Source\PSoC5\USBFS_Dm.c" />
 <dep name=".\Generated_Source\PSoC5\USBFS_Dm.h" />
@@ -407,271 +709,6 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\USBFS_Dp.c" />
-<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_audio.o">
-<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_audio.c" />
-<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-<dep name=".\cyapicallbacks.h" />
-</file>
-<file name=".\Generated_Source\PSoC5\USBFS_audio.c" />
-<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_boot.o">
-<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_boot.c" />
-<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-<dep name=".\cyapicallbacks.h" />
-</file>
-<file name=".\Generated_Source\PSoC5\USBFS_boot.c" />
-<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_cdc.o">
-<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_cdc.c" />
-<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-<dep name=".\cyapicallbacks.h" />
-</file>
-<file name=".\Generated_Source\PSoC5\USBFS_cdc.c" />
-<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_cls.o">
-<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_cls.c" />
-<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-<dep name=".\cyapicallbacks.h" />
-</file>
-<file name=".\Generated_Source\PSoC5\USBFS_cls.c" />
-<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_descr.o">
-<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_descr.c" />
-<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-<dep name=".\cyapicallbacks.h" />
-</file>
-<file name=".\Generated_Source\PSoC5\USBFS_descr.c" />
-<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_drv.o">
-<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_drv.c" />
-<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-<dep name=".\cyapicallbacks.h" />
-</file>
-<file name=".\Generated_Source\PSoC5\USBFS_drv.c" />
-<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_episr.o">
-<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_cydmac.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_episr.c" />
-<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-<dep name=".\cyapicallbacks.h" />
-</file>
-<file name=".\Generated_Source\PSoC5\USBFS_episr.c" />
-<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_hid.o">
-<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_hid.c" />
-<dep name=".\Generated_Source\PSoC5\USBFS_hid.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-<dep name=".\cyapicallbacks.h" />
-</file>
-<file name=".\Generated_Source\PSoC5\USBFS_hid.c" />
-<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_midi.o">
-<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_midi.c" />
-<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-<dep name=".\cyapicallbacks.h" />
-</file>
-<file name=".\Generated_Source\PSoC5\USBFS_midi.c" />
-<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_msc.o">
-<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_msc.c" />
-<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-<dep name=".\cyapicallbacks.h" />
-</file>
-<file name=".\Generated_Source\PSoC5\USBFS_msc.c" />
-<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_pm.o">
-<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_Dp.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_Dp_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_pm.c" />
-<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cypins.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-<dep name=".\cyapicallbacks.h" />
-</file>
-<file name=".\Generated_Source\PSoC5\USBFS_pm.c" />
-<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_std.o">
-<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_std.c" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-<dep name=".\cyapicallbacks.h" />
-</file>
-<file name=".\Generated_Source\PSoC5\USBFS_std.c" />
-<file name=".\CortexM3\ARM_GCC_541\Debug\USBFS_vnd.o">
-<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_vnd.c" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-<dep name=".\cyapicallbacks.h" />
-</file>
-<file name=".\Generated_Source\PSoC5\USBFS_vnd.c" />
 <file name=".\CortexM3\ARM_GCC_541\Debug\cyPm.o">
 <dep name=".\Generated_Source\PSoC5\CyFlash.h" />
 <dep name=".\Generated_Source\PSoC5\CyLib.h" />
@@ -839,9 +876,10 @@
 <name_val_pair name="usb.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
 <name_val_pair name="Generated_Source\PSoC5\Loop_Clock.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
 <name_val_pair name="Generated_Source\PSoC5\Loop_Interrupt.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
+<name_val_pair name="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\CortexM3\ARM_GCC_541\Debug\USB_first.hex" v="-mcpu=cortex-m3 -mthumb -L Generated_Source\PSoC5 -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects" />
 </name>
 </genericCmdLineData>
-<codeGenCmdLineTag v="-.appdatapath &quot;C:\Users\pajoh\AppData\Local\Cypress Semiconductor\PSoC Creator\4.2&quot; -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\pajoh\projects\USB\cypress\USB_data\USB_first.cydsn\USB_first.cyprj -d CY8C5888LTI-LP097 -s C:\Users\pajoh\projects\USB\cypress\USB_data\USB_first.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE" />
+<codeGenCmdLineTag v="-.appdatapath &quot;C:\Users\pajoh\AppData\Local\Cypress Semiconductor\PSoC Creator\4.2&quot; -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\USB_first.cyprj -d CY8C5888LTI-LP097 -s C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE" />
 </CyGuid_b0374e30-ce3a-47f2-ad85-821643292c68>
 </dataGuid>
 <dataGuid v="597c5b74-0c46-4204-8b7f-96f3570671dc">
@@ -856,7 +894,7 @@
 <v>Off-Chip</v>
 </tree_states_tab_names>
 <tree_states>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Cypress Component Catalog\Ports and Pins\Analog Pin [v2.20]">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Cypress Component Catalog\Analog\ADC\Delta Sigma ADC [v3.30]">
 <ExpandedNodeIds>
 <v>Cypress Component Catalog</v>
 <v>Cypress Component Catalog\Analog</v>
@@ -890,6 +928,7 @@
 <v>Cypress Component Catalog\Ports and Pins\Digital Output Pin [v2.20]</v>
 <v>Cypress Component Catalog\Power Supervision</v>
 <v>Cypress Component Catalog\System</v>
+<v>Cypress Component Catalog\Thermal Management</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -914,134 +953,134 @@
 <CyGuid_925cc1e1-309e-4e08-b0a1-09a83c35b157 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtProjectPSoCExe+CyCodeGenDepUserInfo" version="1">
 <deps_list>
 <v>.\TopDesign\TopDesign.cysch</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\USBFS_v3_20.cysym</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\USBFS_v3_20.pdf</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\USBFS_v3_20.cycdx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\USBFS_v3_20.cystate</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS.c</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS.h</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_audio.c</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_audio.h</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_boot.c</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_cdc.c</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_cdc.h</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_cls.c</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_descr.c</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_drv.c</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_episr.c</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_hid.c</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_hid.h</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_pm.c</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_std.c</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_vnd.c</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_cdc.inf</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_midi.c</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_midi.h</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_pvt.h</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_cydmac.h</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_msc.c</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_msc.h</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\Properties\Resources.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyadvancedpage.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyadvancedpage.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyapicustomizer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyaudio.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyaudiodescriptorpage.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyaudiodescriptorpage.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cycdc.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cycdcdescriptorpage.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cycdcdescriptorpage.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cycustomizer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsconfig.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsconfig.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsdevice.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsdevice.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsendpoint.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsendpoint.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailshid.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailshid.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsinterface.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsinterface.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailslangid.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailslangid.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsstring.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsstring.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydevice.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydevicedescriptorpage.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydevicedescriptorpage.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyhiddescriptorpage.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyhiddescriptorpage.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportbase.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportbase.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportbits.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportbits.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportcustom.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportcustom.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportlist.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportlist.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportnumber.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportnumber.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportunit.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportunit.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cystringdescriptorpage.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cystringdescriptorpage.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cytemplates.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyusbdescriptor.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyusbparameters.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyaudio2_0.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsepmngt.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsepmngt.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cymidi.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cymididescriptorpage.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cymididescriptorpage.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cymiditemplate.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsintassociation.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsintassociation.designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyusbconst.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cywrappercontrol.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cybasedescriptorpage.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cybasedescriptorpage.designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyinterruptspage.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyinterruptspage.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsbos.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsbos.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsusb20extension.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsusb20extension.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailscontainerid.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailscontainerid.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cymscdescriptorpage.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cymscdescriptorpage.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cymsc.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\Properties\Resources.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyadvancedpage.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyaudiodescriptorpage.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cycdcdescriptorpage.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsconfig.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsdevice.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsendpoint.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailshid.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsinterface.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailslangid.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsstring.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydevicedescriptorpage.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyhiddescriptorpage.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportbits.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportcustom.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportlist.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportnumber.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportunit.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cystringdescriptorpage.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsepmngt.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cymididescriptorpage.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsintassociation.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cybasedescriptorpage.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyinterruptspage.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsbos.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsusb20extension.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailscontainerid.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cymscdescriptorpage.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\PSoC5\USBFS_v3_20.cysch</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\USBFS_v3_20.cysym</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\USBFS_v3_20.pdf</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\USBFS_v3_20.cycdx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\USBFS_v3_20.cystate</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS.c</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS.h</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_audio.c</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_audio.h</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_boot.c</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_cdc.c</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_cdc.h</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_cls.c</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_descr.c</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_drv.c</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_episr.c</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_hid.c</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_hid.h</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_pm.c</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_std.c</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_vnd.c</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_cdc.inf</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_midi.c</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_midi.h</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_pvt.h</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_cydmac.h</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_msc.c</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\API\USBFS_msc.h</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\Properties\Resources.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyadvancedpage.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyadvancedpage.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyapicustomizer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyaudio.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyaudiodescriptorpage.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyaudiodescriptorpage.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cycdc.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cycdcdescriptorpage.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cycdcdescriptorpage.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cycustomizer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsconfig.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsconfig.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsdevice.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsdevice.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsendpoint.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsendpoint.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailshid.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailshid.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsinterface.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsinterface.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailslangid.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailslangid.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsstring.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsstring.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydevice.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydevicedescriptorpage.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydevicedescriptorpage.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyhiddescriptorpage.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyhiddescriptorpage.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportbase.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportbase.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportbits.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportbits.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportcustom.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportcustom.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportlist.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportlist.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportnumber.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportnumber.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportunit.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportunit.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cystringdescriptorpage.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cystringdescriptorpage.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cytemplates.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyusbdescriptor.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyusbparameters.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyaudio2_0.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsepmngt.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsepmngt.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cymidi.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cymididescriptorpage.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cymididescriptorpage.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cymiditemplate.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsintassociation.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsintassociation.designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyusbconst.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cywrappercontrol.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cybasedescriptorpage.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cybasedescriptorpage.designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyinterruptspage.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyinterruptspage.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsbos.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsbos.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsusb20extension.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsusb20extension.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailscontainerid.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailscontainerid.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cymscdescriptorpage.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cymscdescriptorpage.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cymsc.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\Properties\Resources.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyadvancedpage.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyaudiodescriptorpage.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cycdcdescriptorpage.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsconfig.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsdevice.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsendpoint.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailshid.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsinterface.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailslangid.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsstring.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydevicedescriptorpage.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyhiddescriptorpage.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportbits.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportcustom.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportlist.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportnumber.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyreportunit.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cystringdescriptorpage.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsepmngt.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cymididescriptorpage.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsintassociation.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cybasedescriptorpage.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cyinterruptspage.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsbos.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailsusb20extension.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cydetailscontainerid.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\Custom\cymscdescriptorpage.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\USBFS_v3_20\PSoC5\USBFS_v3_20.cysch</v>
 <v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_isr_v1_70\cy_isr_v1_70.cysym</v>
 <v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
 <v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_isr_v1_70\cy_isr_v1_70.primitive</v>
@@ -1101,31 +1140,31 @@
 <v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.pdf</v>
 <v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v</v>
 <v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\version.cypatch</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\ADC_DelSig_v3_30.cydmacap</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\ADC_DelSig_v3_30.cysym</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\ADC_DelSig_v3_30.pdf</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\ADC_DelSig_v3_30.cystate</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\ADC_DelSig_v3_30.cycdx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\version.cypatch</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\API\ADC_DelSig.c</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\API\ADC_DelSig.h</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\API\ADC_DelSig_PM.c</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\API\ADC_DelSigINT.c</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\cyapigen.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\cycommontab.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\cycommontab.designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\cyparameters.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\cycustomizer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\Resource.Designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\cyconfigurationtab.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\cyconfigurationtab.designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\cytabcontrolwrapper.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\cytabcontrolwrapper.designer.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\cyapiconst.cs</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\cycommontab.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\Resource.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\cyconfigurationtab.resx</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\PSoC5\ADC_DelSig_v3_30.cysch</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\ADC_DelSig_v3_30.cydmacap</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\ADC_DelSig_v3_30.cysym</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\ADC_DelSig_v3_30.pdf</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\ADC_DelSig_v3_30.cystate</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\ADC_DelSig_v3_30.cycdx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\version.cypatch</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\API\ADC_DelSig.c</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\API\ADC_DelSig.h</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\API\ADC_DelSig_PM.c</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\API\ADC_DelSigINT.c</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\cyapigen.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\cycommontab.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\cycommontab.designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\cyparameters.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\cycustomizer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\Resource.Designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\cyconfigurationtab.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\cyconfigurationtab.designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\cytabcontrolwrapper.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\cytabcontrolwrapper.designer.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\cyapiconst.cs</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\cycommontab.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\Resource.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\Custom\cyconfigurationtab.resx</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\ADC_DelSig_v3_30\PSoC5\ADC_DelSig_v3_30.cysch</v>
 <v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_vref_v1_70\cy_vref_v1_70.cysym</v>
 <v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_vref_v1_70\cy_vref_v1_70.v</v>
 <v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_vref_v1_70\cy_vref_v1_70.cystate</v>
@@ -1175,8 +1214,8 @@
 <v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\version.cypatch</v>
 <v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\Custom\custom.cs</v>
 <v>.\USB_first.cydwr</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Em_EEPROM_Dynamic_v2_20\API\cy_em_eeprom.c</v>
-<v>..\..\..\..\..\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Em_EEPROM_Dynamic_v2_20\API\cy_em_eeprom.h</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Em_EEPROM_Dynamic_v2_20\API\cy_em_eeprom.c</v>
+<v>..\..\..\..\..\..\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Em_EEPROM_Dynamic_v2_20\API\cy_em_eeprom.h</v>
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\cy_boot_v5_70\PSoC5\API\cm3gcc.ld</v>
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\cy_boot_v5_70\PSoC5\API\Cm3RealView.scat</v>
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\cy_boot_v5_70\PSoC5\API\Cm3Start.c</v>
@@ -1315,7 +1354,7 @@
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cy_psoc3_inc.v</v>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
 </warp_dep>
-<deps_time v="132120346609725412" />
+<deps_time v="132122737794268490" />
 <top_block v="TopDesign" />
 <last_generation v="0" />
 <pdl_path v="" />
@@ -1325,7 +1364,7 @@
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
 <link_deps_times>
-<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3" v="132122028579552658" />
+<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3" v="132122768272673603" />
 </link_deps_times>
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>
@@ -1333,7 +1372,10 @@
 <CyGuid_bf610382-39c6-441f-80b8-b04622ea7845 type_name="CyDesigner.Common.Debugger.CyWatchedVariableList" version="1">
 <debugger_watch_list>
 <CyGuid_ccf7a56e-c00d-460c-82dd-56c8f54feb7f type_name="CyDesigner.Common.Debugger.CyWatchedVariableList+CyWatchedItem" version="1" window="0" name="log_s.num_vars" radix="decimal" />
-<CyGuid_ccf7a56e-c00d-460c-82dd-56c8f54feb7f type_name="CyDesigner.Common.Debugger.CyWatchedVariableList+CyWatchedItem" version="1" window="0" name="log_s.CircBuff.data_index" radix="decimal" />
+<CyGuid_ccf7a56e-c00d-460c-82dd-56c8f54feb7f type_name="CyDesigner.Common.Debugger.CyWatchedVariableList+CyWatchedItem" version="1" window="0" name="usb_s.usb_in.command[0]" radix="Default" />
+<CyGuid_ccf7a56e-c00d-460c-82dd-56c8f54feb7f type_name="CyDesigner.Common.Debugger.CyWatchedVariableList+CyWatchedItem" version="1" window="0" name="usb_s.usb_in.command[1]" radix="Default" />
+<CyGuid_ccf7a56e-c00d-460c-82dd-56c8f54feb7f type_name="CyDesigner.Common.Debugger.CyWatchedVariableList+CyWatchedItem" version="1" window="0" name="usb_s.usb_in.command[2]" radix="Default" />
+<CyGuid_ccf7a56e-c00d-460c-82dd-56c8f54feb7f type_name="CyDesigner.Common.Debugger.CyWatchedVariableList+CyWatchedItem" version="1" window="0" name="usb_s.usb_in.command[3]" radix="Default" />
 </debugger_watch_list>
 </CyGuid_bf610382-39c6-441f-80b8-b04622ea7845>
 </dataGuid>

@@ -40,6 +40,7 @@ int i;
 char * name;
 
 Log_ts log_s;
+struct usb_ts usb_s;
 uint8 dumvar1 = 0;
 uint16 dumvar2 = 0;
 uint32 dumvar3 = 0;
@@ -59,9 +60,11 @@ int main(void)
     
     //logger initialization
     logger_init(&log_s);
-    attach_variable(&dumvar1,UINT8,&log_s);
-    attach_variable(&analogRead,UINT16,&log_s);
-    attach_variable(&dumvar3,UINT32,&log_s);
+    attach_variable(&dumvar1,UINT8,"dumvar1",&log_s);
+    attach_variable(&analogRead,UINT16,"analogRead",&log_s);
+    attach_variable(&dumvar3,UINT32,"dumvar3",&log_s);
+    
+    usb_set_stream(&usb_s,get_buffer(&log_s));
     
     
     /* enumeration is done, enable out endpoint for receive data from Host */
@@ -80,25 +83,14 @@ int main(void)
             //logger
             //---------------------------
             logger(&log_s);
+            get_command_usb(&log_s, &usb_s);
             
             //---------------------------
             //usb
             //---------------------------
-            if(USBFS_bGetConfiguration()){
-                USBFS_EnableOutEP(2);
-                /* Place your application code here. */
-                /*wait for data received */
-                //while(USBFS_bGetEPState(2) != USBFS_OUT_BUFFER_FULL);
+            usb_task(&usb_s);
+            clear_log(&log_s);
             
-                /* Read received bytes count */
-                //length = USBFS_wGetEPCount(2);
-                
-                /* unload the out buffer */
-                //USBFS_ReadOutEP(2, &buffer[0], length);
-                //USBFS_LoadInEP(1, &buffer[0], 64);
-                USBFS_LoadInEP(1, get_buffer(&log_s), 64);
-                clear_log(&log_s);
-            }
             if(ADC_DelSig_1_IsEndConversion(ADC_DelSig_1_WAIT_FOR_RESULT)){
                 analogRead = ADC_DelSig_1_GetResult16();   
             }

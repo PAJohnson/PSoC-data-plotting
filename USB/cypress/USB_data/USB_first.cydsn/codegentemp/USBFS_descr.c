@@ -52,10 +52,10 @@ const uint8 CYCODE USBFS_DEVICE0_DESCR[18u] = {
 /*********************************************************************
 * Config Descriptor  
 *********************************************************************/
-const uint8 CYCODE USBFS_DEVICE0_CONFIGURATION0_DESCR[55u] = {
+const uint8 CYCODE USBFS_DEVICE0_CONFIGURATION0_DESCR[46u] = {
 /*  Config Descriptor Length               */ 0x09u,
 /*  DescriptorType: CONFIG                 */ 0x02u,
-/*  wTotalLength                           */ 0x37u, 0x00u,
+/*  wTotalLength                           */ 0x2Eu, 0x00u,
 /*  bNumInterfaces                         */ 0x01u,
 /*  bConfigurationValue                    */ 0x01u,
 /*  iConfiguration                         */ 0x00u,
@@ -68,7 +68,7 @@ const uint8 CYCODE USBFS_DEVICE0_CONFIGURATION0_DESCR[55u] = {
 /*  DescriptorType: INTERFACE              */ 0x04u,
 /*  bInterfaceNumber                       */ 0x00u,
 /*  bAlternateSetting                      */ 0x00u,
-/*  bNumEndpoints                          */ 0x02u,
+/*  bNumEndpoints                          */ 0x04u,
 /*  bInterfaceClass                        */ 0xFFu,
 /*  bInterfaceSubClass                     */ 0x00u,
 /*  bInterfaceProtocol                     */ 0x00u,
@@ -91,18 +91,6 @@ const uint8 CYCODE USBFS_DEVICE0_CONFIGURATION0_DESCR[55u] = {
 /*  bmAttributes                           */ 0x02u,
 /*  wMaxPacketSize                         */ 0x40u, 0x00u,
 /*  bInterval                              */ 0x00u,
-/*********************************************************************
-* Interface Descriptor
-*********************************************************************/
-/*  Interface Descriptor Length            */ 0x09u,
-/*  DescriptorType: INTERFACE              */ 0x04u,
-/*  bInterfaceNumber                       */ 0x00u,
-/*  bAlternateSetting                      */ 0x01u,
-/*  bNumEndpoints                          */ 0x02u,
-/*  bInterfaceClass                        */ 0xFFu,
-/*  bInterfaceSubClass                     */ 0x00u,
-/*  bInterfaceProtocol                     */ 0x00u,
-/*  iInterface                             */ 0x04u,
 /*********************************************************************
 * Endpoint Descriptor
 *********************************************************************/
@@ -181,11 +169,11 @@ const T_USBFS_EP_SETTINGS_BLOCK CYCODE USBFS_DEVICE0_CONFIGURATION0_EP_SETTINGS_
 /* IFC  ALT    EPAddr bmAttr MaxPktSize Class ********************/
 {0x00u, 0x00u, 0x81u, 0x02u, 0x0040u,   0xFFu},
 {0x00u, 0x00u, 0x02u, 0x02u, 0x0040u,   0xFFu},
-{0x00u, 0x01u, 0x83u, 0x02u, 0x0040u,   0xFFu},
-{0x00u, 0x01u, 0x04u, 0x02u, 0x0040u,   0xFFu}
+{0x00u, 0x00u, 0x83u, 0x02u, 0x0040u,   0xFFu},
+{0x00u, 0x00u, 0x04u, 0x02u, 0x0040u,   0xFFu}
 };
 const uint8 CYCODE USBFS_DEVICE0_CONFIGURATION0_INTERFACE_CLASS[1u] = {
-0xFFu, 
+0xFFu
 };
 /*********************************************************************
 * Config Dispatch Table -- Points to the Config Descriptor and each of
