@@ -1,0 +1,1674 @@
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.main,"ax",%progbits
+  20              		.align	2
+  21              		.global	main
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	main, %function
+  25              	main:
+  26              	.LFB64:
+  27              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** 
+  13:main.c        **** //implement type tagging for the info header
+  14:main.c        **** //first, send a message indicating the order and type of variables
+  15:main.c        **** //from then on, send variables csv style
+  16:main.c        **** //might be a good idea to make use of control endpoints
+  17:main.c        **** //for example, do nothing until a "start" ctrl message is received
+  18:main.c        **** //send this message from python on a keypress
+  19:main.c        **** //implement an event loop in python for this
+  20:main.c        **** 
+  21:main.c        **** //send variable names individually, end with a termination message
+  22:main.c        **** //unlikely to hit name limit problems this way
+  23:main.c        **** //state machine for usb data, even in interrupt
+  24:main.c        **** //state 0 init -> state 1 on RX start
+  25:main.c        **** //state 1 run -> state 0 on RESET
+  26:main.c        **** 
+  27:main.c        **** //logger file next
+  28:main.c        **** //similar to the DI4 datalogger
+  29:main.c        **** #include "project.h"
+  30:main.c        **** #include "stdio.h"
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 2
+
+
+  31:main.c        **** #include "datalogger.h"
+  32:main.c        **** 
+  33:main.c        **** #define getName(var) #var
+  34:main.c        **** 
+  35:main.c        **** uint8 buffer[64], length;
+  36:main.c        **** uint16 analogRead;
+  37:main.c        **** int sample_count = 0;
+  38:main.c        **** int i;
+  39:main.c        **** 
+  40:main.c        **** char * name;
+  41:main.c        **** 
+  42:main.c        **** Log_ts log_s;
+  43:main.c        **** uint8 dumvar1 = 0;
+  44:main.c        **** uint16 dumvar2 = 0;
+  45:main.c        **** uint32 dumvar3 = 0;
+  46:main.c        **** 
+  47:main.c        **** volatile uint8 main_flag;
+  48:main.c        **** 
+  49:main.c        **** 
+  50:main.c        **** int main(void)
+  51:main.c        **** {
+  28              		.loc 1 51 0
+  29              		.cfi_startproc
+  30              		@ Volatile: function does not return.
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 08B5     		push	{r3, lr}
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 3, -8
+  36              		.cfi_offset 14, -4
+  52:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  37              		.loc 1 52 0
+  38              		.syntax unified
+  39              	@ 52 "main.c" 1
+  40 0002 62B6     		CPSIE   i
+  41              	@ 0 "" 2
+  53:main.c        **** 
+  54:main.c        ****     name = getName(analogRead);
+  42              		.loc 1 54 0
+  43              		.thumb
+  44              		.syntax unified
+  45 0004 294A     		ldr	r2, .L7
+  46 0006 2A4B     		ldr	r3, .L7+4
+  47 0008 1A60     		str	r2, [r3]
+  55:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  56:main.c        ****     ADC_DelSig_1_Start();
+  48              		.loc 1 56 0
+  49 000a FFF7FEFF 		bl	ADC_DelSig_1_Start
+  50              	.LVL0:
+  57:main.c        ****     ADC_DelSig_1_StartConvert();
+  51              		.loc 1 57 0
+  52 000e FFF7FEFF 		bl	ADC_DelSig_1_StartConvert
+  53              	.LVL1:
+  58:main.c        ****     USBFS_Start(0u, USBFS_5V_OPERATION);
+  54              		.loc 1 58 0
+  55 0012 0121     		movs	r1, #1
+  56 0014 0020     		movs	r0, #0
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 3
+
+
+  57 0016 FFF7FEFF 		bl	USBFS_Start
+  58              	.LVL2:
+  59:main.c        ****     
+  60:main.c        ****     //logger initialization
+  61:main.c        ****     logger_init(&log_s);
+  59              		.loc 1 61 0
+  60 001a 264C     		ldr	r4, .L7+8
+  61 001c 2046     		mov	r0, r4
+  62 001e FFF7FEFF 		bl	logger_init
+  63              	.LVL3:
+  62:main.c        ****     attach_variable(&dumvar1,UINT8,&log_s);
+  64              		.loc 1 62 0
+  65 0022 254D     		ldr	r5, .L7+12
+  66 0024 2246     		mov	r2, r4
+  67 0026 0021     		movs	r1, #0
+  68 0028 2846     		mov	r0, r5
+  69 002a FFF7FEFF 		bl	attach_variable
+  70              	.LVL4:
+  63:main.c        ****     attach_variable(&analogRead,UINT16,&log_s);
+  71              		.loc 1 63 0
+  72 002e 2246     		mov	r2, r4
+  73 0030 0221     		movs	r1, #2
+  74 0032 2248     		ldr	r0, .L7+16
+  75 0034 FFF7FEFF 		bl	attach_variable
+  76              	.LVL5:
+  64:main.c        ****     attach_variable(&dumvar3,UINT32,&log_s);
+  77              		.loc 1 64 0
+  78 0038 2246     		mov	r2, r4
+  79 003a 0421     		movs	r1, #4
+  80 003c 6818     		adds	r0, r5, r1
+  81 003e FFF7FEFF 		bl	attach_variable
+  82              	.LVL6:
+  65:main.c        ****     
+  66:main.c        ****     
+  67:main.c        ****     /* enumeration is done, enable out endpoint for receive data from Host */
+  68:main.c        ****     Loop_Interrupt_Start();
+  83              		.loc 1 68 0
+  84 0042 FFF7FEFF 		bl	Loop_Interrupt_Start
+  85              	.LVL7:
+  69:main.c        ****     sample_count = 0;
+  86              		.loc 1 69 0
+  87 0046 0023     		movs	r3, #0
+  88 0048 AB60     		str	r3, [r5, #8]
+  89              	.L2:
+  70:main.c        ****     for(;;)
+  71:main.c        ****     {
+  72:main.c        ****         if(main_flag == 1){
+  90              		.loc 1 72 0
+  91 004a 1D4B     		ldr	r3, .L7+20
+  92 004c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  93 004e DBB2     		uxtb	r3, r3
+  94 0050 012B     		cmp	r3, #1
+  95 0052 FAD1     		bne	.L2
+  73:main.c        ****             //main interrupt driven loop
+  74:main.c        ****             main_flag = 0;
+  96              		.loc 1 74 0
+  97 0054 0022     		movs	r2, #0
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 4
+
+
+  98 0056 1A4B     		ldr	r3, .L7+20
+  99 0058 1A70     		strb	r2, [r3]
+  75:main.c        ****             //insert code to run here
+  76:main.c        ****             dumvar1 += 1;
+ 100              		.loc 1 76 0
+ 101 005a 174B     		ldr	r3, .L7+12
+ 102 005c 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 103 005e 0132     		adds	r2, r2, #1
+ 104 0060 1A70     		strb	r2, [r3]
+  77:main.c        ****             dumvar2 += 10;
+ 105              		.loc 1 77 0
+ 106 0062 9A89     		ldrh	r2, [r3, #12]
+ 107 0064 0A32     		adds	r2, r2, #10
+ 108 0066 9A81     		strh	r2, [r3, #12]	@ movhi
+  78:main.c        ****             dumvar3 += 100;
+ 109              		.loc 1 78 0
+ 110 0068 5A68     		ldr	r2, [r3, #4]
+ 111 006a 6432     		adds	r2, r2, #100
+ 112 006c 5A60     		str	r2, [r3, #4]
+  79:main.c        ****             //---------------------------
+  80:main.c        ****             //logger
+  81:main.c        ****             //---------------------------
+  82:main.c        ****             logger(&log_s);
+ 113              		.loc 1 82 0
+ 114 006e 1148     		ldr	r0, .L7+8
+ 115 0070 FFF7FEFF 		bl	logger
+ 116              	.LVL8:
+  83:main.c        ****             
+  84:main.c        ****             //---------------------------
+  85:main.c        ****             //usb
+  86:main.c        ****             //---------------------------
+  87:main.c        ****             if(USBFS_bGetConfiguration()){
+ 117              		.loc 1 87 0
+ 118 0074 FFF7FEFF 		bl	USBFS_GetConfiguration
+ 119              	.LVL9:
+ 120 0078 70B1     		cbz	r0, .L3
+  88:main.c        ****                 USBFS_EnableOutEP(2);
+ 121              		.loc 1 88 0
+ 122 007a 0220     		movs	r0, #2
+ 123 007c FFF7FEFF 		bl	USBFS_EnableOutEP
+ 124              	.LVL10:
+  89:main.c        ****                 /* Place your application code here. */
+  90:main.c        ****                 /*wait for data received */
+  91:main.c        ****                 //while(USBFS_bGetEPState(2) != USBFS_OUT_BUFFER_FULL);
+  92:main.c        ****             
+  93:main.c        ****                 /* Read received bytes count */
+  94:main.c        ****                 //length = USBFS_wGetEPCount(2);
+  95:main.c        ****                 
+  96:main.c        ****                 /* unload the out buffer */
+  97:main.c        ****                 //USBFS_ReadOutEP(2, &buffer[0], length);
+  98:main.c        ****                 //USBFS_LoadInEP(1, &buffer[0], 64);
+  99:main.c        ****                 USBFS_LoadInEP(1, get_buffer(&log_s), 64);
+ 125              		.loc 1 99 0
+ 126 0080 0C4C     		ldr	r4, .L7+8
+ 127 0082 2046     		mov	r0, r4
+ 128 0084 FFF7FEFF 		bl	get_buffer
+ 129              	.LVL11:
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 5
+
+
+ 130 0088 4022     		movs	r2, #64
+ 131 008a 0146     		mov	r1, r0
+ 132 008c 0120     		movs	r0, #1
+ 133 008e FFF7FEFF 		bl	USBFS_LoadInEP
+ 134              	.LVL12:
+ 100:main.c        ****                 clear_log(&log_s);
+ 135              		.loc 1 100 0
+ 136 0092 2046     		mov	r0, r4
+ 137 0094 FFF7FEFF 		bl	clear_log
+ 138              	.LVL13:
+ 139              	.L3:
+ 101:main.c        ****             }
+ 102:main.c        ****             if(ADC_DelSig_1_IsEndConversion(ADC_DelSig_1_WAIT_FOR_RESULT)){
+ 140              		.loc 1 102 0
+ 141 0098 0020     		movs	r0, #0
+ 142 009a FFF7FEFF 		bl	ADC_DelSig_1_IsEndConversion
+ 143              	.LVL14:
+ 144 009e 0028     		cmp	r0, #0
+ 145 00a0 D3D0     		beq	.L2
+ 103:main.c        ****                 analogRead = ADC_DelSig_1_GetResult16();   
+ 146              		.loc 1 103 0
+ 147 00a2 FFF7FEFF 		bl	ADC_DelSig_1_GetResult16
+ 148              	.LVL15:
+ 149 00a6 054B     		ldr	r3, .L7+16
+ 150 00a8 1880     		strh	r0, [r3]	@ movhi
+ 151 00aa CEE7     		b	.L2
+ 152              	.L8:
+ 153              		.align	2
+ 154              	.L7:
+ 155 00ac 00000000 		.word	.LC0
+ 156 00b0 00000000 		.word	name
+ 157 00b4 00000000 		.word	log_s
+ 158 00b8 00000000 		.word	.LANCHOR0
+ 159 00bc 00000000 		.word	analogRead
+ 160 00c0 00000000 		.word	main_flag
+ 161              		.cfi_endproc
+ 162              	.LFE64:
+ 163              		.size	main, .-main
+ 164              		.comm	main_flag,1,1
+ 165              		.global	dumvar3
+ 166              		.global	dumvar2
+ 167              		.global	dumvar1
+ 168              		.comm	log_s,332,4
+ 169              		.comm	name,4,4
+ 170              		.comm	i,4,4
+ 171              		.global	sample_count
+ 172              		.comm	analogRead,2,2
+ 173              		.comm	length,1,1
+ 174              		.comm	buffer,64,4
+ 175              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 176              		.align	2
+ 177              	.LC0:
+ 178 0000 616E616C 		.ascii	"analogRead\000"
+ 178      6F675265 
+ 178      616400
+ 179              		.bss
+ 180              		.align	2
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 6
+
+
+ 181              		.set	.LANCHOR0,. + 0
+ 182              		.type	dumvar1, %object
+ 183              		.size	dumvar1, 1
+ 184              	dumvar1:
+ 185 0000 00       		.space	1
+ 186 0001 000000   		.space	3
+ 187              		.type	dumvar3, %object
+ 188              		.size	dumvar3, 4
+ 189              	dumvar3:
+ 190 0004 00000000 		.space	4
+ 191              		.type	sample_count, %object
+ 192              		.size	sample_count, 4
+ 193              	sample_count:
+ 194 0008 00000000 		.space	4
+ 195              		.type	dumvar2, %object
+ 196              		.size	dumvar2, 2
+ 197              	dumvar2:
+ 198 000c 0000     		.space	2
+ 199              		.text
+ 200              	.Letext0:
+ 201              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 202              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 203              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 204              		.file 5 "datalogger.h"
+ 205              		.file 6 "Generated_Source\\PSoC5/core_cm3.h"
+ 206              		.file 7 "Generated_Source\\PSoC5/ADC_DelSig_1.h"
+ 207              		.file 8 "Generated_Source\\PSoC5/USBFS.h"
+ 208              		.file 9 "Generated_Source\\PSoC5/Loop_Interrupt.h"
+ 209              		.section	.debug_info,"",%progbits
+ 210              	.Ldebug_info0:
+ 211 0000 A6040000 		.4byte	0x4a6
+ 212 0004 0400     		.2byte	0x4
+ 213 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 214 000a 04       		.byte	0x4
+ 215 000b 01       		.uleb128 0x1
+ 216 000c D1020000 		.4byte	.LASF67
+ 217 0010 0C       		.byte	0xc
+ 218 0011 40020000 		.4byte	.LASF68
+ 219 0015 6C030000 		.4byte	.LASF69
+ 220 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 221 001d 00000000 		.4byte	0
+ 222 0021 00000000 		.4byte	.Ldebug_line0
+ 223 0025 02       		.uleb128 0x2
+ 224 0026 01       		.byte	0x1
+ 225 0027 06       		.byte	0x6
+ 226 0028 48010000 		.4byte	.LASF0
+ 227 002c 02       		.uleb128 0x2
+ 228 002d 01       		.byte	0x1
+ 229 002e 08       		.byte	0x8
+ 230 002f 07010000 		.4byte	.LASF1
+ 231 0033 02       		.uleb128 0x2
+ 232 0034 02       		.byte	0x2
+ 233 0035 05       		.byte	0x5
+ 234 0036 1F000000 		.4byte	.LASF2
+ 235 003a 02       		.uleb128 0x2
+ 236 003b 02       		.byte	0x2
+ 237 003c 07       		.byte	0x7
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 7
+
+
+ 238 003d 26020000 		.4byte	.LASF3
+ 239 0041 03       		.uleb128 0x3
+ 240 0042 93020000 		.4byte	.LASF9
+ 241 0046 02       		.byte	0x2
+ 242 0047 3F       		.byte	0x3f
+ 243 0048 4C000000 		.4byte	0x4c
+ 244 004c 02       		.uleb128 0x2
+ 245 004d 04       		.byte	0x4
+ 246 004e 05       		.byte	0x5
+ 247 004f EE000000 		.4byte	.LASF4
+ 248 0053 02       		.uleb128 0x2
+ 249 0054 04       		.byte	0x4
+ 250 0055 07       		.byte	0x7
+ 251 0056 92010000 		.4byte	.LASF5
+ 252 005a 02       		.uleb128 0x2
+ 253 005b 08       		.byte	0x8
+ 254 005c 05       		.byte	0x5
+ 255 005d C4000000 		.4byte	.LASF6
+ 256 0061 02       		.uleb128 0x2
+ 257 0062 08       		.byte	0x8
+ 258 0063 07       		.byte	0x7
+ 259 0064 54010000 		.4byte	.LASF7
+ 260 0068 04       		.uleb128 0x4
+ 261 0069 04       		.byte	0x4
+ 262 006a 05       		.byte	0x5
+ 263 006b 696E7400 		.ascii	"int\000"
+ 264 006f 02       		.uleb128 0x2
+ 265 0070 04       		.byte	0x4
+ 266 0071 07       		.byte	0x7
+ 267 0072 7B010000 		.4byte	.LASF8
+ 268 0076 03       		.uleb128 0x3
+ 269 0077 E2010000 		.4byte	.LASF10
+ 270 007b 03       		.byte	0x3
+ 271 007c 2C       		.byte	0x2c
+ 272 007d 41000000 		.4byte	0x41
+ 273 0081 05       		.uleb128 0x5
+ 274 0082 7F000000 		.4byte	.LASF11
+ 275 0086 04       		.byte	0x4
+ 276 0087 E401     		.2byte	0x1e4
+ 277 0089 2C000000 		.4byte	0x2c
+ 278 008d 05       		.uleb128 0x5
+ 279 008e 5B000000 		.4byte	.LASF12
+ 280 0092 04       		.byte	0x4
+ 281 0093 E501     		.2byte	0x1e5
+ 282 0095 3A000000 		.4byte	0x3a
+ 283 0099 05       		.uleb128 0x5
+ 284 009a 39020000 		.4byte	.LASF13
+ 285 009e 04       		.byte	0x4
+ 286 009f E601     		.2byte	0x1e6
+ 287 00a1 53000000 		.4byte	0x53
+ 288 00a5 02       		.uleb128 0x2
+ 289 00a6 04       		.byte	0x4
+ 290 00a7 04       		.byte	0x4
+ 291 00a8 BE000000 		.4byte	.LASF14
+ 292 00ac 02       		.uleb128 0x2
+ 293 00ad 08       		.byte	0x8
+ 294 00ae 04       		.byte	0x4
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 8
+
+
+ 295 00af 57020000 		.4byte	.LASF15
+ 296 00b3 02       		.uleb128 0x2
+ 297 00b4 01       		.byte	0x1
+ 298 00b5 08       		.byte	0x8
+ 299 00b6 D0010000 		.4byte	.LASF16
+ 300 00ba 06       		.uleb128 0x6
+ 301 00bb 81000000 		.4byte	0x81
+ 302 00bf 02       		.uleb128 0x2
+ 303 00c0 08       		.byte	0x8
+ 304 00c1 04       		.byte	0x4
+ 305 00c2 20010000 		.4byte	.LASF17
+ 306 00c6 02       		.uleb128 0x2
+ 307 00c7 04       		.byte	0x4
+ 308 00c8 07       		.byte	0x7
+ 309 00c9 32000000 		.4byte	.LASF18
+ 310 00cd 07       		.uleb128 0x7
+ 311 00ce 04       		.byte	0x4
+ 312 00cf 08       		.uleb128 0x8
+ 313 00d0 04       		.byte	0x4
+ 314 00d1 B3000000 		.4byte	0xb3
+ 315 00d5 09       		.uleb128 0x9
+ 316 00d6 00000000 		.4byte	.LASF70
+ 317 00da 01       		.byte	0x1
+ 318 00db 2C000000 		.4byte	0x2c
+ 319 00df 05       		.byte	0x5
+ 320 00e0 17       		.byte	0x17
+ 321 00e1 28010000 		.4byte	0x128
+ 322 00e5 0A       		.uleb128 0xa
+ 323 00e6 FC000000 		.4byte	.LASF19
+ 324 00ea 00       		.byte	0
+ 325 00eb 0A       		.uleb128 0xa
+ 326 00ec 56000000 		.4byte	.LASF20
+ 327 00f0 01       		.byte	0x1
+ 328 00f1 0A       		.uleb128 0xa
+ 329 00f2 C9010000 		.4byte	.LASF21
+ 330 00f6 02       		.byte	0x2
+ 331 00f7 0A       		.uleb128 0xa
+ 332 00f8 15010000 		.4byte	.LASF22
+ 333 00fc 03       		.byte	0x3
+ 334 00fd 0A       		.uleb128 0xa
+ 335 00fe 43000000 		.4byte	.LASF23
+ 336 0102 04       		.byte	0x4
+ 337 0103 0A       		.uleb128 0xa
+ 338 0104 5F030000 		.4byte	.LASF24
+ 339 0108 05       		.byte	0x5
+ 340 0109 0A       		.uleb128 0xa
+ 341 010a 65030000 		.4byte	.LASF25
+ 342 010e 06       		.byte	0x6
+ 343 010f 0A       		.uleb128 0xa
+ 344 0110 51020000 		.4byte	.LASF26
+ 345 0114 07       		.byte	0x7
+ 346 0115 0A       		.uleb128 0xa
+ 347 0116 9D020000 		.4byte	.LASF27
+ 348 011a 08       		.byte	0x8
+ 349 011b 0A       		.uleb128 0xa
+ 350 011c 41010000 		.4byte	.LASF28
+ 351 0120 09       		.byte	0x9
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 9
+
+
+ 352 0121 0A       		.uleb128 0xa
+ 353 0122 F7000000 		.4byte	.LASF29
+ 354 0126 0A       		.byte	0xa
+ 355 0127 00       		.byte	0
+ 356 0128 0B       		.uleb128 0xb
+ 357 0129 76617200 		.ascii	"var\000"
+ 358 012d 08       		.byte	0x8
+ 359 012e 05       		.byte	0x5
+ 360 012f 27       		.byte	0x27
+ 361 0130 4D010000 		.4byte	0x14d
+ 362 0134 0C       		.uleb128 0xc
+ 363 0135 C9020000 		.4byte	.LASF30
+ 364 0139 05       		.byte	0x5
+ 365 013a 28       		.byte	0x28
+ 366 013b CD000000 		.4byte	0xcd
+ 367 013f 00       		.byte	0
+ 368 0140 0C       		.uleb128 0xc
+ 369 0141 6B010000 		.4byte	.LASF31
+ 370 0145 05       		.byte	0x5
+ 371 0146 29       		.byte	0x29
+ 372 0147 D5000000 		.4byte	0xd5
+ 373 014b 04       		.byte	0x4
+ 374 014c 00       		.byte	0
+ 375 014d 03       		.uleb128 0x3
+ 376 014e 18020000 		.4byte	.LASF32
+ 377 0152 05       		.byte	0x5
+ 378 0153 2A       		.byte	0x2a
+ 379 0154 28010000 		.4byte	0x128
+ 380 0158 0D       		.uleb128 0xd
+ 381 0159 29000000 		.4byte	.LASF33
+ 382 015d 48       		.byte	0x48
+ 383 015e 05       		.byte	0x5
+ 384 015f 2C       		.byte	0x2c
+ 385 0160 89010000 		.4byte	0x189
+ 386 0164 0C       		.uleb128 0xc
+ 387 0165 13020000 		.4byte	.LASF34
+ 388 0169 05       		.byte	0x5
+ 389 016a 2D       		.byte	0x2d
+ 390 016b 89010000 		.4byte	0x189
+ 391 016f 00       		.byte	0
+ 392 0170 0C       		.uleb128 0xc
+ 393 0171 36010000 		.4byte	.LASF35
+ 394 0175 05       		.byte	0x5
+ 395 0176 2E       		.byte	0x2e
+ 396 0177 68000000 		.4byte	0x68
+ 397 017b 40       		.byte	0x40
+ 398 017c 0C       		.uleb128 0xc
+ 399 017d 47020000 		.4byte	.LASF36
+ 400 0181 05       		.byte	0x5
+ 401 0182 2F       		.byte	0x2f
+ 402 0183 68000000 		.4byte	0x68
+ 403 0187 44       		.byte	0x44
+ 404 0188 00       		.byte	0
+ 405 0189 0E       		.uleb128 0xe
+ 406 018a 81000000 		.4byte	0x81
+ 407 018e 99010000 		.4byte	0x199
+ 408 0192 0F       		.uleb128 0xf
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 10
+
+
+ 409 0193 C6000000 		.4byte	0xc6
+ 410 0197 3F       		.byte	0x3f
+ 411 0198 00       		.byte	0
+ 412 0199 03       		.uleb128 0x3
+ 413 019a AA010000 		.4byte	.LASF37
+ 414 019e 05       		.byte	0x5
+ 415 019f 30       		.byte	0x30
+ 416 01a0 58010000 		.4byte	0x158
+ 417 01a4 10       		.uleb128 0x10
+ 418 01a5 6C6F6700 		.ascii	"log\000"
+ 419 01a9 4C01     		.2byte	0x14c
+ 420 01ab 05       		.byte	0x5
+ 421 01ac 32       		.byte	0x32
+ 422 01ad D8010000 		.4byte	0x1d8
+ 423 01b1 0C       		.uleb128 0xc
+ 424 01b2 02010000 		.4byte	.LASF38
+ 425 01b6 05       		.byte	0x5
+ 426 01b7 33       		.byte	0x33
+ 427 01b8 D8010000 		.4byte	0x1d8
+ 428 01bc 00       		.byte	0
+ 429 01bd 11       		.uleb128 0x11
+ 430 01be 8A020000 		.4byte	.LASF39
+ 431 01c2 05       		.byte	0x5
+ 432 01c3 34       		.byte	0x34
+ 433 01c4 99010000 		.4byte	0x199
+ 434 01c8 0001     		.2byte	0x100
+ 435 01ca 11       		.uleb128 0x11
+ 436 01cb 95000000 		.4byte	.LASF40
+ 437 01cf 05       		.byte	0x5
+ 438 01d0 35       		.byte	0x35
+ 439 01d1 68000000 		.4byte	0x68
+ 440 01d5 4801     		.2byte	0x148
+ 441 01d7 00       		.byte	0
+ 442 01d8 0E       		.uleb128 0xe
+ 443 01d9 4D010000 		.4byte	0x14d
+ 444 01dd E8010000 		.4byte	0x1e8
+ 445 01e1 0F       		.uleb128 0xf
+ 446 01e2 C6000000 		.4byte	0xc6
+ 447 01e6 1F       		.byte	0x1f
+ 448 01e7 00       		.byte	0
+ 449 01e8 03       		.uleb128 0x3
+ 450 01e9 D2000000 		.4byte	.LASF41
+ 451 01ed 05       		.byte	0x5
+ 452 01ee 36       		.byte	0x36
+ 453 01ef A4010000 		.4byte	0x1a4
+ 454 01f3 12       		.uleb128 0x12
+ 455 01f4 4A000000 		.4byte	.LASF71
+ 456 01f8 01       		.byte	0x1
+ 457 01f9 32       		.byte	0x32
+ 458 01fa 68000000 		.4byte	0x68
+ 459 01fe 00000000 		.4byte	.LFB64
+ 460 0202 C4000000 		.4byte	.LFE64-.LFB64
+ 461 0206 01       		.uleb128 0x1
+ 462 0207 9C       		.byte	0x9c
+ 463 0208 41030000 		.4byte	0x341
+ 464 020c 13       		.uleb128 0x13
+ 465 020d 0E000000 		.4byte	.LVL0
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 11
+
+
+ 466 0211 0B040000 		.4byte	0x40b
+ 467 0215 13       		.uleb128 0x13
+ 468 0216 12000000 		.4byte	.LVL1
+ 469 021a 16040000 		.4byte	0x416
+ 470 021e 14       		.uleb128 0x14
+ 471 021f 1A000000 		.4byte	.LVL2
+ 472 0223 21040000 		.4byte	0x421
+ 473 0227 36020000 		.4byte	0x236
+ 474 022b 15       		.uleb128 0x15
+ 475 022c 01       		.uleb128 0x1
+ 476 022d 50       		.byte	0x50
+ 477 022e 01       		.uleb128 0x1
+ 478 022f 30       		.byte	0x30
+ 479 0230 15       		.uleb128 0x15
+ 480 0231 01       		.uleb128 0x1
+ 481 0232 51       		.byte	0x51
+ 482 0233 01       		.uleb128 0x1
+ 483 0234 31       		.byte	0x31
+ 484 0235 00       		.byte	0
+ 485 0236 14       		.uleb128 0x14
+ 486 0237 22000000 		.4byte	.LVL3
+ 487 023b 2D040000 		.4byte	0x42d
+ 488 023f 4A020000 		.4byte	0x24a
+ 489 0243 15       		.uleb128 0x15
+ 490 0244 01       		.uleb128 0x1
+ 491 0245 50       		.byte	0x50
+ 492 0246 02       		.uleb128 0x2
+ 493 0247 74       		.byte	0x74
+ 494 0248 00       		.sleb128 0
+ 495 0249 00       		.byte	0
+ 496 024a 14       		.uleb128 0x14
+ 497 024b 2E000000 		.4byte	.LVL4
+ 498 024f 38040000 		.4byte	0x438
+ 499 0253 69020000 		.4byte	0x269
+ 500 0257 15       		.uleb128 0x15
+ 501 0258 01       		.uleb128 0x1
+ 502 0259 50       		.byte	0x50
+ 503 025a 02       		.uleb128 0x2
+ 504 025b 75       		.byte	0x75
+ 505 025c 00       		.sleb128 0
+ 506 025d 15       		.uleb128 0x15
+ 507 025e 01       		.uleb128 0x1
+ 508 025f 51       		.byte	0x51
+ 509 0260 01       		.uleb128 0x1
+ 510 0261 30       		.byte	0x30
+ 511 0262 15       		.uleb128 0x15
+ 512 0263 01       		.uleb128 0x1
+ 513 0264 52       		.byte	0x52
+ 514 0265 02       		.uleb128 0x2
+ 515 0266 74       		.byte	0x74
+ 516 0267 00       		.sleb128 0
+ 517 0268 00       		.byte	0
+ 518 0269 14       		.uleb128 0x14
+ 519 026a 38000000 		.4byte	.LVL5
+ 520 026e 38040000 		.4byte	0x438
+ 521 0272 8B020000 		.4byte	0x28b
+ 522 0276 15       		.uleb128 0x15
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 12
+
+
+ 523 0277 01       		.uleb128 0x1
+ 524 0278 50       		.byte	0x50
+ 525 0279 05       		.uleb128 0x5
+ 526 027a 03       		.byte	0x3
+ 527 027b 00000000 		.4byte	analogRead
+ 528 027f 15       		.uleb128 0x15
+ 529 0280 01       		.uleb128 0x1
+ 530 0281 51       		.byte	0x51
+ 531 0282 01       		.uleb128 0x1
+ 532 0283 32       		.byte	0x32
+ 533 0284 15       		.uleb128 0x15
+ 534 0285 01       		.uleb128 0x1
+ 535 0286 52       		.byte	0x52
+ 536 0287 02       		.uleb128 0x2
+ 537 0288 74       		.byte	0x74
+ 538 0289 00       		.sleb128 0
+ 539 028a 00       		.byte	0
+ 540 028b 14       		.uleb128 0x14
+ 541 028c 42000000 		.4byte	.LVL6
+ 542 0290 38040000 		.4byte	0x438
+ 543 0294 AA020000 		.4byte	0x2aa
+ 544 0298 15       		.uleb128 0x15
+ 545 0299 01       		.uleb128 0x1
+ 546 029a 50       		.byte	0x50
+ 547 029b 02       		.uleb128 0x2
+ 548 029c 75       		.byte	0x75
+ 549 029d 04       		.sleb128 4
+ 550 029e 15       		.uleb128 0x15
+ 551 029f 01       		.uleb128 0x1
+ 552 02a0 51       		.byte	0x51
+ 553 02a1 01       		.uleb128 0x1
+ 554 02a2 34       		.byte	0x34
+ 555 02a3 15       		.uleb128 0x15
+ 556 02a4 01       		.uleb128 0x1
+ 557 02a5 52       		.byte	0x52
+ 558 02a6 02       		.uleb128 0x2
+ 559 02a7 74       		.byte	0x74
+ 560 02a8 00       		.sleb128 0
+ 561 02a9 00       		.byte	0
+ 562 02aa 13       		.uleb128 0x13
+ 563 02ab 46000000 		.4byte	.LVL7
+ 564 02af 43040000 		.4byte	0x443
+ 565 02b3 14       		.uleb128 0x14
+ 566 02b4 74000000 		.4byte	.LVL8
+ 567 02b8 4E040000 		.4byte	0x44e
+ 568 02bc C7020000 		.4byte	0x2c7
+ 569 02c0 15       		.uleb128 0x15
+ 570 02c1 01       		.uleb128 0x1
+ 571 02c2 50       		.byte	0x50
+ 572 02c3 02       		.uleb128 0x2
+ 573 02c4 74       		.byte	0x74
+ 574 02c5 00       		.sleb128 0
+ 575 02c6 00       		.byte	0
+ 576 02c7 13       		.uleb128 0x13
+ 577 02c8 78000000 		.4byte	.LVL9
+ 578 02cc 59040000 		.4byte	0x459
+ 579 02d0 14       		.uleb128 0x14
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 13
+
+
+ 580 02d1 80000000 		.4byte	.LVL10
+ 581 02d5 65040000 		.4byte	0x465
+ 582 02d9 E3020000 		.4byte	0x2e3
+ 583 02dd 15       		.uleb128 0x15
+ 584 02de 01       		.uleb128 0x1
+ 585 02df 50       		.byte	0x50
+ 586 02e0 01       		.uleb128 0x1
+ 587 02e1 32       		.byte	0x32
+ 588 02e2 00       		.byte	0
+ 589 02e3 14       		.uleb128 0x14
+ 590 02e4 88000000 		.4byte	.LVL11
+ 591 02e8 71040000 		.4byte	0x471
+ 592 02ec F7020000 		.4byte	0x2f7
+ 593 02f0 15       		.uleb128 0x15
+ 594 02f1 01       		.uleb128 0x1
+ 595 02f2 50       		.byte	0x50
+ 596 02f3 02       		.uleb128 0x2
+ 597 02f4 74       		.byte	0x74
+ 598 02f5 00       		.sleb128 0
+ 599 02f6 00       		.byte	0
+ 600 02f7 14       		.uleb128 0x14
+ 601 02f8 92000000 		.4byte	.LVL12
+ 602 02fc 7C040000 		.4byte	0x47c
+ 603 0300 10030000 		.4byte	0x310
+ 604 0304 15       		.uleb128 0x15
+ 605 0305 01       		.uleb128 0x1
+ 606 0306 50       		.byte	0x50
+ 607 0307 01       		.uleb128 0x1
+ 608 0308 31       		.byte	0x31
+ 609 0309 15       		.uleb128 0x15
+ 610 030a 01       		.uleb128 0x1
+ 611 030b 52       		.byte	0x52
+ 612 030c 02       		.uleb128 0x2
+ 613 030d 08       		.byte	0x8
+ 614 030e 40       		.byte	0x40
+ 615 030f 00       		.byte	0
+ 616 0310 14       		.uleb128 0x14
+ 617 0311 98000000 		.4byte	.LVL13
+ 618 0315 88040000 		.4byte	0x488
+ 619 0319 24030000 		.4byte	0x324
+ 620 031d 15       		.uleb128 0x15
+ 621 031e 01       		.uleb128 0x1
+ 622 031f 50       		.byte	0x50
+ 623 0320 02       		.uleb128 0x2
+ 624 0321 74       		.byte	0x74
+ 625 0322 00       		.sleb128 0
+ 626 0323 00       		.byte	0
+ 627 0324 14       		.uleb128 0x14
+ 628 0325 9E000000 		.4byte	.LVL14
+ 629 0329 93040000 		.4byte	0x493
+ 630 032d 37030000 		.4byte	0x337
+ 631 0331 15       		.uleb128 0x15
+ 632 0332 01       		.uleb128 0x1
+ 633 0333 50       		.byte	0x50
+ 634 0334 01       		.uleb128 0x1
+ 635 0335 30       		.byte	0x30
+ 636 0336 00       		.byte	0
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 14
+
+
+ 637 0337 13       		.uleb128 0x13
+ 638 0338 A6000000 		.4byte	.LVL15
+ 639 033c 9E040000 		.4byte	0x49e
+ 640 0340 00       		.byte	0
+ 641 0341 16       		.uleb128 0x16
+ 642 0342 D5010000 		.4byte	.LASF42
+ 643 0346 06       		.byte	0x6
+ 644 0347 1207     		.2byte	0x712
+ 645 0349 4D030000 		.4byte	0x34d
+ 646 034d 06       		.uleb128 0x6
+ 647 034e 76000000 		.4byte	0x76
+ 648 0352 17       		.uleb128 0x17
+ 649 0353 1F020000 		.4byte	.LASF43
+ 650 0357 01       		.byte	0x1
+ 651 0358 23       		.byte	0x23
+ 652 0359 89010000 		.4byte	0x189
+ 653 035d 05       		.uleb128 0x5
+ 654 035e 03       		.byte	0x3
+ 655 035f 00000000 		.4byte	buffer
+ 656 0363 17       		.uleb128 0x17
+ 657 0364 B7000000 		.4byte	.LASF44
+ 658 0368 01       		.byte	0x1
+ 659 0369 23       		.byte	0x23
+ 660 036a 81000000 		.4byte	0x81
+ 661 036e 05       		.uleb128 0x5
+ 662 036f 03       		.byte	0x3
+ 663 0370 00000000 		.4byte	length
+ 664 0374 17       		.uleb128 0x17
+ 665 0375 70020000 		.4byte	.LASF45
+ 666 0379 01       		.byte	0x1
+ 667 037a 24       		.byte	0x24
+ 668 037b 8D000000 		.4byte	0x8d
+ 669 037f 05       		.uleb128 0x5
+ 670 0380 03       		.byte	0x3
+ 671 0381 00000000 		.4byte	analogRead
+ 672 0385 17       		.uleb128 0x17
+ 673 0386 FA010000 		.4byte	.LASF46
+ 674 038a 01       		.byte	0x1
+ 675 038b 25       		.byte	0x25
+ 676 038c 68000000 		.4byte	0x68
+ 677 0390 05       		.uleb128 0x5
+ 678 0391 03       		.byte	0x3
+ 679 0392 00000000 		.4byte	sample_count
+ 680 0396 18       		.uleb128 0x18
+ 681 0397 6900     		.ascii	"i\000"
+ 682 0399 01       		.byte	0x1
+ 683 039a 26       		.byte	0x26
+ 684 039b 68000000 		.4byte	0x68
+ 685 039f 05       		.uleb128 0x5
+ 686 03a0 03       		.byte	0x3
+ 687 03a1 00000000 		.4byte	i
+ 688 03a5 17       		.uleb128 0x17
+ 689 03a6 1B010000 		.4byte	.LASF47
+ 690 03aa 01       		.byte	0x1
+ 691 03ab 28       		.byte	0x28
+ 692 03ac CF000000 		.4byte	0xcf
+ 693 03b0 05       		.uleb128 0x5
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 15
+
+
+ 694 03b1 03       		.byte	0x3
+ 695 03b2 00000000 		.4byte	name
+ 696 03b6 17       		.uleb128 0x17
+ 697 03b7 A4010000 		.4byte	.LASF48
+ 698 03bb 01       		.byte	0x1
+ 699 03bc 2A       		.byte	0x2a
+ 700 03bd E8010000 		.4byte	0x1e8
+ 701 03c1 05       		.uleb128 0x5
+ 702 03c2 03       		.byte	0x3
+ 703 03c3 00000000 		.4byte	log_s
+ 704 03c7 17       		.uleb128 0x17
+ 705 03c8 EA010000 		.4byte	.LASF49
+ 706 03cc 01       		.byte	0x1
+ 707 03cd 2B       		.byte	0x2b
+ 708 03ce 81000000 		.4byte	0x81
+ 709 03d2 05       		.uleb128 0x5
+ 710 03d3 03       		.byte	0x3
+ 711 03d4 00000000 		.4byte	dumvar1
+ 712 03d8 17       		.uleb128 0x17
+ 713 03d9 F2010000 		.4byte	.LASF50
+ 714 03dd 01       		.byte	0x1
+ 715 03de 2C       		.byte	0x2c
+ 716 03df 8D000000 		.4byte	0x8d
+ 717 03e3 05       		.uleb128 0x5
+ 718 03e4 03       		.byte	0x3
+ 719 03e5 00000000 		.4byte	dumvar2
+ 720 03e9 17       		.uleb128 0x17
+ 721 03ea 3B000000 		.4byte	.LASF51
+ 722 03ee 01       		.byte	0x1
+ 723 03ef 2D       		.byte	0x2d
+ 724 03f0 99000000 		.4byte	0x99
+ 725 03f4 05       		.uleb128 0x5
+ 726 03f5 03       		.byte	0x3
+ 727 03f6 00000000 		.4byte	dumvar3
+ 728 03fa 17       		.uleb128 0x17
+ 729 03fb 2C010000 		.4byte	.LASF52
+ 730 03ff 01       		.byte	0x1
+ 731 0400 2F       		.byte	0x2f
+ 732 0401 BA000000 		.4byte	0xba
+ 733 0405 05       		.uleb128 0x5
+ 734 0406 03       		.byte	0x3
+ 735 0407 00000000 		.4byte	main_flag
+ 736 040b 19       		.uleb128 0x19
+ 737 040c B6010000 		.4byte	.LASF53
+ 738 0410 B6010000 		.4byte	.LASF53
+ 739 0414 07       		.byte	0x7
+ 740 0415 3A       		.byte	0x3a
+ 741 0416 19       		.uleb128 0x19
+ 742 0417 A3020000 		.4byte	.LASF54
+ 743 041b A3020000 		.4byte	.LASF54
+ 744 041f 07       		.byte	0x7
+ 745 0420 3D       		.byte	0x3d
+ 746 0421 1A       		.uleb128 0x1a
+ 747 0422 BD020000 		.4byte	.LASF55
+ 748 0426 BD020000 		.4byte	.LASF55
+ 749 042a 08       		.byte	0x8
+ 750 042b 2701     		.2byte	0x127
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 16
+
+
+ 751 042d 19       		.uleb128 0x19
+ 752 042e 07020000 		.4byte	.LASF56
+ 753 0432 07020000 		.4byte	.LASF56
+ 754 0436 05       		.byte	0x5
+ 755 0437 38       		.byte	0x38
+ 756 0438 19       		.uleb128 0x19
+ 757 0439 85000000 		.4byte	.LASF57
+ 758 043d 85000000 		.4byte	.LASF57
+ 759 0441 05       		.byte	0x5
+ 760 0442 39       		.byte	0x39
+ 761 0443 19       		.uleb128 0x19
+ 762 0444 D9000000 		.4byte	.LASF58
+ 763 0448 D9000000 		.4byte	.LASF58
+ 764 044c 09       		.byte	0x9
+ 765 044d 17       		.byte	0x17
+ 766 044e 19       		.uleb128 0x19
+ 767 044f 4F000000 		.4byte	.LASF59
+ 768 0453 4F000000 		.4byte	.LASF59
+ 769 0457 05       		.byte	0x5
+ 770 0458 3A       		.byte	0x3a
+ 771 0459 1A       		.uleb128 0x1a
+ 772 045a 08000000 		.4byte	.LASF60
+ 773 045e 08000000 		.4byte	.LASF60
+ 774 0462 08       		.byte	0x8
+ 775 0463 2A01     		.2byte	0x12a
+ 776 0465 1A       		.uleb128 0x1a
+ 777 0466 5E020000 		.4byte	.LASF61
+ 778 046a 5E020000 		.4byte	.LASF61
+ 779 046e 08       		.byte	0x8
+ 780 046f 3301     		.2byte	0x133
+ 781 0471 19       		.uleb128 0x19
+ 782 0472 70010000 		.4byte	.LASF62
+ 783 0476 70010000 		.4byte	.LASF62
+ 784 047a 05       		.byte	0x5
+ 785 047b 3B       		.byte	0x3b
+ 786 047c 1A       		.uleb128 0x1a
+ 787 047d 7B020000 		.4byte	.LASF63
+ 788 0481 7B020000 		.4byte	.LASF63
+ 789 0485 08       		.byte	0x8
+ 790 0486 2F01     		.2byte	0x12f
+ 791 0488 19       		.uleb128 0x19
+ 792 0489 88010000 		.4byte	.LASF64
+ 793 048d 88010000 		.4byte	.LASF64
+ 794 0491 05       		.byte	0x5
+ 795 0492 41       		.byte	0x41
+ 796 0493 19       		.uleb128 0x19
+ 797 0494 62000000 		.4byte	.LASF65
+ 798 0498 62000000 		.4byte	.LASF65
+ 799 049c 07       		.byte	0x7
+ 800 049d 3F       		.byte	0x3f
+ 801 049e 19       		.uleb128 0x19
+ 802 049f 9E000000 		.4byte	.LASF66
+ 803 04a3 9E000000 		.4byte	.LASF66
+ 804 04a7 07       		.byte	0x7
+ 805 04a8 41       		.byte	0x41
+ 806 04a9 00       		.byte	0
+ 807              		.section	.debug_abbrev,"",%progbits
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 17
+
+
+ 808              	.Ldebug_abbrev0:
+ 809 0000 01       		.uleb128 0x1
+ 810 0001 11       		.uleb128 0x11
+ 811 0002 01       		.byte	0x1
+ 812 0003 25       		.uleb128 0x25
+ 813 0004 0E       		.uleb128 0xe
+ 814 0005 13       		.uleb128 0x13
+ 815 0006 0B       		.uleb128 0xb
+ 816 0007 03       		.uleb128 0x3
+ 817 0008 0E       		.uleb128 0xe
+ 818 0009 1B       		.uleb128 0x1b
+ 819 000a 0E       		.uleb128 0xe
+ 820 000b 55       		.uleb128 0x55
+ 821 000c 17       		.uleb128 0x17
+ 822 000d 11       		.uleb128 0x11
+ 823 000e 01       		.uleb128 0x1
+ 824 000f 10       		.uleb128 0x10
+ 825 0010 17       		.uleb128 0x17
+ 826 0011 00       		.byte	0
+ 827 0012 00       		.byte	0
+ 828 0013 02       		.uleb128 0x2
+ 829 0014 24       		.uleb128 0x24
+ 830 0015 00       		.byte	0
+ 831 0016 0B       		.uleb128 0xb
+ 832 0017 0B       		.uleb128 0xb
+ 833 0018 3E       		.uleb128 0x3e
+ 834 0019 0B       		.uleb128 0xb
+ 835 001a 03       		.uleb128 0x3
+ 836 001b 0E       		.uleb128 0xe
+ 837 001c 00       		.byte	0
+ 838 001d 00       		.byte	0
+ 839 001e 03       		.uleb128 0x3
+ 840 001f 16       		.uleb128 0x16
+ 841 0020 00       		.byte	0
+ 842 0021 03       		.uleb128 0x3
+ 843 0022 0E       		.uleb128 0xe
+ 844 0023 3A       		.uleb128 0x3a
+ 845 0024 0B       		.uleb128 0xb
+ 846 0025 3B       		.uleb128 0x3b
+ 847 0026 0B       		.uleb128 0xb
+ 848 0027 49       		.uleb128 0x49
+ 849 0028 13       		.uleb128 0x13
+ 850 0029 00       		.byte	0
+ 851 002a 00       		.byte	0
+ 852 002b 04       		.uleb128 0x4
+ 853 002c 24       		.uleb128 0x24
+ 854 002d 00       		.byte	0
+ 855 002e 0B       		.uleb128 0xb
+ 856 002f 0B       		.uleb128 0xb
+ 857 0030 3E       		.uleb128 0x3e
+ 858 0031 0B       		.uleb128 0xb
+ 859 0032 03       		.uleb128 0x3
+ 860 0033 08       		.uleb128 0x8
+ 861 0034 00       		.byte	0
+ 862 0035 00       		.byte	0
+ 863 0036 05       		.uleb128 0x5
+ 864 0037 16       		.uleb128 0x16
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 18
+
+
+ 865 0038 00       		.byte	0
+ 866 0039 03       		.uleb128 0x3
+ 867 003a 0E       		.uleb128 0xe
+ 868 003b 3A       		.uleb128 0x3a
+ 869 003c 0B       		.uleb128 0xb
+ 870 003d 3B       		.uleb128 0x3b
+ 871 003e 05       		.uleb128 0x5
+ 872 003f 49       		.uleb128 0x49
+ 873 0040 13       		.uleb128 0x13
+ 874 0041 00       		.byte	0
+ 875 0042 00       		.byte	0
+ 876 0043 06       		.uleb128 0x6
+ 877 0044 35       		.uleb128 0x35
+ 878 0045 00       		.byte	0
+ 879 0046 49       		.uleb128 0x49
+ 880 0047 13       		.uleb128 0x13
+ 881 0048 00       		.byte	0
+ 882 0049 00       		.byte	0
+ 883 004a 07       		.uleb128 0x7
+ 884 004b 0F       		.uleb128 0xf
+ 885 004c 00       		.byte	0
+ 886 004d 0B       		.uleb128 0xb
+ 887 004e 0B       		.uleb128 0xb
+ 888 004f 00       		.byte	0
+ 889 0050 00       		.byte	0
+ 890 0051 08       		.uleb128 0x8
+ 891 0052 0F       		.uleb128 0xf
+ 892 0053 00       		.byte	0
+ 893 0054 0B       		.uleb128 0xb
+ 894 0055 0B       		.uleb128 0xb
+ 895 0056 49       		.uleb128 0x49
+ 896 0057 13       		.uleb128 0x13
+ 897 0058 00       		.byte	0
+ 898 0059 00       		.byte	0
+ 899 005a 09       		.uleb128 0x9
+ 900 005b 04       		.uleb128 0x4
+ 901 005c 01       		.byte	0x1
+ 902 005d 03       		.uleb128 0x3
+ 903 005e 0E       		.uleb128 0xe
+ 904 005f 0B       		.uleb128 0xb
+ 905 0060 0B       		.uleb128 0xb
+ 906 0061 49       		.uleb128 0x49
+ 907 0062 13       		.uleb128 0x13
+ 908 0063 3A       		.uleb128 0x3a
+ 909 0064 0B       		.uleb128 0xb
+ 910 0065 3B       		.uleb128 0x3b
+ 911 0066 0B       		.uleb128 0xb
+ 912 0067 01       		.uleb128 0x1
+ 913 0068 13       		.uleb128 0x13
+ 914 0069 00       		.byte	0
+ 915 006a 00       		.byte	0
+ 916 006b 0A       		.uleb128 0xa
+ 917 006c 28       		.uleb128 0x28
+ 918 006d 00       		.byte	0
+ 919 006e 03       		.uleb128 0x3
+ 920 006f 0E       		.uleb128 0xe
+ 921 0070 1C       		.uleb128 0x1c
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 19
+
+
+ 922 0071 0B       		.uleb128 0xb
+ 923 0072 00       		.byte	0
+ 924 0073 00       		.byte	0
+ 925 0074 0B       		.uleb128 0xb
+ 926 0075 13       		.uleb128 0x13
+ 927 0076 01       		.byte	0x1
+ 928 0077 03       		.uleb128 0x3
+ 929 0078 08       		.uleb128 0x8
+ 930 0079 0B       		.uleb128 0xb
+ 931 007a 0B       		.uleb128 0xb
+ 932 007b 3A       		.uleb128 0x3a
+ 933 007c 0B       		.uleb128 0xb
+ 934 007d 3B       		.uleb128 0x3b
+ 935 007e 0B       		.uleb128 0xb
+ 936 007f 01       		.uleb128 0x1
+ 937 0080 13       		.uleb128 0x13
+ 938 0081 00       		.byte	0
+ 939 0082 00       		.byte	0
+ 940 0083 0C       		.uleb128 0xc
+ 941 0084 0D       		.uleb128 0xd
+ 942 0085 00       		.byte	0
+ 943 0086 03       		.uleb128 0x3
+ 944 0087 0E       		.uleb128 0xe
+ 945 0088 3A       		.uleb128 0x3a
+ 946 0089 0B       		.uleb128 0xb
+ 947 008a 3B       		.uleb128 0x3b
+ 948 008b 0B       		.uleb128 0xb
+ 949 008c 49       		.uleb128 0x49
+ 950 008d 13       		.uleb128 0x13
+ 951 008e 38       		.uleb128 0x38
+ 952 008f 0B       		.uleb128 0xb
+ 953 0090 00       		.byte	0
+ 954 0091 00       		.byte	0
+ 955 0092 0D       		.uleb128 0xd
+ 956 0093 13       		.uleb128 0x13
+ 957 0094 01       		.byte	0x1
+ 958 0095 03       		.uleb128 0x3
+ 959 0096 0E       		.uleb128 0xe
+ 960 0097 0B       		.uleb128 0xb
+ 961 0098 0B       		.uleb128 0xb
+ 962 0099 3A       		.uleb128 0x3a
+ 963 009a 0B       		.uleb128 0xb
+ 964 009b 3B       		.uleb128 0x3b
+ 965 009c 0B       		.uleb128 0xb
+ 966 009d 01       		.uleb128 0x1
+ 967 009e 13       		.uleb128 0x13
+ 968 009f 00       		.byte	0
+ 969 00a0 00       		.byte	0
+ 970 00a1 0E       		.uleb128 0xe
+ 971 00a2 01       		.uleb128 0x1
+ 972 00a3 01       		.byte	0x1
+ 973 00a4 49       		.uleb128 0x49
+ 974 00a5 13       		.uleb128 0x13
+ 975 00a6 01       		.uleb128 0x1
+ 976 00a7 13       		.uleb128 0x13
+ 977 00a8 00       		.byte	0
+ 978 00a9 00       		.byte	0
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 20
+
+
+ 979 00aa 0F       		.uleb128 0xf
+ 980 00ab 21       		.uleb128 0x21
+ 981 00ac 00       		.byte	0
+ 982 00ad 49       		.uleb128 0x49
+ 983 00ae 13       		.uleb128 0x13
+ 984 00af 2F       		.uleb128 0x2f
+ 985 00b0 0B       		.uleb128 0xb
+ 986 00b1 00       		.byte	0
+ 987 00b2 00       		.byte	0
+ 988 00b3 10       		.uleb128 0x10
+ 989 00b4 13       		.uleb128 0x13
+ 990 00b5 01       		.byte	0x1
+ 991 00b6 03       		.uleb128 0x3
+ 992 00b7 08       		.uleb128 0x8
+ 993 00b8 0B       		.uleb128 0xb
+ 994 00b9 05       		.uleb128 0x5
+ 995 00ba 3A       		.uleb128 0x3a
+ 996 00bb 0B       		.uleb128 0xb
+ 997 00bc 3B       		.uleb128 0x3b
+ 998 00bd 0B       		.uleb128 0xb
+ 999 00be 01       		.uleb128 0x1
+ 1000 00bf 13       		.uleb128 0x13
+ 1001 00c0 00       		.byte	0
+ 1002 00c1 00       		.byte	0
+ 1003 00c2 11       		.uleb128 0x11
+ 1004 00c3 0D       		.uleb128 0xd
+ 1005 00c4 00       		.byte	0
+ 1006 00c5 03       		.uleb128 0x3
+ 1007 00c6 0E       		.uleb128 0xe
+ 1008 00c7 3A       		.uleb128 0x3a
+ 1009 00c8 0B       		.uleb128 0xb
+ 1010 00c9 3B       		.uleb128 0x3b
+ 1011 00ca 0B       		.uleb128 0xb
+ 1012 00cb 49       		.uleb128 0x49
+ 1013 00cc 13       		.uleb128 0x13
+ 1014 00cd 38       		.uleb128 0x38
+ 1015 00ce 05       		.uleb128 0x5
+ 1016 00cf 00       		.byte	0
+ 1017 00d0 00       		.byte	0
+ 1018 00d1 12       		.uleb128 0x12
+ 1019 00d2 2E       		.uleb128 0x2e
+ 1020 00d3 01       		.byte	0x1
+ 1021 00d4 3F       		.uleb128 0x3f
+ 1022 00d5 19       		.uleb128 0x19
+ 1023 00d6 03       		.uleb128 0x3
+ 1024 00d7 0E       		.uleb128 0xe
+ 1025 00d8 3A       		.uleb128 0x3a
+ 1026 00d9 0B       		.uleb128 0xb
+ 1027 00da 3B       		.uleb128 0x3b
+ 1028 00db 0B       		.uleb128 0xb
+ 1029 00dc 27       		.uleb128 0x27
+ 1030 00dd 19       		.uleb128 0x19
+ 1031 00de 49       		.uleb128 0x49
+ 1032 00df 13       		.uleb128 0x13
+ 1033 00e0 8701     		.uleb128 0x87
+ 1034 00e2 19       		.uleb128 0x19
+ 1035 00e3 11       		.uleb128 0x11
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 21
+
+
+ 1036 00e4 01       		.uleb128 0x1
+ 1037 00e5 12       		.uleb128 0x12
+ 1038 00e6 06       		.uleb128 0x6
+ 1039 00e7 40       		.uleb128 0x40
+ 1040 00e8 18       		.uleb128 0x18
+ 1041 00e9 9742     		.uleb128 0x2117
+ 1042 00eb 19       		.uleb128 0x19
+ 1043 00ec 01       		.uleb128 0x1
+ 1044 00ed 13       		.uleb128 0x13
+ 1045 00ee 00       		.byte	0
+ 1046 00ef 00       		.byte	0
+ 1047 00f0 13       		.uleb128 0x13
+ 1048 00f1 898201   		.uleb128 0x4109
+ 1049 00f4 00       		.byte	0
+ 1050 00f5 11       		.uleb128 0x11
+ 1051 00f6 01       		.uleb128 0x1
+ 1052 00f7 31       		.uleb128 0x31
+ 1053 00f8 13       		.uleb128 0x13
+ 1054 00f9 00       		.byte	0
+ 1055 00fa 00       		.byte	0
+ 1056 00fb 14       		.uleb128 0x14
+ 1057 00fc 898201   		.uleb128 0x4109
+ 1058 00ff 01       		.byte	0x1
+ 1059 0100 11       		.uleb128 0x11
+ 1060 0101 01       		.uleb128 0x1
+ 1061 0102 31       		.uleb128 0x31
+ 1062 0103 13       		.uleb128 0x13
+ 1063 0104 01       		.uleb128 0x1
+ 1064 0105 13       		.uleb128 0x13
+ 1065 0106 00       		.byte	0
+ 1066 0107 00       		.byte	0
+ 1067 0108 15       		.uleb128 0x15
+ 1068 0109 8A8201   		.uleb128 0x410a
+ 1069 010c 00       		.byte	0
+ 1070 010d 02       		.uleb128 0x2
+ 1071 010e 18       		.uleb128 0x18
+ 1072 010f 9142     		.uleb128 0x2111
+ 1073 0111 18       		.uleb128 0x18
+ 1074 0112 00       		.byte	0
+ 1075 0113 00       		.byte	0
+ 1076 0114 16       		.uleb128 0x16
+ 1077 0115 34       		.uleb128 0x34
+ 1078 0116 00       		.byte	0
+ 1079 0117 03       		.uleb128 0x3
+ 1080 0118 0E       		.uleb128 0xe
+ 1081 0119 3A       		.uleb128 0x3a
+ 1082 011a 0B       		.uleb128 0xb
+ 1083 011b 3B       		.uleb128 0x3b
+ 1084 011c 05       		.uleb128 0x5
+ 1085 011d 49       		.uleb128 0x49
+ 1086 011e 13       		.uleb128 0x13
+ 1087 011f 3F       		.uleb128 0x3f
+ 1088 0120 19       		.uleb128 0x19
+ 1089 0121 3C       		.uleb128 0x3c
+ 1090 0122 19       		.uleb128 0x19
+ 1091 0123 00       		.byte	0
+ 1092 0124 00       		.byte	0
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 22
+
+
+ 1093 0125 17       		.uleb128 0x17
+ 1094 0126 34       		.uleb128 0x34
+ 1095 0127 00       		.byte	0
+ 1096 0128 03       		.uleb128 0x3
+ 1097 0129 0E       		.uleb128 0xe
+ 1098 012a 3A       		.uleb128 0x3a
+ 1099 012b 0B       		.uleb128 0xb
+ 1100 012c 3B       		.uleb128 0x3b
+ 1101 012d 0B       		.uleb128 0xb
+ 1102 012e 49       		.uleb128 0x49
+ 1103 012f 13       		.uleb128 0x13
+ 1104 0130 3F       		.uleb128 0x3f
+ 1105 0131 19       		.uleb128 0x19
+ 1106 0132 02       		.uleb128 0x2
+ 1107 0133 18       		.uleb128 0x18
+ 1108 0134 00       		.byte	0
+ 1109 0135 00       		.byte	0
+ 1110 0136 18       		.uleb128 0x18
+ 1111 0137 34       		.uleb128 0x34
+ 1112 0138 00       		.byte	0
+ 1113 0139 03       		.uleb128 0x3
+ 1114 013a 08       		.uleb128 0x8
+ 1115 013b 3A       		.uleb128 0x3a
+ 1116 013c 0B       		.uleb128 0xb
+ 1117 013d 3B       		.uleb128 0x3b
+ 1118 013e 0B       		.uleb128 0xb
+ 1119 013f 49       		.uleb128 0x49
+ 1120 0140 13       		.uleb128 0x13
+ 1121 0141 3F       		.uleb128 0x3f
+ 1122 0142 19       		.uleb128 0x19
+ 1123 0143 02       		.uleb128 0x2
+ 1124 0144 18       		.uleb128 0x18
+ 1125 0145 00       		.byte	0
+ 1126 0146 00       		.byte	0
+ 1127 0147 19       		.uleb128 0x19
+ 1128 0148 2E       		.uleb128 0x2e
+ 1129 0149 00       		.byte	0
+ 1130 014a 3F       		.uleb128 0x3f
+ 1131 014b 19       		.uleb128 0x19
+ 1132 014c 3C       		.uleb128 0x3c
+ 1133 014d 19       		.uleb128 0x19
+ 1134 014e 6E       		.uleb128 0x6e
+ 1135 014f 0E       		.uleb128 0xe
+ 1136 0150 03       		.uleb128 0x3
+ 1137 0151 0E       		.uleb128 0xe
+ 1138 0152 3A       		.uleb128 0x3a
+ 1139 0153 0B       		.uleb128 0xb
+ 1140 0154 3B       		.uleb128 0x3b
+ 1141 0155 0B       		.uleb128 0xb
+ 1142 0156 00       		.byte	0
+ 1143 0157 00       		.byte	0
+ 1144 0158 1A       		.uleb128 0x1a
+ 1145 0159 2E       		.uleb128 0x2e
+ 1146 015a 00       		.byte	0
+ 1147 015b 3F       		.uleb128 0x3f
+ 1148 015c 19       		.uleb128 0x19
+ 1149 015d 3C       		.uleb128 0x3c
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 23
+
+
+ 1150 015e 19       		.uleb128 0x19
+ 1151 015f 6E       		.uleb128 0x6e
+ 1152 0160 0E       		.uleb128 0xe
+ 1153 0161 03       		.uleb128 0x3
+ 1154 0162 0E       		.uleb128 0xe
+ 1155 0163 3A       		.uleb128 0x3a
+ 1156 0164 0B       		.uleb128 0xb
+ 1157 0165 3B       		.uleb128 0x3b
+ 1158 0166 05       		.uleb128 0x5
+ 1159 0167 00       		.byte	0
+ 1160 0168 00       		.byte	0
+ 1161 0169 00       		.byte	0
+ 1162              		.section	.debug_aranges,"",%progbits
+ 1163 0000 1C000000 		.4byte	0x1c
+ 1164 0004 0200     		.2byte	0x2
+ 1165 0006 00000000 		.4byte	.Ldebug_info0
+ 1166 000a 04       		.byte	0x4
+ 1167 000b 00       		.byte	0
+ 1168 000c 0000     		.2byte	0
+ 1169 000e 0000     		.2byte	0
+ 1170 0010 00000000 		.4byte	.LFB64
+ 1171 0014 C4000000 		.4byte	.LFE64-.LFB64
+ 1172 0018 00000000 		.4byte	0
+ 1173 001c 00000000 		.4byte	0
+ 1174              		.section	.debug_ranges,"",%progbits
+ 1175              	.Ldebug_ranges0:
+ 1176 0000 00000000 		.4byte	.LFB64
+ 1177 0004 C4000000 		.4byte	.LFE64
+ 1178 0008 00000000 		.4byte	0
+ 1179 000c 00000000 		.4byte	0
+ 1180              		.section	.debug_line,"",%progbits
+ 1181              	.Ldebug_line0:
+ 1182 0000 BA010000 		.section	.debug_str,"MS",%progbits,1
+ 1182      02008D01 
+ 1182      00000201 
+ 1182      FB0E0D00 
+ 1182      01010101 
+ 1183              	.LASF70:
+ 1184 0000 74797065 		.ascii	"types_e\000"
+ 1184      735F6500 
+ 1185              	.LASF60:
+ 1186 0008 55534246 		.ascii	"USBFS_GetConfiguration\000"
+ 1186      535F4765 
+ 1186      74436F6E 
+ 1186      66696775 
+ 1186      72617469 
+ 1187              	.LASF2:
+ 1188 001f 73686F72 		.ascii	"short int\000"
+ 1188      7420696E 
+ 1188      7400
+ 1189              	.LASF33:
+ 1190 0029 63697263 		.ascii	"circbuff\000"
+ 1190      62756666 
+ 1190      00
+ 1191              	.LASF18:
+ 1192 0032 73697A65 		.ascii	"sizetype\000"
+ 1192      74797065 
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 24
+
+
+ 1192      00
+ 1193              	.LASF51:
+ 1194 003b 64756D76 		.ascii	"dumvar3\000"
+ 1194      61723300 
+ 1195              	.LASF23:
+ 1196 0043 55494E54 		.ascii	"UINT32\000"
+ 1196      333200
+ 1197              	.LASF71:
+ 1198 004a 6D61696E 		.ascii	"main\000"
+ 1198      00
+ 1199              	.LASF59:
+ 1200 004f 6C6F6767 		.ascii	"logger\000"
+ 1200      657200
+ 1201              	.LASF20:
+ 1202 0056 494E5438 		.ascii	"INT8\000"
+ 1202      00
+ 1203              	.LASF12:
+ 1204 005b 75696E74 		.ascii	"uint16\000"
+ 1204      313600
+ 1205              	.LASF65:
+ 1206 0062 4144435F 		.ascii	"ADC_DelSig_1_IsEndConversion\000"
+ 1206      44656C53 
+ 1206      69675F31 
+ 1206      5F497345 
+ 1206      6E64436F 
+ 1207              	.LASF11:
+ 1208 007f 75696E74 		.ascii	"uint8\000"
+ 1208      3800
+ 1209              	.LASF57:
+ 1210 0085 61747461 		.ascii	"attach_variable\000"
+ 1210      63685F76 
+ 1210      61726961 
+ 1210      626C6500 
+ 1211              	.LASF40:
+ 1212 0095 6E756D5F 		.ascii	"num_vars\000"
+ 1212      76617273 
+ 1212      00
+ 1213              	.LASF66:
+ 1214 009e 4144435F 		.ascii	"ADC_DelSig_1_GetResult16\000"
+ 1214      44656C53 
+ 1214      69675F31 
+ 1214      5F476574 
+ 1214      52657375 
+ 1215              	.LASF44:
+ 1216 00b7 6C656E67 		.ascii	"length\000"
+ 1216      746800
+ 1217              	.LASF14:
+ 1218 00be 666C6F61 		.ascii	"float\000"
+ 1218      7400
+ 1219              	.LASF6:
+ 1220 00c4 6C6F6E67 		.ascii	"long long int\000"
+ 1220      206C6F6E 
+ 1220      6720696E 
+ 1220      7400
+ 1221              	.LASF41:
+ 1222 00d2 4C6F675F 		.ascii	"Log_ts\000"
+ 1222      747300
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 25
+
+
+ 1223              	.LASF58:
+ 1224 00d9 4C6F6F70 		.ascii	"Loop_Interrupt_Start\000"
+ 1224      5F496E74 
+ 1224      65727275 
+ 1224      70745F53 
+ 1224      74617274 
+ 1225              	.LASF4:
+ 1226 00ee 6C6F6E67 		.ascii	"long int\000"
+ 1226      20696E74 
+ 1226      00
+ 1227              	.LASF29:
+ 1228 00f7 43484152 		.ascii	"CHAR\000"
+ 1228      00
+ 1229              	.LASF19:
+ 1230 00fc 55494E54 		.ascii	"UINT8\000"
+ 1230      3800
+ 1231              	.LASF38:
+ 1232 0102 76617273 		.ascii	"vars\000"
+ 1232      00
+ 1233              	.LASF1:
+ 1234 0107 756E7369 		.ascii	"unsigned char\000"
+ 1234      676E6564 
+ 1234      20636861 
+ 1234      7200
+ 1235              	.LASF22:
+ 1236 0115 494E5431 		.ascii	"INT16\000"
+ 1236      3600
+ 1237              	.LASF47:
+ 1238 011b 6E616D65 		.ascii	"name\000"
+ 1238      00
+ 1239              	.LASF17:
+ 1240 0120 6C6F6E67 		.ascii	"long double\000"
+ 1240      20646F75 
+ 1240      626C6500 
+ 1241              	.LASF52:
+ 1242 012c 6D61696E 		.ascii	"main_flag\000"
+ 1242      5F666C61 
+ 1242      6700
+ 1243              	.LASF35:
+ 1244 0136 64617461 		.ascii	"data_index\000"
+ 1244      5F696E64 
+ 1244      657800
+ 1245              	.LASF28:
+ 1246 0141 444F5542 		.ascii	"DOUBLE\000"
+ 1246      4C4500
+ 1247              	.LASF0:
+ 1248 0148 7369676E 		.ascii	"signed char\000"
+ 1248      65642063 
+ 1248      68617200 
+ 1249              	.LASF7:
+ 1250 0154 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1250      206C6F6E 
+ 1250      6720756E 
+ 1250      7369676E 
+ 1250      65642069 
+ 1251              	.LASF31:
+ 1252 016b 74797065 		.ascii	"type\000"
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 26
+
+
+ 1252      00
+ 1253              	.LASF62:
+ 1254 0170 6765745F 		.ascii	"get_buffer\000"
+ 1254      62756666 
+ 1254      657200
+ 1255              	.LASF8:
+ 1256 017b 756E7369 		.ascii	"unsigned int\000"
+ 1256      676E6564 
+ 1256      20696E74 
+ 1256      00
+ 1257              	.LASF64:
+ 1258 0188 636C6561 		.ascii	"clear_log\000"
+ 1258      725F6C6F 
+ 1258      6700
+ 1259              	.LASF5:
+ 1260 0192 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1260      20756E73 
+ 1260      69676E65 
+ 1260      6420696E 
+ 1260      7400
+ 1261              	.LASF48:
+ 1262 01a4 6C6F675F 		.ascii	"log_s\000"
+ 1262      7300
+ 1263              	.LASF37:
+ 1264 01aa 43697263 		.ascii	"CircBuff_ts\000"
+ 1264      42756666 
+ 1264      5F747300 
+ 1265              	.LASF53:
+ 1266 01b6 4144435F 		.ascii	"ADC_DelSig_1_Start\000"
+ 1266      44656C53 
+ 1266      69675F31 
+ 1266      5F537461 
+ 1266      727400
+ 1267              	.LASF21:
+ 1268 01c9 55494E54 		.ascii	"UINT16\000"
+ 1268      313600
+ 1269              	.LASF16:
+ 1270 01d0 63686172 		.ascii	"char\000"
+ 1270      00
+ 1271              	.LASF42:
+ 1272 01d5 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1272      52784275 
+ 1272      66666572 
+ 1272      00
+ 1273              	.LASF10:
+ 1274 01e2 696E7433 		.ascii	"int32_t\000"
+ 1274      325F7400 
+ 1275              	.LASF49:
+ 1276 01ea 64756D76 		.ascii	"dumvar1\000"
+ 1276      61723100 
+ 1277              	.LASF50:
+ 1278 01f2 64756D76 		.ascii	"dumvar2\000"
+ 1278      61723200 
+ 1279              	.LASF46:
+ 1280 01fa 73616D70 		.ascii	"sample_count\000"
+ 1280      6C655F63 
+ 1280      6F756E74 
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 27
+
+
+ 1280      00
+ 1281              	.LASF56:
+ 1282 0207 6C6F6767 		.ascii	"logger_init\000"
+ 1282      65725F69 
+ 1282      6E697400 
+ 1283              	.LASF34:
+ 1284 0213 64617461 		.ascii	"data\000"
+ 1284      00
+ 1285              	.LASF32:
+ 1286 0218 5661725F 		.ascii	"Var_ts\000"
+ 1286      747300
+ 1287              	.LASF43:
+ 1288 021f 62756666 		.ascii	"buffer\000"
+ 1288      657200
+ 1289              	.LASF3:
+ 1290 0226 73686F72 		.ascii	"short unsigned int\000"
+ 1290      7420756E 
+ 1290      7369676E 
+ 1290      65642069 
+ 1290      6E7400
+ 1291              	.LASF13:
+ 1292 0239 75696E74 		.ascii	"uint32\000"
+ 1292      333200
+ 1293              	.LASF68:
+ 1294 0240 6D61696E 		.ascii	"main.c\000"
+ 1294      2E6300
+ 1295              	.LASF36:
+ 1296 0247 64617461 		.ascii	"data_size\000"
+ 1296      5F73697A 
+ 1296      6500
+ 1297              	.LASF26:
+ 1298 0251 494E5436 		.ascii	"INT64\000"
+ 1298      3400
+ 1299              	.LASF15:
+ 1300 0257 646F7562 		.ascii	"double\000"
+ 1300      6C6500
+ 1301              	.LASF61:
+ 1302 025e 55534246 		.ascii	"USBFS_EnableOutEP\000"
+ 1302      535F456E 
+ 1302      61626C65 
+ 1302      4F757445 
+ 1302      5000
+ 1303              	.LASF45:
+ 1304 0270 616E616C 		.ascii	"analogRead\000"
+ 1304      6F675265 
+ 1304      616400
+ 1305              	.LASF63:
+ 1306 027b 55534246 		.ascii	"USBFS_LoadInEP\000"
+ 1306      535F4C6F 
+ 1306      6164496E 
+ 1306      455000
+ 1307              	.LASF39:
+ 1308 028a 43697263 		.ascii	"CircBuff\000"
+ 1308      42756666 
+ 1308      00
+ 1309              	.LASF9:
+ 1310 0293 5F5F696E 		.ascii	"__int32_t\000"
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccPspkEE.s 			page 28
+
+
+ 1310      7433325F 
+ 1310      7400
+ 1311              	.LASF27:
+ 1312 029d 464C4F41 		.ascii	"FLOAT\000"
+ 1312      5400
+ 1313              	.LASF54:
+ 1314 02a3 4144435F 		.ascii	"ADC_DelSig_1_StartConvert\000"
+ 1314      44656C53 
+ 1314      69675F31 
+ 1314      5F537461 
+ 1314      7274436F 
+ 1315              	.LASF55:
+ 1316 02bd 55534246 		.ascii	"USBFS_Start\000"
+ 1316      535F5374 
+ 1316      61727400 
+ 1317              	.LASF30:
+ 1318 02c9 7661725F 		.ascii	"var_ptr\000"
+ 1318      70747200 
+ 1319              	.LASF67:
+ 1320 02d1 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1320      43313120 
+ 1320      352E342E 
+ 1320      31203230 
+ 1320      31363036 
+ 1321 0304 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1321      20726576 
+ 1321      6973696F 
+ 1321      6E203233 
+ 1321      37373135 
+ 1322 0337 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1322      66756E63 
+ 1322      74696F6E 
+ 1322      2D736563 
+ 1322      74696F6E 
+ 1323              	.LASF24:
+ 1324 035f 494E5433 		.ascii	"INT32\000"
+ 1324      3200
+ 1325              	.LASF25:
+ 1326 0365 55494E54 		.ascii	"UINT64\000"
+ 1326      363400
+ 1327              	.LASF69:
+ 1328 036c 433A5C55 		.ascii	"C:\\Users\\pajoh\\projects\\USB\\cypress\\USB_data\\"
+ 1328      73657273 
+ 1328      5C70616A 
+ 1328      6F685C70 
+ 1328      726F6A65 
+ 1329 0399 5553425F 		.ascii	"USB_first.cydsn\000"
+ 1329      66697273 
+ 1329      742E6379 
+ 1329      64736E00 
+ 1330              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

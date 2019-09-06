@@ -1,0 +1,1933 @@
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"Loop_Interrupt.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.Loop_Interrupt_Interrupt,"ax",%progbits
+  20              		.align	2
+  21              		.global	Loop_Interrupt_Interrupt
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	Loop_Interrupt_Interrupt, %function
+  25              	Loop_Interrupt_Interrupt:
+  26              	.LFB3:
+  27              		.file 1 "Generated_Source\\PSoC5\\Loop_Interrupt.c"
+   1:Generated_Source\PSoC5/Loop_Interrupt.c **** /*******************************************************************************
+   2:Generated_Source\PSoC5/Loop_Interrupt.c **** * File Name: Loop_Interrupt.c  
+   3:Generated_Source\PSoC5/Loop_Interrupt.c **** * Version 1.70
+   4:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+   5:Generated_Source\PSoC5/Loop_Interrupt.c **** *  Description:
+   6:Generated_Source\PSoC5/Loop_Interrupt.c **** *   API for controlling the state of an interrupt.
+   7:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+   8:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+   9:Generated_Source\PSoC5/Loop_Interrupt.c **** *  Note:
+  10:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+  11:Generated_Source\PSoC5/Loop_Interrupt.c **** ********************************************************************************
+  12:Generated_Source\PSoC5/Loop_Interrupt.c **** * Copyright 2008-2015, Cypress Semiconductor Corporation.  All rights reserved.
+  13:Generated_Source\PSoC5/Loop_Interrupt.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  14:Generated_Source\PSoC5/Loop_Interrupt.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  15:Generated_Source\PSoC5/Loop_Interrupt.c **** * the software package with which this file was provided.
+  16:Generated_Source\PSoC5/Loop_Interrupt.c **** *******************************************************************************/
+  17:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+  18:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+  19:Generated_Source\PSoC5/Loop_Interrupt.c **** #include <cydevice_trm.h>
+  20:Generated_Source\PSoC5/Loop_Interrupt.c **** #include <CyLib.h>
+  21:Generated_Source\PSoC5/Loop_Interrupt.c **** #include <Loop_Interrupt.h>
+  22:Generated_Source\PSoC5/Loop_Interrupt.c **** #include "cyapicallbacks.h"
+  23:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+  24:Generated_Source\PSoC5/Loop_Interrupt.c **** #if !defined(Loop_Interrupt__REMOVED) /* Check for removal by optimization */
+  25:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+  26:Generated_Source\PSoC5/Loop_Interrupt.c **** /*******************************************************************************
+  27:Generated_Source\PSoC5/Loop_Interrupt.c **** *  Place your includes, defines and code here 
+  28:Generated_Source\PSoC5/Loop_Interrupt.c **** ********************************************************************************/
+  29:Generated_Source\PSoC5/Loop_Interrupt.c **** /* `#START Loop_Interrupt_intc` */
+  30:Generated_Source\PSoC5/Loop_Interrupt.c **** extern volatile uint8 main_flag;
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 2
+
+
+  31:Generated_Source\PSoC5/Loop_Interrupt.c **** /* `#END` */
+  32:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+  33:Generated_Source\PSoC5/Loop_Interrupt.c **** #ifndef CYINT_IRQ_BASE
+  34:Generated_Source\PSoC5/Loop_Interrupt.c **** #define CYINT_IRQ_BASE      16
+  35:Generated_Source\PSoC5/Loop_Interrupt.c **** #endif /* CYINT_IRQ_BASE */
+  36:Generated_Source\PSoC5/Loop_Interrupt.c **** #ifndef CYINT_VECT_TABLE
+  37:Generated_Source\PSoC5/Loop_Interrupt.c **** #define CYINT_VECT_TABLE    ((cyisraddress **) CYREG_NVIC_VECT_OFFSET)
+  38:Generated_Source\PSoC5/Loop_Interrupt.c **** #endif /* CYINT_VECT_TABLE */
+  39:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+  40:Generated_Source\PSoC5/Loop_Interrupt.c **** /* Declared in startup, used to set unused interrupts to. */
+  41:Generated_Source\PSoC5/Loop_Interrupt.c **** CY_ISR_PROTO(IntDefaultHandler);
+  42:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+  43:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+  44:Generated_Source\PSoC5/Loop_Interrupt.c **** /*******************************************************************************
+  45:Generated_Source\PSoC5/Loop_Interrupt.c **** * Function Name: Loop_Interrupt_Start
+  46:Generated_Source\PSoC5/Loop_Interrupt.c **** ********************************************************************************
+  47:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+  48:Generated_Source\PSoC5/Loop_Interrupt.c **** * Summary:
+  49:Generated_Source\PSoC5/Loop_Interrupt.c **** *  Set up the interrupt and enable it. This function disables the interrupt, 
+  50:Generated_Source\PSoC5/Loop_Interrupt.c **** *  sets the default interrupt vector, sets the priority from the value in the
+  51:Generated_Source\PSoC5/Loop_Interrupt.c **** *  Design Wide Resources Interrupt Editor, then enables the interrupt to the 
+  52:Generated_Source\PSoC5/Loop_Interrupt.c **** *  interrupt controller.
+  53:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+  54:Generated_Source\PSoC5/Loop_Interrupt.c **** * Parameters:  
+  55:Generated_Source\PSoC5/Loop_Interrupt.c **** *   None
+  56:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+  57:Generated_Source\PSoC5/Loop_Interrupt.c **** * Return:
+  58:Generated_Source\PSoC5/Loop_Interrupt.c **** *   None
+  59:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+  60:Generated_Source\PSoC5/Loop_Interrupt.c **** *******************************************************************************/
+  61:Generated_Source\PSoC5/Loop_Interrupt.c **** void Loop_Interrupt_Start(void)
+  62:Generated_Source\PSoC5/Loop_Interrupt.c **** {
+  63:Generated_Source\PSoC5/Loop_Interrupt.c ****     /* For all we know the interrupt is active. */
+  64:Generated_Source\PSoC5/Loop_Interrupt.c ****     Loop_Interrupt_Disable();
+  65:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+  66:Generated_Source\PSoC5/Loop_Interrupt.c ****     /* Set the ISR to point to the Loop_Interrupt Interrupt. */
+  67:Generated_Source\PSoC5/Loop_Interrupt.c ****     Loop_Interrupt_SetVector(&Loop_Interrupt_Interrupt);
+  68:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+  69:Generated_Source\PSoC5/Loop_Interrupt.c ****     /* Set the priority. */
+  70:Generated_Source\PSoC5/Loop_Interrupt.c ****     Loop_Interrupt_SetPriority((uint8)Loop_Interrupt_INTC_PRIOR_NUMBER);
+  71:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+  72:Generated_Source\PSoC5/Loop_Interrupt.c ****     /* Enable it. */
+  73:Generated_Source\PSoC5/Loop_Interrupt.c ****     Loop_Interrupt_Enable();
+  74:Generated_Source\PSoC5/Loop_Interrupt.c **** }
+  75:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+  76:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+  77:Generated_Source\PSoC5/Loop_Interrupt.c **** /*******************************************************************************
+  78:Generated_Source\PSoC5/Loop_Interrupt.c **** * Function Name: Loop_Interrupt_StartEx
+  79:Generated_Source\PSoC5/Loop_Interrupt.c **** ********************************************************************************
+  80:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+  81:Generated_Source\PSoC5/Loop_Interrupt.c **** * Summary:
+  82:Generated_Source\PSoC5/Loop_Interrupt.c **** *  Sets up the interrupt and enables it. This function disables the interrupt,
+  83:Generated_Source\PSoC5/Loop_Interrupt.c **** *  sets the interrupt vector based on the address passed in, sets the priority 
+  84:Generated_Source\PSoC5/Loop_Interrupt.c **** *  from the value in the Design Wide Resources Interrupt Editor, then enables 
+  85:Generated_Source\PSoC5/Loop_Interrupt.c **** *  the interrupt to the interrupt controller.
+  86:Generated_Source\PSoC5/Loop_Interrupt.c **** *  
+  87:Generated_Source\PSoC5/Loop_Interrupt.c **** *  When defining ISR functions, the CY_ISR and CY_ISR_PROTO macros should be 
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 3
+
+
+  88:Generated_Source\PSoC5/Loop_Interrupt.c **** *  used to provide consistent definition across compilers:
+  89:Generated_Source\PSoC5/Loop_Interrupt.c **** *  
+  90:Generated_Source\PSoC5/Loop_Interrupt.c **** *  Function definition example:
+  91:Generated_Source\PSoC5/Loop_Interrupt.c **** *   CY_ISR(MyISR)
+  92:Generated_Source\PSoC5/Loop_Interrupt.c **** *   {
+  93:Generated_Source\PSoC5/Loop_Interrupt.c **** *   }
+  94:Generated_Source\PSoC5/Loop_Interrupt.c **** *   Function prototype example:
+  95:Generated_Source\PSoC5/Loop_Interrupt.c **** *   CY_ISR_PROTO(MyISR);
+  96:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+  97:Generated_Source\PSoC5/Loop_Interrupt.c **** * Parameters:  
+  98:Generated_Source\PSoC5/Loop_Interrupt.c **** *   address: Address of the ISR to set in the interrupt vector table.
+  99:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 100:Generated_Source\PSoC5/Loop_Interrupt.c **** * Return:
+ 101:Generated_Source\PSoC5/Loop_Interrupt.c **** *   None
+ 102:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 103:Generated_Source\PSoC5/Loop_Interrupt.c **** *******************************************************************************/
+ 104:Generated_Source\PSoC5/Loop_Interrupt.c **** void Loop_Interrupt_StartEx(cyisraddress address)
+ 105:Generated_Source\PSoC5/Loop_Interrupt.c **** {
+ 106:Generated_Source\PSoC5/Loop_Interrupt.c ****     /* For all we know the interrupt is active. */
+ 107:Generated_Source\PSoC5/Loop_Interrupt.c ****     Loop_Interrupt_Disable();
+ 108:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 109:Generated_Source\PSoC5/Loop_Interrupt.c ****     /* Set the ISR to point to the Loop_Interrupt Interrupt. */
+ 110:Generated_Source\PSoC5/Loop_Interrupt.c ****     Loop_Interrupt_SetVector(address);
+ 111:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 112:Generated_Source\PSoC5/Loop_Interrupt.c ****     /* Set the priority. */
+ 113:Generated_Source\PSoC5/Loop_Interrupt.c ****     Loop_Interrupt_SetPriority((uint8)Loop_Interrupt_INTC_PRIOR_NUMBER);
+ 114:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 115:Generated_Source\PSoC5/Loop_Interrupt.c ****     /* Enable it. */
+ 116:Generated_Source\PSoC5/Loop_Interrupt.c ****     Loop_Interrupt_Enable();
+ 117:Generated_Source\PSoC5/Loop_Interrupt.c **** }
+ 118:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 119:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 120:Generated_Source\PSoC5/Loop_Interrupt.c **** /*******************************************************************************
+ 121:Generated_Source\PSoC5/Loop_Interrupt.c **** * Function Name: Loop_Interrupt_Stop
+ 122:Generated_Source\PSoC5/Loop_Interrupt.c **** ********************************************************************************
+ 123:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 124:Generated_Source\PSoC5/Loop_Interrupt.c **** * Summary:
+ 125:Generated_Source\PSoC5/Loop_Interrupt.c **** *   Disables and removes the interrupt.
+ 126:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 127:Generated_Source\PSoC5/Loop_Interrupt.c **** * Parameters:  
+ 128:Generated_Source\PSoC5/Loop_Interrupt.c **** *   None
+ 129:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 130:Generated_Source\PSoC5/Loop_Interrupt.c **** * Return:
+ 131:Generated_Source\PSoC5/Loop_Interrupt.c **** *   None
+ 132:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 133:Generated_Source\PSoC5/Loop_Interrupt.c **** *******************************************************************************/
+ 134:Generated_Source\PSoC5/Loop_Interrupt.c **** void Loop_Interrupt_Stop(void)
+ 135:Generated_Source\PSoC5/Loop_Interrupt.c **** {
+ 136:Generated_Source\PSoC5/Loop_Interrupt.c ****     /* Disable this interrupt. */
+ 137:Generated_Source\PSoC5/Loop_Interrupt.c ****     Loop_Interrupt_Disable();
+ 138:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 139:Generated_Source\PSoC5/Loop_Interrupt.c ****     /* Set the ISR to point to the passive one. */
+ 140:Generated_Source\PSoC5/Loop_Interrupt.c ****     Loop_Interrupt_SetVector(&IntDefaultHandler);
+ 141:Generated_Source\PSoC5/Loop_Interrupt.c **** }
+ 142:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 143:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 144:Generated_Source\PSoC5/Loop_Interrupt.c **** /*******************************************************************************
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 4
+
+
+ 145:Generated_Source\PSoC5/Loop_Interrupt.c **** * Function Name: Loop_Interrupt_Interrupt
+ 146:Generated_Source\PSoC5/Loop_Interrupt.c **** ********************************************************************************
+ 147:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 148:Generated_Source\PSoC5/Loop_Interrupt.c **** * Summary:
+ 149:Generated_Source\PSoC5/Loop_Interrupt.c **** *   The default Interrupt Service Routine for Loop_Interrupt.
+ 150:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 151:Generated_Source\PSoC5/Loop_Interrupt.c **** *   Add custom code between the coments to keep the next version of this file
+ 152:Generated_Source\PSoC5/Loop_Interrupt.c **** *   from over writting your code.
+ 153:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 154:Generated_Source\PSoC5/Loop_Interrupt.c **** * Parameters:  
+ 155:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 156:Generated_Source\PSoC5/Loop_Interrupt.c **** * Return:
+ 157:Generated_Source\PSoC5/Loop_Interrupt.c **** *   None
+ 158:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 159:Generated_Source\PSoC5/Loop_Interrupt.c **** *******************************************************************************/
+ 160:Generated_Source\PSoC5/Loop_Interrupt.c **** CY_ISR(Loop_Interrupt_Interrupt)
+ 161:Generated_Source\PSoC5/Loop_Interrupt.c **** {
+  28              		.loc 1 161 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+ 162:Generated_Source\PSoC5/Loop_Interrupt.c ****     #ifdef Loop_Interrupt_INTERRUPT_INTERRUPT_CALLBACK
+ 163:Generated_Source\PSoC5/Loop_Interrupt.c ****         Loop_Interrupt_Interrupt_InterruptCallback();
+ 164:Generated_Source\PSoC5/Loop_Interrupt.c ****     #endif /* Loop_Interrupt_INTERRUPT_INTERRUPT_CALLBACK */ 
+ 165:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 166:Generated_Source\PSoC5/Loop_Interrupt.c ****     /*  Place your Interrupt code here. */
+ 167:Generated_Source\PSoC5/Loop_Interrupt.c ****     /* `#START Loop_Interrupt_Interrupt` */
+ 168:Generated_Source\PSoC5/Loop_Interrupt.c ****     main_flag = 1;
+  33              		.loc 1 168 0
+  34 0000 0122     		movs	r2, #1
+  35 0002 014B     		ldr	r3, .L2
+  36 0004 1A70     		strb	r2, [r3]
+  37 0006 7047     		bx	lr
+  38              	.L3:
+  39              		.align	2
+  40              	.L2:
+  41 0008 00000000 		.word	main_flag
+  42              		.cfi_endproc
+  43              	.LFE3:
+  44              		.size	Loop_Interrupt_Interrupt, .-Loop_Interrupt_Interrupt
+  45              		.section	.text.Loop_Interrupt_SetVector,"ax",%progbits
+  46              		.align	2
+  47              		.global	Loop_Interrupt_SetVector
+  48              		.thumb
+  49              		.thumb_func
+  50              		.type	Loop_Interrupt_SetVector, %function
+  51              	Loop_Interrupt_SetVector:
+  52              	.LFB4:
+ 169:Generated_Source\PSoC5/Loop_Interrupt.c ****     /* `#END` */
+ 170:Generated_Source\PSoC5/Loop_Interrupt.c **** }
+ 171:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 172:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 173:Generated_Source\PSoC5/Loop_Interrupt.c **** /*******************************************************************************
+ 174:Generated_Source\PSoC5/Loop_Interrupt.c **** * Function Name: Loop_Interrupt_SetVector
+ 175:Generated_Source\PSoC5/Loop_Interrupt.c **** ********************************************************************************
+ 176:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 5
+
+
+ 177:Generated_Source\PSoC5/Loop_Interrupt.c **** * Summary:
+ 178:Generated_Source\PSoC5/Loop_Interrupt.c **** *   Change the ISR vector for the Interrupt. Note calling Loop_Interrupt_Start
+ 179:Generated_Source\PSoC5/Loop_Interrupt.c **** *   will override any effect this method would have had. To set the vector 
+ 180:Generated_Source\PSoC5/Loop_Interrupt.c **** *   before the component has been started use Loop_Interrupt_StartEx instead.
+ 181:Generated_Source\PSoC5/Loop_Interrupt.c **** * 
+ 182:Generated_Source\PSoC5/Loop_Interrupt.c **** *   When defining ISR functions, the CY_ISR and CY_ISR_PROTO macros should be 
+ 183:Generated_Source\PSoC5/Loop_Interrupt.c **** *   used to provide consistent definition across compilers:
+ 184:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 185:Generated_Source\PSoC5/Loop_Interrupt.c **** *   Function definition example:
+ 186:Generated_Source\PSoC5/Loop_Interrupt.c **** *   CY_ISR(MyISR)
+ 187:Generated_Source\PSoC5/Loop_Interrupt.c **** *   {
+ 188:Generated_Source\PSoC5/Loop_Interrupt.c **** *   }
+ 189:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 190:Generated_Source\PSoC5/Loop_Interrupt.c **** *   Function prototype example:
+ 191:Generated_Source\PSoC5/Loop_Interrupt.c **** *     CY_ISR_PROTO(MyISR);
+ 192:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 193:Generated_Source\PSoC5/Loop_Interrupt.c **** * Parameters:
+ 194:Generated_Source\PSoC5/Loop_Interrupt.c **** *   address: Address of the ISR to set in the interrupt vector table.
+ 195:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 196:Generated_Source\PSoC5/Loop_Interrupt.c **** * Return:
+ 197:Generated_Source\PSoC5/Loop_Interrupt.c **** *   None
+ 198:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 199:Generated_Source\PSoC5/Loop_Interrupt.c **** *******************************************************************************/
+ 200:Generated_Source\PSoC5/Loop_Interrupt.c **** void Loop_Interrupt_SetVector(cyisraddress address)
+ 201:Generated_Source\PSoC5/Loop_Interrupt.c **** {
+  53              		.loc 1 201 0
+  54              		.cfi_startproc
+  55              		@ args = 0, pretend = 0, frame = 0
+  56              		@ frame_needed = 0, uses_anonymous_args = 0
+  57              		@ link register save eliminated.
+  58              	.LVL0:
+ 202:Generated_Source\PSoC5/Loop_Interrupt.c ****     cyisraddress * ramVectorTable;
+ 203:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 204:Generated_Source\PSoC5/Loop_Interrupt.c ****     ramVectorTable = (cyisraddress *) *CYINT_VECT_TABLE;
+  59              		.loc 1 204 0
+  60 0000 014B     		ldr	r3, .L5
+  61 0002 1B68     		ldr	r3, [r3]
+  62              	.LVL1:
+ 205:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 206:Generated_Source\PSoC5/Loop_Interrupt.c ****     ramVectorTable[CYINT_IRQ_BASE + (uint32)Loop_Interrupt__INTC_NUMBER] = address;
+  63              		.loc 1 206 0
+  64 0004 1864     		str	r0, [r3, #64]
+  65 0006 7047     		bx	lr
+  66              	.L6:
+  67              		.align	2
+  68              	.L5:
+  69 0008 08ED00E0 		.word	-536810232
+  70              		.cfi_endproc
+  71              	.LFE4:
+  72              		.size	Loop_Interrupt_SetVector, .-Loop_Interrupt_SetVector
+  73              		.section	.text.Loop_Interrupt_GetVector,"ax",%progbits
+  74              		.align	2
+  75              		.global	Loop_Interrupt_GetVector
+  76              		.thumb
+  77              		.thumb_func
+  78              		.type	Loop_Interrupt_GetVector, %function
+  79              	Loop_Interrupt_GetVector:
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 6
+
+
+  80              	.LFB5:
+ 207:Generated_Source\PSoC5/Loop_Interrupt.c **** }
+ 208:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 209:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 210:Generated_Source\PSoC5/Loop_Interrupt.c **** /*******************************************************************************
+ 211:Generated_Source\PSoC5/Loop_Interrupt.c **** * Function Name: Loop_Interrupt_GetVector
+ 212:Generated_Source\PSoC5/Loop_Interrupt.c **** ********************************************************************************
+ 213:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 214:Generated_Source\PSoC5/Loop_Interrupt.c **** * Summary:
+ 215:Generated_Source\PSoC5/Loop_Interrupt.c **** *   Gets the "address" of the current ISR vector for the Interrupt.
+ 216:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 217:Generated_Source\PSoC5/Loop_Interrupt.c **** * Parameters:
+ 218:Generated_Source\PSoC5/Loop_Interrupt.c **** *   None
+ 219:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 220:Generated_Source\PSoC5/Loop_Interrupt.c **** * Return:
+ 221:Generated_Source\PSoC5/Loop_Interrupt.c **** *   Address of the ISR in the interrupt vector table.
+ 222:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 223:Generated_Source\PSoC5/Loop_Interrupt.c **** *******************************************************************************/
+ 224:Generated_Source\PSoC5/Loop_Interrupt.c **** cyisraddress Loop_Interrupt_GetVector(void)
+ 225:Generated_Source\PSoC5/Loop_Interrupt.c **** {
+  81              		.loc 1 225 0
+  82              		.cfi_startproc
+  83              		@ args = 0, pretend = 0, frame = 0
+  84              		@ frame_needed = 0, uses_anonymous_args = 0
+  85              		@ link register save eliminated.
+ 226:Generated_Source\PSoC5/Loop_Interrupt.c ****     cyisraddress * ramVectorTable;
+ 227:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 228:Generated_Source\PSoC5/Loop_Interrupt.c ****     ramVectorTable = (cyisraddress *) *CYINT_VECT_TABLE;
+  86              		.loc 1 228 0
+  87 0000 014B     		ldr	r3, .L8
+  88 0002 1B68     		ldr	r3, [r3]
+  89              	.LVL2:
+ 229:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 230:Generated_Source\PSoC5/Loop_Interrupt.c ****     return ramVectorTable[CYINT_IRQ_BASE + (uint32)Loop_Interrupt__INTC_NUMBER];
+ 231:Generated_Source\PSoC5/Loop_Interrupt.c **** }
+  90              		.loc 1 231 0
+  91 0004 186C     		ldr	r0, [r3, #64]
+  92 0006 7047     		bx	lr
+  93              	.L9:
+  94              		.align	2
+  95              	.L8:
+  96 0008 08ED00E0 		.word	-536810232
+  97              		.cfi_endproc
+  98              	.LFE5:
+  99              		.size	Loop_Interrupt_GetVector, .-Loop_Interrupt_GetVector
+ 100              		.section	.text.Loop_Interrupt_SetPriority,"ax",%progbits
+ 101              		.align	2
+ 102              		.global	Loop_Interrupt_SetPriority
+ 103              		.thumb
+ 104              		.thumb_func
+ 105              		.type	Loop_Interrupt_SetPriority, %function
+ 106              	Loop_Interrupt_SetPriority:
+ 107              	.LFB6:
+ 232:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 233:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 234:Generated_Source\PSoC5/Loop_Interrupt.c **** /*******************************************************************************
+ 235:Generated_Source\PSoC5/Loop_Interrupt.c **** * Function Name: Loop_Interrupt_SetPriority
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 7
+
+
+ 236:Generated_Source\PSoC5/Loop_Interrupt.c **** ********************************************************************************
+ 237:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 238:Generated_Source\PSoC5/Loop_Interrupt.c **** * Summary:
+ 239:Generated_Source\PSoC5/Loop_Interrupt.c **** *   Sets the Priority of the Interrupt. 
+ 240:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 241:Generated_Source\PSoC5/Loop_Interrupt.c **** *   Note calling Loop_Interrupt_Start or Loop_Interrupt_StartEx will 
+ 242:Generated_Source\PSoC5/Loop_Interrupt.c **** *   override any effect this API would have had. This API should only be called
+ 243:Generated_Source\PSoC5/Loop_Interrupt.c **** *   after Loop_Interrupt_Start or Loop_Interrupt_StartEx has been called. 
+ 244:Generated_Source\PSoC5/Loop_Interrupt.c **** *   To set the initial priority for the component, use the Design-Wide Resources
+ 245:Generated_Source\PSoC5/Loop_Interrupt.c **** *   Interrupt Editor.
+ 246:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 247:Generated_Source\PSoC5/Loop_Interrupt.c **** *   Note This API has no effect on Non-maskable interrupt NMI).
+ 248:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 249:Generated_Source\PSoC5/Loop_Interrupt.c **** * Parameters:
+ 250:Generated_Source\PSoC5/Loop_Interrupt.c **** *   priority: Priority of the interrupt, 0 being the highest priority
+ 251:Generated_Source\PSoC5/Loop_Interrupt.c **** *             PSoC 3 and PSoC 5LP: Priority is from 0 to 7.
+ 252:Generated_Source\PSoC5/Loop_Interrupt.c **** *             PSoC 4: Priority is from 0 to 3.
+ 253:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 254:Generated_Source\PSoC5/Loop_Interrupt.c **** * Return:
+ 255:Generated_Source\PSoC5/Loop_Interrupt.c **** *   None
+ 256:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 257:Generated_Source\PSoC5/Loop_Interrupt.c **** *******************************************************************************/
+ 258:Generated_Source\PSoC5/Loop_Interrupt.c **** void Loop_Interrupt_SetPriority(uint8 priority)
+ 259:Generated_Source\PSoC5/Loop_Interrupt.c **** {
+ 108              		.loc 1 259 0
+ 109              		.cfi_startproc
+ 110              		@ args = 0, pretend = 0, frame = 0
+ 111              		@ frame_needed = 0, uses_anonymous_args = 0
+ 112              		@ link register save eliminated.
+ 113              	.LVL3:
+ 260:Generated_Source\PSoC5/Loop_Interrupt.c ****     *Loop_Interrupt_INTC_PRIOR = priority << 5;
+ 114              		.loc 1 260 0
+ 115 0000 4001     		lsls	r0, r0, #5
+ 116              	.LVL4:
+ 117 0002 C0B2     		uxtb	r0, r0
+ 118 0004 014B     		ldr	r3, .L11
+ 119 0006 1870     		strb	r0, [r3]
+ 120 0008 7047     		bx	lr
+ 121              	.L12:
+ 122 000a 00BF     		.align	2
+ 123              	.L11:
+ 124 000c 00E400E0 		.word	-536812544
+ 125              		.cfi_endproc
+ 126              	.LFE6:
+ 127              		.size	Loop_Interrupt_SetPriority, .-Loop_Interrupt_SetPriority
+ 128              		.section	.text.Loop_Interrupt_GetPriority,"ax",%progbits
+ 129              		.align	2
+ 130              		.global	Loop_Interrupt_GetPriority
+ 131              		.thumb
+ 132              		.thumb_func
+ 133              		.type	Loop_Interrupt_GetPriority, %function
+ 134              	Loop_Interrupt_GetPriority:
+ 135              	.LFB7:
+ 261:Generated_Source\PSoC5/Loop_Interrupt.c **** }
+ 262:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 263:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 264:Generated_Source\PSoC5/Loop_Interrupt.c **** /*******************************************************************************
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 8
+
+
+ 265:Generated_Source\PSoC5/Loop_Interrupt.c **** * Function Name: Loop_Interrupt_GetPriority
+ 266:Generated_Source\PSoC5/Loop_Interrupt.c **** ********************************************************************************
+ 267:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 268:Generated_Source\PSoC5/Loop_Interrupt.c **** * Summary:
+ 269:Generated_Source\PSoC5/Loop_Interrupt.c **** *   Gets the Priority of the Interrupt.
+ 270:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 271:Generated_Source\PSoC5/Loop_Interrupt.c **** * Parameters:
+ 272:Generated_Source\PSoC5/Loop_Interrupt.c **** *   None
+ 273:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 274:Generated_Source\PSoC5/Loop_Interrupt.c **** * Return:
+ 275:Generated_Source\PSoC5/Loop_Interrupt.c **** *   Priority of the interrupt, 0 being the highest priority
+ 276:Generated_Source\PSoC5/Loop_Interrupt.c **** *    PSoC 3 and PSoC 5LP: Priority is from 0 to 7.
+ 277:Generated_Source\PSoC5/Loop_Interrupt.c **** *    PSoC 4: Priority is from 0 to 3.
+ 278:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 279:Generated_Source\PSoC5/Loop_Interrupt.c **** *******************************************************************************/
+ 280:Generated_Source\PSoC5/Loop_Interrupt.c **** uint8 Loop_Interrupt_GetPriority(void)
+ 281:Generated_Source\PSoC5/Loop_Interrupt.c **** {
+ 136              		.loc 1 281 0
+ 137              		.cfi_startproc
+ 138              		@ args = 0, pretend = 0, frame = 0
+ 139              		@ frame_needed = 0, uses_anonymous_args = 0
+ 140              		@ link register save eliminated.
+ 282:Generated_Source\PSoC5/Loop_Interrupt.c ****     uint8 priority;
+ 283:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 284:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 285:Generated_Source\PSoC5/Loop_Interrupt.c ****     priority = *Loop_Interrupt_INTC_PRIOR >> 5;
+ 141              		.loc 1 285 0
+ 142 0000 014B     		ldr	r3, .L14
+ 143 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 144              	.LVL5:
+ 286:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 287:Generated_Source\PSoC5/Loop_Interrupt.c ****     return priority;
+ 288:Generated_Source\PSoC5/Loop_Interrupt.c **** }
+ 145              		.loc 1 288 0
+ 146 0004 4009     		lsrs	r0, r0, #5
+ 147              	.LVL6:
+ 148 0006 7047     		bx	lr
+ 149              	.L15:
+ 150              		.align	2
+ 151              	.L14:
+ 152 0008 00E400E0 		.word	-536812544
+ 153              		.cfi_endproc
+ 154              	.LFE7:
+ 155              		.size	Loop_Interrupt_GetPriority, .-Loop_Interrupt_GetPriority
+ 156              		.section	.text.Loop_Interrupt_Enable,"ax",%progbits
+ 157              		.align	2
+ 158              		.global	Loop_Interrupt_Enable
+ 159              		.thumb
+ 160              		.thumb_func
+ 161              		.type	Loop_Interrupt_Enable, %function
+ 162              	Loop_Interrupt_Enable:
+ 163              	.LFB8:
+ 289:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 290:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 291:Generated_Source\PSoC5/Loop_Interrupt.c **** /*******************************************************************************
+ 292:Generated_Source\PSoC5/Loop_Interrupt.c **** * Function Name: Loop_Interrupt_Enable
+ 293:Generated_Source\PSoC5/Loop_Interrupt.c **** ********************************************************************************
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 9
+
+
+ 294:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 295:Generated_Source\PSoC5/Loop_Interrupt.c **** * Summary:
+ 296:Generated_Source\PSoC5/Loop_Interrupt.c **** *   Enables the interrupt to the interrupt controller. Do not call this function
+ 297:Generated_Source\PSoC5/Loop_Interrupt.c **** *   unless ISR_Start() has been called or the functionality of the ISR_Start() 
+ 298:Generated_Source\PSoC5/Loop_Interrupt.c **** *   function, which sets the vector and the priority, has been called.
+ 299:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 300:Generated_Source\PSoC5/Loop_Interrupt.c **** * Parameters:
+ 301:Generated_Source\PSoC5/Loop_Interrupt.c **** *   None
+ 302:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 303:Generated_Source\PSoC5/Loop_Interrupt.c **** * Return:
+ 304:Generated_Source\PSoC5/Loop_Interrupt.c **** *   None
+ 305:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 306:Generated_Source\PSoC5/Loop_Interrupt.c **** *******************************************************************************/
+ 307:Generated_Source\PSoC5/Loop_Interrupt.c **** void Loop_Interrupt_Enable(void)
+ 308:Generated_Source\PSoC5/Loop_Interrupt.c **** {
+ 164              		.loc 1 308 0
+ 165              		.cfi_startproc
+ 166              		@ args = 0, pretend = 0, frame = 0
+ 167              		@ frame_needed = 0, uses_anonymous_args = 0
+ 168              		@ link register save eliminated.
+ 309:Generated_Source\PSoC5/Loop_Interrupt.c ****     /* Enable the general interrupt. */
+ 310:Generated_Source\PSoC5/Loop_Interrupt.c ****     *Loop_Interrupt_INTC_SET_EN = Loop_Interrupt__INTC_MASK;
+ 169              		.loc 1 310 0
+ 170 0000 0122     		movs	r2, #1
+ 171 0002 014B     		ldr	r3, .L17
+ 172 0004 1A60     		str	r2, [r3]
+ 173 0006 7047     		bx	lr
+ 174              	.L18:
+ 175              		.align	2
+ 176              	.L17:
+ 177 0008 00E100E0 		.word	-536813312
+ 178              		.cfi_endproc
+ 179              	.LFE8:
+ 180              		.size	Loop_Interrupt_Enable, .-Loop_Interrupt_Enable
+ 181              		.section	.text.Loop_Interrupt_GetState,"ax",%progbits
+ 182              		.align	2
+ 183              		.global	Loop_Interrupt_GetState
+ 184              		.thumb
+ 185              		.thumb_func
+ 186              		.type	Loop_Interrupt_GetState, %function
+ 187              	Loop_Interrupt_GetState:
+ 188              	.LFB9:
+ 311:Generated_Source\PSoC5/Loop_Interrupt.c **** }
+ 312:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 313:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 314:Generated_Source\PSoC5/Loop_Interrupt.c **** /*******************************************************************************
+ 315:Generated_Source\PSoC5/Loop_Interrupt.c **** * Function Name: Loop_Interrupt_GetState
+ 316:Generated_Source\PSoC5/Loop_Interrupt.c **** ********************************************************************************
+ 317:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 318:Generated_Source\PSoC5/Loop_Interrupt.c **** * Summary:
+ 319:Generated_Source\PSoC5/Loop_Interrupt.c **** *   Gets the state (enabled, disabled) of the Interrupt.
+ 320:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 321:Generated_Source\PSoC5/Loop_Interrupt.c **** * Parameters:
+ 322:Generated_Source\PSoC5/Loop_Interrupt.c **** *   None
+ 323:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 324:Generated_Source\PSoC5/Loop_Interrupt.c **** * Return:
+ 325:Generated_Source\PSoC5/Loop_Interrupt.c **** *   1 if enabled, 0 if disabled.
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 10
+
+
+ 326:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 327:Generated_Source\PSoC5/Loop_Interrupt.c **** *******************************************************************************/
+ 328:Generated_Source\PSoC5/Loop_Interrupt.c **** uint8 Loop_Interrupt_GetState(void)
+ 329:Generated_Source\PSoC5/Loop_Interrupt.c **** {
+ 189              		.loc 1 329 0
+ 190              		.cfi_startproc
+ 191              		@ args = 0, pretend = 0, frame = 0
+ 192              		@ frame_needed = 0, uses_anonymous_args = 0
+ 193              		@ link register save eliminated.
+ 330:Generated_Source\PSoC5/Loop_Interrupt.c ****     /* Get the state of the general interrupt. */
+ 331:Generated_Source\PSoC5/Loop_Interrupt.c ****     return ((*Loop_Interrupt_INTC_SET_EN & (uint32)Loop_Interrupt__INTC_MASK) != 0u) ? 1u:0u;
+ 194              		.loc 1 331 0
+ 195 0000 024B     		ldr	r3, .L20
+ 196 0002 1868     		ldr	r0, [r3]
+ 332:Generated_Source\PSoC5/Loop_Interrupt.c **** }
+ 197              		.loc 1 332 0
+ 198 0004 00F00100 		and	r0, r0, #1
+ 199 0008 7047     		bx	lr
+ 200              	.L21:
+ 201 000a 00BF     		.align	2
+ 202              	.L20:
+ 203 000c 00E100E0 		.word	-536813312
+ 204              		.cfi_endproc
+ 205              	.LFE9:
+ 206              		.size	Loop_Interrupt_GetState, .-Loop_Interrupt_GetState
+ 207              		.section	.text.Loop_Interrupt_Disable,"ax",%progbits
+ 208              		.align	2
+ 209              		.global	Loop_Interrupt_Disable
+ 210              		.thumb
+ 211              		.thumb_func
+ 212              		.type	Loop_Interrupt_Disable, %function
+ 213              	Loop_Interrupt_Disable:
+ 214              	.LFB10:
+ 333:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 334:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 335:Generated_Source\PSoC5/Loop_Interrupt.c **** /*******************************************************************************
+ 336:Generated_Source\PSoC5/Loop_Interrupt.c **** * Function Name: Loop_Interrupt_Disable
+ 337:Generated_Source\PSoC5/Loop_Interrupt.c **** ********************************************************************************
+ 338:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 339:Generated_Source\PSoC5/Loop_Interrupt.c **** * Summary:
+ 340:Generated_Source\PSoC5/Loop_Interrupt.c **** *   Disables the Interrupt in the interrupt controller.
+ 341:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 342:Generated_Source\PSoC5/Loop_Interrupt.c **** * Parameters:
+ 343:Generated_Source\PSoC5/Loop_Interrupt.c **** *   None
+ 344:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 345:Generated_Source\PSoC5/Loop_Interrupt.c **** * Return:
+ 346:Generated_Source\PSoC5/Loop_Interrupt.c **** *   None
+ 347:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 348:Generated_Source\PSoC5/Loop_Interrupt.c **** *******************************************************************************/
+ 349:Generated_Source\PSoC5/Loop_Interrupt.c **** void Loop_Interrupt_Disable(void)
+ 350:Generated_Source\PSoC5/Loop_Interrupt.c **** {
+ 215              		.loc 1 350 0
+ 216              		.cfi_startproc
+ 217              		@ args = 0, pretend = 0, frame = 0
+ 218              		@ frame_needed = 0, uses_anonymous_args = 0
+ 219              		@ link register save eliminated.
+ 351:Generated_Source\PSoC5/Loop_Interrupt.c ****     /* Disable the general interrupt. */
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 11
+
+
+ 352:Generated_Source\PSoC5/Loop_Interrupt.c ****     *Loop_Interrupt_INTC_CLR_EN = Loop_Interrupt__INTC_MASK;
+ 220              		.loc 1 352 0
+ 221 0000 0122     		movs	r2, #1
+ 222 0002 014B     		ldr	r3, .L23
+ 223 0004 1A60     		str	r2, [r3]
+ 224 0006 7047     		bx	lr
+ 225              	.L24:
+ 226              		.align	2
+ 227              	.L23:
+ 228 0008 80E100E0 		.word	-536813184
+ 229              		.cfi_endproc
+ 230              	.LFE10:
+ 231              		.size	Loop_Interrupt_Disable, .-Loop_Interrupt_Disable
+ 232              		.section	.text.Loop_Interrupt_Start,"ax",%progbits
+ 233              		.align	2
+ 234              		.global	Loop_Interrupt_Start
+ 235              		.thumb
+ 236              		.thumb_func
+ 237              		.type	Loop_Interrupt_Start, %function
+ 238              	Loop_Interrupt_Start:
+ 239              	.LFB0:
+  62:Generated_Source\PSoC5/Loop_Interrupt.c ****     /* For all we know the interrupt is active. */
+ 240              		.loc 1 62 0
+ 241              		.cfi_startproc
+ 242              		@ args = 0, pretend = 0, frame = 0
+ 243              		@ frame_needed = 0, uses_anonymous_args = 0
+ 244 0000 08B5     		push	{r3, lr}
+ 245              		.cfi_def_cfa_offset 8
+ 246              		.cfi_offset 3, -8
+ 247              		.cfi_offset 14, -4
+  64:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 248              		.loc 1 64 0
+ 249 0002 FFF7FEFF 		bl	Loop_Interrupt_Disable
+ 250              	.LVL7:
+  67:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 251              		.loc 1 67 0
+ 252 0006 0448     		ldr	r0, .L27
+ 253 0008 FFF7FEFF 		bl	Loop_Interrupt_SetVector
+ 254              	.LVL8:
+  70:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 255              		.loc 1 70 0
+ 256 000c 0720     		movs	r0, #7
+ 257 000e FFF7FEFF 		bl	Loop_Interrupt_SetPriority
+ 258              	.LVL9:
+  73:Generated_Source\PSoC5/Loop_Interrupt.c **** }
+ 259              		.loc 1 73 0
+ 260 0012 FFF7FEFF 		bl	Loop_Interrupt_Enable
+ 261              	.LVL10:
+ 262 0016 08BD     		pop	{r3, pc}
+ 263              	.L28:
+ 264              		.align	2
+ 265              	.L27:
+ 266 0018 00000000 		.word	Loop_Interrupt_Interrupt
+ 267              		.cfi_endproc
+ 268              	.LFE0:
+ 269              		.size	Loop_Interrupt_Start, .-Loop_Interrupt_Start
+ 270              		.section	.text.Loop_Interrupt_StartEx,"ax",%progbits
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 12
+
+
+ 271              		.align	2
+ 272              		.global	Loop_Interrupt_StartEx
+ 273              		.thumb
+ 274              		.thumb_func
+ 275              		.type	Loop_Interrupt_StartEx, %function
+ 276              	Loop_Interrupt_StartEx:
+ 277              	.LFB1:
+ 105:Generated_Source\PSoC5/Loop_Interrupt.c ****     /* For all we know the interrupt is active. */
+ 278              		.loc 1 105 0
+ 279              		.cfi_startproc
+ 280              		@ args = 0, pretend = 0, frame = 0
+ 281              		@ frame_needed = 0, uses_anonymous_args = 0
+ 282              	.LVL11:
+ 283 0000 10B5     		push	{r4, lr}
+ 284              		.cfi_def_cfa_offset 8
+ 285              		.cfi_offset 4, -8
+ 286              		.cfi_offset 14, -4
+ 287 0002 0446     		mov	r4, r0
+ 107:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 288              		.loc 1 107 0
+ 289 0004 FFF7FEFF 		bl	Loop_Interrupt_Disable
+ 290              	.LVL12:
+ 110:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 291              		.loc 1 110 0
+ 292 0008 2046     		mov	r0, r4
+ 293 000a FFF7FEFF 		bl	Loop_Interrupt_SetVector
+ 294              	.LVL13:
+ 113:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 295              		.loc 1 113 0
+ 296 000e 0720     		movs	r0, #7
+ 297 0010 FFF7FEFF 		bl	Loop_Interrupt_SetPriority
+ 298              	.LVL14:
+ 116:Generated_Source\PSoC5/Loop_Interrupt.c **** }
+ 299              		.loc 1 116 0
+ 300 0014 FFF7FEFF 		bl	Loop_Interrupt_Enable
+ 301              	.LVL15:
+ 302 0018 10BD     		pop	{r4, pc}
+ 303              		.cfi_endproc
+ 304              	.LFE1:
+ 305              		.size	Loop_Interrupt_StartEx, .-Loop_Interrupt_StartEx
+ 306 001a 00BF     		.section	.text.Loop_Interrupt_Stop,"ax",%progbits
+ 307              		.align	2
+ 308              		.global	Loop_Interrupt_Stop
+ 309              		.thumb
+ 310              		.thumb_func
+ 311              		.type	Loop_Interrupt_Stop, %function
+ 312              	Loop_Interrupt_Stop:
+ 313              	.LFB2:
+ 135:Generated_Source\PSoC5/Loop_Interrupt.c ****     /* Disable this interrupt. */
+ 314              		.loc 1 135 0
+ 315              		.cfi_startproc
+ 316              		@ args = 0, pretend = 0, frame = 0
+ 317              		@ frame_needed = 0, uses_anonymous_args = 0
+ 318 0000 08B5     		push	{r3, lr}
+ 319              		.cfi_def_cfa_offset 8
+ 320              		.cfi_offset 3, -8
+ 321              		.cfi_offset 14, -4
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 13
+
+
+ 137:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 322              		.loc 1 137 0
+ 323 0002 FFF7FEFF 		bl	Loop_Interrupt_Disable
+ 324              	.LVL16:
+ 140:Generated_Source\PSoC5/Loop_Interrupt.c **** }
+ 325              		.loc 1 140 0
+ 326 0006 0248     		ldr	r0, .L33
+ 327 0008 FFF7FEFF 		bl	Loop_Interrupt_SetVector
+ 328              	.LVL17:
+ 329 000c 08BD     		pop	{r3, pc}
+ 330              	.L34:
+ 331 000e 00BF     		.align	2
+ 332              	.L33:
+ 333 0010 00000000 		.word	IntDefaultHandler
+ 334              		.cfi_endproc
+ 335              	.LFE2:
+ 336              		.size	Loop_Interrupt_Stop, .-Loop_Interrupt_Stop
+ 337              		.section	.text.Loop_Interrupt_SetPending,"ax",%progbits
+ 338              		.align	2
+ 339              		.global	Loop_Interrupt_SetPending
+ 340              		.thumb
+ 341              		.thumb_func
+ 342              		.type	Loop_Interrupt_SetPending, %function
+ 343              	Loop_Interrupt_SetPending:
+ 344              	.LFB11:
+ 353:Generated_Source\PSoC5/Loop_Interrupt.c **** }
+ 354:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 355:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 356:Generated_Source\PSoC5/Loop_Interrupt.c **** /*******************************************************************************
+ 357:Generated_Source\PSoC5/Loop_Interrupt.c **** * Function Name: Loop_Interrupt_SetPending
+ 358:Generated_Source\PSoC5/Loop_Interrupt.c **** ********************************************************************************
+ 359:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 360:Generated_Source\PSoC5/Loop_Interrupt.c **** * Summary:
+ 361:Generated_Source\PSoC5/Loop_Interrupt.c **** *   Causes the Interrupt to enter the pending state, a software method of
+ 362:Generated_Source\PSoC5/Loop_Interrupt.c **** *   generating the interrupt.
+ 363:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 364:Generated_Source\PSoC5/Loop_Interrupt.c **** * Parameters:
+ 365:Generated_Source\PSoC5/Loop_Interrupt.c **** *   None
+ 366:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 367:Generated_Source\PSoC5/Loop_Interrupt.c **** * Return:
+ 368:Generated_Source\PSoC5/Loop_Interrupt.c **** *   None
+ 369:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 370:Generated_Source\PSoC5/Loop_Interrupt.c **** * Side Effects:
+ 371:Generated_Source\PSoC5/Loop_Interrupt.c **** *   If interrupts are enabled and the interrupt is set up properly, the ISR is
+ 372:Generated_Source\PSoC5/Loop_Interrupt.c **** *   entered (depending on the priority of this interrupt and other pending 
+ 373:Generated_Source\PSoC5/Loop_Interrupt.c **** *   interrupts).
+ 374:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 375:Generated_Source\PSoC5/Loop_Interrupt.c **** *******************************************************************************/
+ 376:Generated_Source\PSoC5/Loop_Interrupt.c **** void Loop_Interrupt_SetPending(void)
+ 377:Generated_Source\PSoC5/Loop_Interrupt.c **** {
+ 345              		.loc 1 377 0
+ 346              		.cfi_startproc
+ 347              		@ args = 0, pretend = 0, frame = 0
+ 348              		@ frame_needed = 0, uses_anonymous_args = 0
+ 349              		@ link register save eliminated.
+ 378:Generated_Source\PSoC5/Loop_Interrupt.c ****     *Loop_Interrupt_INTC_SET_PD = Loop_Interrupt__INTC_MASK;
+ 350              		.loc 1 378 0
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 14
+
+
+ 351 0000 0122     		movs	r2, #1
+ 352 0002 014B     		ldr	r3, .L36
+ 353 0004 1A60     		str	r2, [r3]
+ 354 0006 7047     		bx	lr
+ 355              	.L37:
+ 356              		.align	2
+ 357              	.L36:
+ 358 0008 00E200E0 		.word	-536813056
+ 359              		.cfi_endproc
+ 360              	.LFE11:
+ 361              		.size	Loop_Interrupt_SetPending, .-Loop_Interrupt_SetPending
+ 362              		.section	.text.Loop_Interrupt_ClearPending,"ax",%progbits
+ 363              		.align	2
+ 364              		.global	Loop_Interrupt_ClearPending
+ 365              		.thumb
+ 366              		.thumb_func
+ 367              		.type	Loop_Interrupt_ClearPending, %function
+ 368              	Loop_Interrupt_ClearPending:
+ 369              	.LFB12:
+ 379:Generated_Source\PSoC5/Loop_Interrupt.c **** }
+ 380:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 381:Generated_Source\PSoC5/Loop_Interrupt.c **** 
+ 382:Generated_Source\PSoC5/Loop_Interrupt.c **** /*******************************************************************************
+ 383:Generated_Source\PSoC5/Loop_Interrupt.c **** * Function Name: Loop_Interrupt_ClearPending
+ 384:Generated_Source\PSoC5/Loop_Interrupt.c **** ********************************************************************************
+ 385:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 386:Generated_Source\PSoC5/Loop_Interrupt.c **** * Summary:
+ 387:Generated_Source\PSoC5/Loop_Interrupt.c **** *   Clears a pending interrupt in the interrupt controller.
+ 388:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 389:Generated_Source\PSoC5/Loop_Interrupt.c **** *   Note Some interrupt sources are clear-on-read and require the block 
+ 390:Generated_Source\PSoC5/Loop_Interrupt.c **** *   interrupt/status register to be read/cleared with the appropriate block API 
+ 391:Generated_Source\PSoC5/Loop_Interrupt.c **** *   (GPIO, UART, and so on). Otherwise the ISR will continue to remain in 
+ 392:Generated_Source\PSoC5/Loop_Interrupt.c **** *   pending state even though the interrupt itself is cleared using this API.
+ 393:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 394:Generated_Source\PSoC5/Loop_Interrupt.c **** * Parameters:
+ 395:Generated_Source\PSoC5/Loop_Interrupt.c **** *   None
+ 396:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 397:Generated_Source\PSoC5/Loop_Interrupt.c **** * Return:
+ 398:Generated_Source\PSoC5/Loop_Interrupt.c **** *   None
+ 399:Generated_Source\PSoC5/Loop_Interrupt.c **** *
+ 400:Generated_Source\PSoC5/Loop_Interrupt.c **** *******************************************************************************/
+ 401:Generated_Source\PSoC5/Loop_Interrupt.c **** void Loop_Interrupt_ClearPending(void)
+ 402:Generated_Source\PSoC5/Loop_Interrupt.c **** {
+ 370              		.loc 1 402 0
+ 371              		.cfi_startproc
+ 372              		@ args = 0, pretend = 0, frame = 0
+ 373              		@ frame_needed = 0, uses_anonymous_args = 0
+ 374              		@ link register save eliminated.
+ 403:Generated_Source\PSoC5/Loop_Interrupt.c ****     *Loop_Interrupt_INTC_CLR_PD = Loop_Interrupt__INTC_MASK;
+ 375              		.loc 1 403 0
+ 376 0000 0122     		movs	r2, #1
+ 377 0002 014B     		ldr	r3, .L39
+ 378 0004 1A60     		str	r2, [r3]
+ 379 0006 7047     		bx	lr
+ 380              	.L40:
+ 381              		.align	2
+ 382              	.L39:
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 15
+
+
+ 383 0008 80E200E0 		.word	-536812928
+ 384              		.cfi_endproc
+ 385              	.LFE12:
+ 386              		.size	Loop_Interrupt_ClearPending, .-Loop_Interrupt_ClearPending
+ 387              		.text
+ 388              	.Letext0:
+ 389              		.file 2 "Generated_Source\\PSoC5/cytypes.h"
+ 390              		.section	.debug_info,"",%progbits
+ 391              	.Ldebug_info0:
+ 392 0000 D9020000 		.4byte	0x2d9
+ 393 0004 0400     		.2byte	0x4
+ 394 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 395 000a 04       		.byte	0x4
+ 396 000b 01       		.uleb128 0x1
+ 397 000c F3000000 		.4byte	.LASF34
+ 398 0010 0C       		.byte	0xc
+ 399 0011 4C000000 		.4byte	.LASF35
+ 400 0015 A8000000 		.4byte	.LASF36
+ 401 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 402 001d 00000000 		.4byte	0
+ 403 0021 00000000 		.4byte	.Ldebug_line0
+ 404 0025 02       		.uleb128 0x2
+ 405 0026 04       		.byte	0x4
+ 406 0027 05       		.byte	0x5
+ 407 0028 696E7400 		.ascii	"int\000"
+ 408 002c 03       		.uleb128 0x3
+ 409 002d 04       		.byte	0x4
+ 410 002e 07       		.byte	0x7
+ 411 002f FA010000 		.4byte	.LASF0
+ 412 0033 03       		.uleb128 0x3
+ 413 0034 08       		.byte	0x8
+ 414 0035 05       		.byte	0x5
+ 415 0036 69020000 		.4byte	.LASF1
+ 416 003a 03       		.uleb128 0x3
+ 417 003b 08       		.byte	0x8
+ 418 003c 04       		.byte	0x4
+ 419 003d F0020000 		.4byte	.LASF2
+ 420 0041 03       		.uleb128 0x3
+ 421 0042 01       		.byte	0x1
+ 422 0043 06       		.byte	0x6
+ 423 0044 FC020000 		.4byte	.LASF3
+ 424 0048 03       		.uleb128 0x3
+ 425 0049 01       		.byte	0x1
+ 426 004a 08       		.byte	0x8
+ 427 004b E5000000 		.4byte	.LASF4
+ 428 004f 03       		.uleb128 0x3
+ 429 0050 02       		.byte	0x2
+ 430 0051 05       		.byte	0x5
+ 431 0052 AB020000 		.4byte	.LASF5
+ 432 0056 03       		.uleb128 0x3
+ 433 0057 02       		.byte	0x2
+ 434 0058 07       		.byte	0x7
+ 435 0059 39000000 		.4byte	.LASF6
+ 436 005d 03       		.uleb128 0x3
+ 437 005e 04       		.byte	0x4
+ 438 005f 05       		.byte	0x5
+ 439 0060 E7020000 		.4byte	.LASF7
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 16
+
+
+ 440 0064 03       		.uleb128 0x3
+ 441 0065 04       		.byte	0x4
+ 442 0066 07       		.byte	0x7
+ 443 0067 9D010000 		.4byte	.LASF8
+ 444 006b 03       		.uleb128 0x3
+ 445 006c 08       		.byte	0x8
+ 446 006d 07       		.byte	0x7
+ 447 006e 0F020000 		.4byte	.LASF9
+ 448 0072 03       		.uleb128 0x3
+ 449 0073 04       		.byte	0x4
+ 450 0074 07       		.byte	0x7
+ 451 0075 60020000 		.4byte	.LASF10
+ 452 0079 03       		.uleb128 0x3
+ 453 007a 01       		.byte	0x1
+ 454 007b 08       		.byte	0x8
+ 455 007c 77020000 		.4byte	.LASF11
+ 456 0080 04       		.uleb128 0x4
+ 457 0081 04       		.byte	0x4
+ 458 0082 86000000 		.4byte	0x86
+ 459 0086 05       		.uleb128 0x5
+ 460 0087 06       		.uleb128 0x6
+ 461 0088 AF010000 		.4byte	.LASF12
+ 462 008c 02       		.byte	0x2
+ 463 008d E401     		.2byte	0x1e4
+ 464 008f 48000000 		.4byte	0x48
+ 465 0093 06       		.uleb128 0x6
+ 466 0094 F3010000 		.4byte	.LASF13
+ 467 0098 02       		.byte	0x2
+ 468 0099 E601     		.2byte	0x1e6
+ 469 009b 64000000 		.4byte	0x64
+ 470 009f 03       		.uleb128 0x3
+ 471 00a0 04       		.byte	0x4
+ 472 00a1 04       		.byte	0x4
+ 473 00a2 A2000000 		.4byte	.LASF14
+ 474 00a6 03       		.uleb128 0x3
+ 475 00a7 08       		.byte	0x8
+ 476 00a8 04       		.byte	0x4
+ 477 00a9 BE010000 		.4byte	.LASF15
+ 478 00ad 06       		.uleb128 0x6
+ 479 00ae 8B020000 		.4byte	.LASF16
+ 480 00b2 02       		.byte	0x2
+ 481 00b3 8E02     		.2byte	0x28e
+ 482 00b5 B9000000 		.4byte	0xb9
+ 483 00b9 07       		.uleb128 0x7
+ 484 00ba 87000000 		.4byte	0x87
+ 485 00be 06       		.uleb128 0x6
+ 486 00bf 00000000 		.4byte	.LASF17
+ 487 00c3 02       		.byte	0x2
+ 488 00c4 9002     		.2byte	0x290
+ 489 00c6 CA000000 		.4byte	0xca
+ 490 00ca 07       		.uleb128 0x7
+ 491 00cb 93000000 		.4byte	0x93
+ 492 00cf 06       		.uleb128 0x6
+ 493 00d0 3C020000 		.4byte	.LASF18
+ 494 00d4 02       		.byte	0x2
+ 495 00d5 A002     		.2byte	0x2a0
+ 496 00d7 80000000 		.4byte	0x80
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 17
+
+
+ 497 00db 08       		.uleb128 0x8
+ 498 00dc B5020000 		.4byte	.LASF26
+ 499 00e0 01       		.byte	0x1
+ 500 00e1 A0       		.byte	0xa0
+ 501 00e2 00000000 		.4byte	.LFB3
+ 502 00e6 0C000000 		.4byte	.LFE3-.LFB3
+ 503 00ea 01       		.uleb128 0x1
+ 504 00eb 9C       		.byte	0x9c
+ 505 00ec 09       		.uleb128 0x9
+ 506 00ed CE020000 		.4byte	.LASF20
+ 507 00f1 01       		.byte	0x1
+ 508 00f2 C8       		.byte	0xc8
+ 509 00f3 00000000 		.4byte	.LFB4
+ 510 00f7 0C000000 		.4byte	.LFE4-.LFB4
+ 511 00fb 01       		.uleb128 0x1
+ 512 00fc 9C       		.byte	0x9c
+ 513 00fd 1C010000 		.4byte	0x11c
+ 514 0101 0A       		.uleb128 0xa
+ 515 0102 07020000 		.4byte	.LASF22
+ 516 0106 01       		.byte	0x1
+ 517 0107 C8       		.byte	0xc8
+ 518 0108 CF000000 		.4byte	0xcf
+ 519 010c 01       		.uleb128 0x1
+ 520 010d 50       		.byte	0x50
+ 521 010e 0B       		.uleb128 0xb
+ 522 010f 7C020000 		.4byte	.LASF19
+ 523 0113 01       		.byte	0x1
+ 524 0114 CA       		.byte	0xca
+ 525 0115 1C010000 		.4byte	0x11c
+ 526 0119 01       		.uleb128 0x1
+ 527 011a 53       		.byte	0x53
+ 528 011b 00       		.byte	0
+ 529 011c 04       		.uleb128 0x4
+ 530 011d 04       		.byte	0x4
+ 531 011e CF000000 		.4byte	0xcf
+ 532 0122 0C       		.uleb128 0xc
+ 533 0123 89000000 		.4byte	.LASF24
+ 534 0127 01       		.byte	0x1
+ 535 0128 E0       		.byte	0xe0
+ 536 0129 CF000000 		.4byte	0xcf
+ 537 012d 00000000 		.4byte	.LFB5
+ 538 0131 0C000000 		.4byte	.LFE5-.LFB5
+ 539 0135 01       		.uleb128 0x1
+ 540 0136 9C       		.byte	0x9c
+ 541 0137 49010000 		.4byte	0x149
+ 542 013b 0B       		.uleb128 0xb
+ 543 013c 7C020000 		.4byte	.LASF19
+ 544 0140 01       		.byte	0x1
+ 545 0141 E2       		.byte	0xe2
+ 546 0142 1C010000 		.4byte	0x11c
+ 547 0146 01       		.uleb128 0x1
+ 548 0147 53       		.byte	0x53
+ 549 0148 00       		.byte	0
+ 550 0149 0D       		.uleb128 0xd
+ 551 014a 1E000000 		.4byte	.LASF21
+ 552 014e 01       		.byte	0x1
+ 553 014f 0201     		.2byte	0x102
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 18
+
+
+ 554 0151 00000000 		.4byte	.LFB6
+ 555 0155 10000000 		.4byte	.LFE6-.LFB6
+ 556 0159 01       		.uleb128 0x1
+ 557 015a 9C       		.byte	0x9c
+ 558 015b 70010000 		.4byte	0x170
+ 559 015f 0E       		.uleb128 0xe
+ 560 0160 B5010000 		.4byte	.LASF23
+ 561 0164 01       		.byte	0x1
+ 562 0165 0201     		.2byte	0x102
+ 563 0167 87000000 		.4byte	0x87
+ 564 016b 00000000 		.4byte	.LLST0
+ 565 016f 00       		.byte	0
+ 566 0170 0F       		.uleb128 0xf
+ 567 0171 90020000 		.4byte	.LASF25
+ 568 0175 01       		.byte	0x1
+ 569 0176 1801     		.2byte	0x118
+ 570 0178 87000000 		.4byte	0x87
+ 571 017c 00000000 		.4byte	.LFB7
+ 572 0180 0C000000 		.4byte	.LFE7-.LFB7
+ 573 0184 01       		.uleb128 0x1
+ 574 0185 9C       		.byte	0x9c
+ 575 0186 9B010000 		.4byte	0x19b
+ 576 018a 10       		.uleb128 0x10
+ 577 018b B5010000 		.4byte	.LASF23
+ 578 018f 01       		.byte	0x1
+ 579 0190 1A01     		.2byte	0x11a
+ 580 0192 87000000 		.4byte	0x87
+ 581 0196 21000000 		.4byte	.LLST1
+ 582 019a 00       		.byte	0
+ 583 019b 11       		.uleb128 0x11
+ 584 019c 26020000 		.4byte	.LASF27
+ 585 01a0 01       		.byte	0x1
+ 586 01a1 3301     		.2byte	0x133
+ 587 01a3 00000000 		.4byte	.LFB8
+ 588 01a7 0C000000 		.4byte	.LFE8-.LFB8
+ 589 01ab 01       		.uleb128 0x1
+ 590 01ac 9C       		.byte	0x9c
+ 591 01ad 12       		.uleb128 0x12
+ 592 01ae 06000000 		.4byte	.LASF37
+ 593 01b2 01       		.byte	0x1
+ 594 01b3 4801     		.2byte	0x148
+ 595 01b5 87000000 		.4byte	0x87
+ 596 01b9 00000000 		.4byte	.LFB9
+ 597 01bd 10000000 		.4byte	.LFE9-.LFB9
+ 598 01c1 01       		.uleb128 0x1
+ 599 01c2 9C       		.byte	0x9c
+ 600 01c3 11       		.uleb128 0x11
+ 601 01c4 12030000 		.4byte	.LASF28
+ 602 01c8 01       		.byte	0x1
+ 603 01c9 5D01     		.2byte	0x15d
+ 604 01cb 00000000 		.4byte	.LFB10
+ 605 01cf 0C000000 		.4byte	.LFE10-.LFB10
+ 606 01d3 01       		.uleb128 0x1
+ 607 01d4 9C       		.byte	0x9c
+ 608 01d5 09       		.uleb128 0x9
+ 609 01d6 74000000 		.4byte	.LASF29
+ 610 01da 01       		.byte	0x1
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 19
+
+
+ 611 01db 3D       		.byte	0x3d
+ 612 01dc 00000000 		.4byte	.LFB0
+ 613 01e0 1C000000 		.4byte	.LFE0-.LFB0
+ 614 01e4 01       		.uleb128 0x1
+ 615 01e5 9C       		.byte	0x9c
+ 616 01e6 27020000 		.4byte	0x227
+ 617 01ea 13       		.uleb128 0x13
+ 618 01eb 06000000 		.4byte	.LVL7
+ 619 01ef C3010000 		.4byte	0x1c3
+ 620 01f3 14       		.uleb128 0x14
+ 621 01f4 0C000000 		.4byte	.LVL8
+ 622 01f8 EC000000 		.4byte	0xec
+ 623 01fc 0A020000 		.4byte	0x20a
+ 624 0200 15       		.uleb128 0x15
+ 625 0201 01       		.uleb128 0x1
+ 626 0202 50       		.byte	0x50
+ 627 0203 05       		.uleb128 0x5
+ 628 0204 03       		.byte	0x3
+ 629 0205 00000000 		.4byte	Loop_Interrupt_Interrupt
+ 630 0209 00       		.byte	0
+ 631 020a 14       		.uleb128 0x14
+ 632 020b 12000000 		.4byte	.LVL9
+ 633 020f 49010000 		.4byte	0x149
+ 634 0213 1D020000 		.4byte	0x21d
+ 635 0217 15       		.uleb128 0x15
+ 636 0218 01       		.uleb128 0x1
+ 637 0219 50       		.byte	0x50
+ 638 021a 01       		.uleb128 0x1
+ 639 021b 37       		.byte	0x37
+ 640 021c 00       		.byte	0
+ 641 021d 13       		.uleb128 0x13
+ 642 021e 16000000 		.4byte	.LVL10
+ 643 0222 9B010000 		.4byte	0x19b
+ 644 0226 00       		.byte	0
+ 645 0227 09       		.uleb128 0x9
+ 646 0228 49020000 		.4byte	.LASF30
+ 647 022c 01       		.byte	0x1
+ 648 022d 68       		.byte	0x68
+ 649 022e 00000000 		.4byte	.LFB1
+ 650 0232 1A000000 		.4byte	.LFE1-.LFB1
+ 651 0236 01       		.uleb128 0x1
+ 652 0237 9C       		.byte	0x9c
+ 653 0238 85020000 		.4byte	0x285
+ 654 023c 16       		.uleb128 0x16
+ 655 023d 07020000 		.4byte	.LASF22
+ 656 0241 01       		.byte	0x1
+ 657 0242 68       		.byte	0x68
+ 658 0243 CF000000 		.4byte	0xcf
+ 659 0247 38000000 		.4byte	.LLST2
+ 660 024b 13       		.uleb128 0x13
+ 661 024c 08000000 		.4byte	.LVL12
+ 662 0250 C3010000 		.4byte	0x1c3
+ 663 0254 14       		.uleb128 0x14
+ 664 0255 0E000000 		.4byte	.LVL13
+ 665 0259 EC000000 		.4byte	0xec
+ 666 025d 68020000 		.4byte	0x268
+ 667 0261 15       		.uleb128 0x15
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 20
+
+
+ 668 0262 01       		.uleb128 0x1
+ 669 0263 50       		.byte	0x50
+ 670 0264 02       		.uleb128 0x2
+ 671 0265 74       		.byte	0x74
+ 672 0266 00       		.sleb128 0
+ 673 0267 00       		.byte	0
+ 674 0268 14       		.uleb128 0x14
+ 675 0269 14000000 		.4byte	.LVL14
+ 676 026d 49010000 		.4byte	0x149
+ 677 0271 7B020000 		.4byte	0x27b
+ 678 0275 15       		.uleb128 0x15
+ 679 0276 01       		.uleb128 0x1
+ 680 0277 50       		.byte	0x50
+ 681 0278 01       		.uleb128 0x1
+ 682 0279 37       		.byte	0x37
+ 683 027a 00       		.byte	0
+ 684 027b 13       		.uleb128 0x13
+ 685 027c 18000000 		.4byte	.LVL15
+ 686 0280 9B010000 		.4byte	0x19b
+ 687 0284 00       		.byte	0
+ 688 0285 09       		.uleb128 0x9
+ 689 0286 DF010000 		.4byte	.LASF31
+ 690 028a 01       		.byte	0x1
+ 691 028b 86       		.byte	0x86
+ 692 028c 00000000 		.4byte	.LFB2
+ 693 0290 14000000 		.4byte	.LFE2-.LFB2
+ 694 0294 01       		.uleb128 0x1
+ 695 0295 9C       		.byte	0x9c
+ 696 0296 AD020000 		.4byte	0x2ad
+ 697 029a 13       		.uleb128 0x13
+ 698 029b 06000000 		.4byte	.LVL16
+ 699 029f C3010000 		.4byte	0x1c3
+ 700 02a3 13       		.uleb128 0x13
+ 701 02a4 0C000000 		.4byte	.LVL17
+ 702 02a8 EC000000 		.4byte	0xec
+ 703 02ac 00       		.byte	0
+ 704 02ad 11       		.uleb128 0x11
+ 705 02ae C5010000 		.4byte	.LASF32
+ 706 02b2 01       		.byte	0x1
+ 707 02b3 7801     		.2byte	0x178
+ 708 02b5 00000000 		.4byte	.LFB11
+ 709 02b9 0C000000 		.4byte	.LFE11-.LFB11
+ 710 02bd 01       		.uleb128 0x1
+ 711 02be 9C       		.byte	0x9c
+ 712 02bf 11       		.uleb128 0x11
+ 713 02c0 81010000 		.4byte	.LASF33
+ 714 02c4 01       		.byte	0x1
+ 715 02c5 9101     		.2byte	0x191
+ 716 02c7 00000000 		.4byte	.LFB12
+ 717 02cb 0C000000 		.4byte	.LFE12-.LFB12
+ 718 02cf 01       		.uleb128 0x1
+ 719 02d0 9C       		.byte	0x9c
+ 720 02d1 17       		.uleb128 0x17
+ 721 02d2 08030000 		.4byte	.LASF38
+ 722 02d6 01       		.byte	0x1
+ 723 02d7 1E       		.byte	0x1e
+ 724 02d8 B9000000 		.4byte	0xb9
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 21
+
+
+ 725 02dc 00       		.byte	0
+ 726              		.section	.debug_abbrev,"",%progbits
+ 727              	.Ldebug_abbrev0:
+ 728 0000 01       		.uleb128 0x1
+ 729 0001 11       		.uleb128 0x11
+ 730 0002 01       		.byte	0x1
+ 731 0003 25       		.uleb128 0x25
+ 732 0004 0E       		.uleb128 0xe
+ 733 0005 13       		.uleb128 0x13
+ 734 0006 0B       		.uleb128 0xb
+ 735 0007 03       		.uleb128 0x3
+ 736 0008 0E       		.uleb128 0xe
+ 737 0009 1B       		.uleb128 0x1b
+ 738 000a 0E       		.uleb128 0xe
+ 739 000b 55       		.uleb128 0x55
+ 740 000c 17       		.uleb128 0x17
+ 741 000d 11       		.uleb128 0x11
+ 742 000e 01       		.uleb128 0x1
+ 743 000f 10       		.uleb128 0x10
+ 744 0010 17       		.uleb128 0x17
+ 745 0011 00       		.byte	0
+ 746 0012 00       		.byte	0
+ 747 0013 02       		.uleb128 0x2
+ 748 0014 24       		.uleb128 0x24
+ 749 0015 00       		.byte	0
+ 750 0016 0B       		.uleb128 0xb
+ 751 0017 0B       		.uleb128 0xb
+ 752 0018 3E       		.uleb128 0x3e
+ 753 0019 0B       		.uleb128 0xb
+ 754 001a 03       		.uleb128 0x3
+ 755 001b 08       		.uleb128 0x8
+ 756 001c 00       		.byte	0
+ 757 001d 00       		.byte	0
+ 758 001e 03       		.uleb128 0x3
+ 759 001f 24       		.uleb128 0x24
+ 760 0020 00       		.byte	0
+ 761 0021 0B       		.uleb128 0xb
+ 762 0022 0B       		.uleb128 0xb
+ 763 0023 3E       		.uleb128 0x3e
+ 764 0024 0B       		.uleb128 0xb
+ 765 0025 03       		.uleb128 0x3
+ 766 0026 0E       		.uleb128 0xe
+ 767 0027 00       		.byte	0
+ 768 0028 00       		.byte	0
+ 769 0029 04       		.uleb128 0x4
+ 770 002a 0F       		.uleb128 0xf
+ 771 002b 00       		.byte	0
+ 772 002c 0B       		.uleb128 0xb
+ 773 002d 0B       		.uleb128 0xb
+ 774 002e 49       		.uleb128 0x49
+ 775 002f 13       		.uleb128 0x13
+ 776 0030 00       		.byte	0
+ 777 0031 00       		.byte	0
+ 778 0032 05       		.uleb128 0x5
+ 779 0033 15       		.uleb128 0x15
+ 780 0034 00       		.byte	0
+ 781 0035 27       		.uleb128 0x27
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 22
+
+
+ 782 0036 19       		.uleb128 0x19
+ 783 0037 00       		.byte	0
+ 784 0038 00       		.byte	0
+ 785 0039 06       		.uleb128 0x6
+ 786 003a 16       		.uleb128 0x16
+ 787 003b 00       		.byte	0
+ 788 003c 03       		.uleb128 0x3
+ 789 003d 0E       		.uleb128 0xe
+ 790 003e 3A       		.uleb128 0x3a
+ 791 003f 0B       		.uleb128 0xb
+ 792 0040 3B       		.uleb128 0x3b
+ 793 0041 05       		.uleb128 0x5
+ 794 0042 49       		.uleb128 0x49
+ 795 0043 13       		.uleb128 0x13
+ 796 0044 00       		.byte	0
+ 797 0045 00       		.byte	0
+ 798 0046 07       		.uleb128 0x7
+ 799 0047 35       		.uleb128 0x35
+ 800 0048 00       		.byte	0
+ 801 0049 49       		.uleb128 0x49
+ 802 004a 13       		.uleb128 0x13
+ 803 004b 00       		.byte	0
+ 804 004c 00       		.byte	0
+ 805 004d 08       		.uleb128 0x8
+ 806 004e 2E       		.uleb128 0x2e
+ 807 004f 00       		.byte	0
+ 808 0050 3F       		.uleb128 0x3f
+ 809 0051 19       		.uleb128 0x19
+ 810 0052 03       		.uleb128 0x3
+ 811 0053 0E       		.uleb128 0xe
+ 812 0054 3A       		.uleb128 0x3a
+ 813 0055 0B       		.uleb128 0xb
+ 814 0056 3B       		.uleb128 0x3b
+ 815 0057 0B       		.uleb128 0xb
+ 816 0058 27       		.uleb128 0x27
+ 817 0059 19       		.uleb128 0x19
+ 818 005a 11       		.uleb128 0x11
+ 819 005b 01       		.uleb128 0x1
+ 820 005c 12       		.uleb128 0x12
+ 821 005d 06       		.uleb128 0x6
+ 822 005e 40       		.uleb128 0x40
+ 823 005f 18       		.uleb128 0x18
+ 824 0060 9742     		.uleb128 0x2117
+ 825 0062 19       		.uleb128 0x19
+ 826 0063 00       		.byte	0
+ 827 0064 00       		.byte	0
+ 828 0065 09       		.uleb128 0x9
+ 829 0066 2E       		.uleb128 0x2e
+ 830 0067 01       		.byte	0x1
+ 831 0068 3F       		.uleb128 0x3f
+ 832 0069 19       		.uleb128 0x19
+ 833 006a 03       		.uleb128 0x3
+ 834 006b 0E       		.uleb128 0xe
+ 835 006c 3A       		.uleb128 0x3a
+ 836 006d 0B       		.uleb128 0xb
+ 837 006e 3B       		.uleb128 0x3b
+ 838 006f 0B       		.uleb128 0xb
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 23
+
+
+ 839 0070 27       		.uleb128 0x27
+ 840 0071 19       		.uleb128 0x19
+ 841 0072 11       		.uleb128 0x11
+ 842 0073 01       		.uleb128 0x1
+ 843 0074 12       		.uleb128 0x12
+ 844 0075 06       		.uleb128 0x6
+ 845 0076 40       		.uleb128 0x40
+ 846 0077 18       		.uleb128 0x18
+ 847 0078 9742     		.uleb128 0x2117
+ 848 007a 19       		.uleb128 0x19
+ 849 007b 01       		.uleb128 0x1
+ 850 007c 13       		.uleb128 0x13
+ 851 007d 00       		.byte	0
+ 852 007e 00       		.byte	0
+ 853 007f 0A       		.uleb128 0xa
+ 854 0080 05       		.uleb128 0x5
+ 855 0081 00       		.byte	0
+ 856 0082 03       		.uleb128 0x3
+ 857 0083 0E       		.uleb128 0xe
+ 858 0084 3A       		.uleb128 0x3a
+ 859 0085 0B       		.uleb128 0xb
+ 860 0086 3B       		.uleb128 0x3b
+ 861 0087 0B       		.uleb128 0xb
+ 862 0088 49       		.uleb128 0x49
+ 863 0089 13       		.uleb128 0x13
+ 864 008a 02       		.uleb128 0x2
+ 865 008b 18       		.uleb128 0x18
+ 866 008c 00       		.byte	0
+ 867 008d 00       		.byte	0
+ 868 008e 0B       		.uleb128 0xb
+ 869 008f 34       		.uleb128 0x34
+ 870 0090 00       		.byte	0
+ 871 0091 03       		.uleb128 0x3
+ 872 0092 0E       		.uleb128 0xe
+ 873 0093 3A       		.uleb128 0x3a
+ 874 0094 0B       		.uleb128 0xb
+ 875 0095 3B       		.uleb128 0x3b
+ 876 0096 0B       		.uleb128 0xb
+ 877 0097 49       		.uleb128 0x49
+ 878 0098 13       		.uleb128 0x13
+ 879 0099 02       		.uleb128 0x2
+ 880 009a 18       		.uleb128 0x18
+ 881 009b 00       		.byte	0
+ 882 009c 00       		.byte	0
+ 883 009d 0C       		.uleb128 0xc
+ 884 009e 2E       		.uleb128 0x2e
+ 885 009f 01       		.byte	0x1
+ 886 00a0 3F       		.uleb128 0x3f
+ 887 00a1 19       		.uleb128 0x19
+ 888 00a2 03       		.uleb128 0x3
+ 889 00a3 0E       		.uleb128 0xe
+ 890 00a4 3A       		.uleb128 0x3a
+ 891 00a5 0B       		.uleb128 0xb
+ 892 00a6 3B       		.uleb128 0x3b
+ 893 00a7 0B       		.uleb128 0xb
+ 894 00a8 27       		.uleb128 0x27
+ 895 00a9 19       		.uleb128 0x19
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 24
+
+
+ 896 00aa 49       		.uleb128 0x49
+ 897 00ab 13       		.uleb128 0x13
+ 898 00ac 11       		.uleb128 0x11
+ 899 00ad 01       		.uleb128 0x1
+ 900 00ae 12       		.uleb128 0x12
+ 901 00af 06       		.uleb128 0x6
+ 902 00b0 40       		.uleb128 0x40
+ 903 00b1 18       		.uleb128 0x18
+ 904 00b2 9742     		.uleb128 0x2117
+ 905 00b4 19       		.uleb128 0x19
+ 906 00b5 01       		.uleb128 0x1
+ 907 00b6 13       		.uleb128 0x13
+ 908 00b7 00       		.byte	0
+ 909 00b8 00       		.byte	0
+ 910 00b9 0D       		.uleb128 0xd
+ 911 00ba 2E       		.uleb128 0x2e
+ 912 00bb 01       		.byte	0x1
+ 913 00bc 3F       		.uleb128 0x3f
+ 914 00bd 19       		.uleb128 0x19
+ 915 00be 03       		.uleb128 0x3
+ 916 00bf 0E       		.uleb128 0xe
+ 917 00c0 3A       		.uleb128 0x3a
+ 918 00c1 0B       		.uleb128 0xb
+ 919 00c2 3B       		.uleb128 0x3b
+ 920 00c3 05       		.uleb128 0x5
+ 921 00c4 27       		.uleb128 0x27
+ 922 00c5 19       		.uleb128 0x19
+ 923 00c6 11       		.uleb128 0x11
+ 924 00c7 01       		.uleb128 0x1
+ 925 00c8 12       		.uleb128 0x12
+ 926 00c9 06       		.uleb128 0x6
+ 927 00ca 40       		.uleb128 0x40
+ 928 00cb 18       		.uleb128 0x18
+ 929 00cc 9742     		.uleb128 0x2117
+ 930 00ce 19       		.uleb128 0x19
+ 931 00cf 01       		.uleb128 0x1
+ 932 00d0 13       		.uleb128 0x13
+ 933 00d1 00       		.byte	0
+ 934 00d2 00       		.byte	0
+ 935 00d3 0E       		.uleb128 0xe
+ 936 00d4 05       		.uleb128 0x5
+ 937 00d5 00       		.byte	0
+ 938 00d6 03       		.uleb128 0x3
+ 939 00d7 0E       		.uleb128 0xe
+ 940 00d8 3A       		.uleb128 0x3a
+ 941 00d9 0B       		.uleb128 0xb
+ 942 00da 3B       		.uleb128 0x3b
+ 943 00db 05       		.uleb128 0x5
+ 944 00dc 49       		.uleb128 0x49
+ 945 00dd 13       		.uleb128 0x13
+ 946 00de 02       		.uleb128 0x2
+ 947 00df 17       		.uleb128 0x17
+ 948 00e0 00       		.byte	0
+ 949 00e1 00       		.byte	0
+ 950 00e2 0F       		.uleb128 0xf
+ 951 00e3 2E       		.uleb128 0x2e
+ 952 00e4 01       		.byte	0x1
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 25
+
+
+ 953 00e5 3F       		.uleb128 0x3f
+ 954 00e6 19       		.uleb128 0x19
+ 955 00e7 03       		.uleb128 0x3
+ 956 00e8 0E       		.uleb128 0xe
+ 957 00e9 3A       		.uleb128 0x3a
+ 958 00ea 0B       		.uleb128 0xb
+ 959 00eb 3B       		.uleb128 0x3b
+ 960 00ec 05       		.uleb128 0x5
+ 961 00ed 27       		.uleb128 0x27
+ 962 00ee 19       		.uleb128 0x19
+ 963 00ef 49       		.uleb128 0x49
+ 964 00f0 13       		.uleb128 0x13
+ 965 00f1 11       		.uleb128 0x11
+ 966 00f2 01       		.uleb128 0x1
+ 967 00f3 12       		.uleb128 0x12
+ 968 00f4 06       		.uleb128 0x6
+ 969 00f5 40       		.uleb128 0x40
+ 970 00f6 18       		.uleb128 0x18
+ 971 00f7 9742     		.uleb128 0x2117
+ 972 00f9 19       		.uleb128 0x19
+ 973 00fa 01       		.uleb128 0x1
+ 974 00fb 13       		.uleb128 0x13
+ 975 00fc 00       		.byte	0
+ 976 00fd 00       		.byte	0
+ 977 00fe 10       		.uleb128 0x10
+ 978 00ff 34       		.uleb128 0x34
+ 979 0100 00       		.byte	0
+ 980 0101 03       		.uleb128 0x3
+ 981 0102 0E       		.uleb128 0xe
+ 982 0103 3A       		.uleb128 0x3a
+ 983 0104 0B       		.uleb128 0xb
+ 984 0105 3B       		.uleb128 0x3b
+ 985 0106 05       		.uleb128 0x5
+ 986 0107 49       		.uleb128 0x49
+ 987 0108 13       		.uleb128 0x13
+ 988 0109 02       		.uleb128 0x2
+ 989 010a 17       		.uleb128 0x17
+ 990 010b 00       		.byte	0
+ 991 010c 00       		.byte	0
+ 992 010d 11       		.uleb128 0x11
+ 993 010e 2E       		.uleb128 0x2e
+ 994 010f 00       		.byte	0
+ 995 0110 3F       		.uleb128 0x3f
+ 996 0111 19       		.uleb128 0x19
+ 997 0112 03       		.uleb128 0x3
+ 998 0113 0E       		.uleb128 0xe
+ 999 0114 3A       		.uleb128 0x3a
+ 1000 0115 0B       		.uleb128 0xb
+ 1001 0116 3B       		.uleb128 0x3b
+ 1002 0117 05       		.uleb128 0x5
+ 1003 0118 27       		.uleb128 0x27
+ 1004 0119 19       		.uleb128 0x19
+ 1005 011a 11       		.uleb128 0x11
+ 1006 011b 01       		.uleb128 0x1
+ 1007 011c 12       		.uleb128 0x12
+ 1008 011d 06       		.uleb128 0x6
+ 1009 011e 40       		.uleb128 0x40
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 26
+
+
+ 1010 011f 18       		.uleb128 0x18
+ 1011 0120 9742     		.uleb128 0x2117
+ 1012 0122 19       		.uleb128 0x19
+ 1013 0123 00       		.byte	0
+ 1014 0124 00       		.byte	0
+ 1015 0125 12       		.uleb128 0x12
+ 1016 0126 2E       		.uleb128 0x2e
+ 1017 0127 00       		.byte	0
+ 1018 0128 3F       		.uleb128 0x3f
+ 1019 0129 19       		.uleb128 0x19
+ 1020 012a 03       		.uleb128 0x3
+ 1021 012b 0E       		.uleb128 0xe
+ 1022 012c 3A       		.uleb128 0x3a
+ 1023 012d 0B       		.uleb128 0xb
+ 1024 012e 3B       		.uleb128 0x3b
+ 1025 012f 05       		.uleb128 0x5
+ 1026 0130 27       		.uleb128 0x27
+ 1027 0131 19       		.uleb128 0x19
+ 1028 0132 49       		.uleb128 0x49
+ 1029 0133 13       		.uleb128 0x13
+ 1030 0134 11       		.uleb128 0x11
+ 1031 0135 01       		.uleb128 0x1
+ 1032 0136 12       		.uleb128 0x12
+ 1033 0137 06       		.uleb128 0x6
+ 1034 0138 40       		.uleb128 0x40
+ 1035 0139 18       		.uleb128 0x18
+ 1036 013a 9742     		.uleb128 0x2117
+ 1037 013c 19       		.uleb128 0x19
+ 1038 013d 00       		.byte	0
+ 1039 013e 00       		.byte	0
+ 1040 013f 13       		.uleb128 0x13
+ 1041 0140 898201   		.uleb128 0x4109
+ 1042 0143 00       		.byte	0
+ 1043 0144 11       		.uleb128 0x11
+ 1044 0145 01       		.uleb128 0x1
+ 1045 0146 31       		.uleb128 0x31
+ 1046 0147 13       		.uleb128 0x13
+ 1047 0148 00       		.byte	0
+ 1048 0149 00       		.byte	0
+ 1049 014a 14       		.uleb128 0x14
+ 1050 014b 898201   		.uleb128 0x4109
+ 1051 014e 01       		.byte	0x1
+ 1052 014f 11       		.uleb128 0x11
+ 1053 0150 01       		.uleb128 0x1
+ 1054 0151 31       		.uleb128 0x31
+ 1055 0152 13       		.uleb128 0x13
+ 1056 0153 01       		.uleb128 0x1
+ 1057 0154 13       		.uleb128 0x13
+ 1058 0155 00       		.byte	0
+ 1059 0156 00       		.byte	0
+ 1060 0157 15       		.uleb128 0x15
+ 1061 0158 8A8201   		.uleb128 0x410a
+ 1062 015b 00       		.byte	0
+ 1063 015c 02       		.uleb128 0x2
+ 1064 015d 18       		.uleb128 0x18
+ 1065 015e 9142     		.uleb128 0x2111
+ 1066 0160 18       		.uleb128 0x18
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 27
+
+
+ 1067 0161 00       		.byte	0
+ 1068 0162 00       		.byte	0
+ 1069 0163 16       		.uleb128 0x16
+ 1070 0164 05       		.uleb128 0x5
+ 1071 0165 00       		.byte	0
+ 1072 0166 03       		.uleb128 0x3
+ 1073 0167 0E       		.uleb128 0xe
+ 1074 0168 3A       		.uleb128 0x3a
+ 1075 0169 0B       		.uleb128 0xb
+ 1076 016a 3B       		.uleb128 0x3b
+ 1077 016b 0B       		.uleb128 0xb
+ 1078 016c 49       		.uleb128 0x49
+ 1079 016d 13       		.uleb128 0x13
+ 1080 016e 02       		.uleb128 0x2
+ 1081 016f 17       		.uleb128 0x17
+ 1082 0170 00       		.byte	0
+ 1083 0171 00       		.byte	0
+ 1084 0172 17       		.uleb128 0x17
+ 1085 0173 34       		.uleb128 0x34
+ 1086 0174 00       		.byte	0
+ 1087 0175 03       		.uleb128 0x3
+ 1088 0176 0E       		.uleb128 0xe
+ 1089 0177 3A       		.uleb128 0x3a
+ 1090 0178 0B       		.uleb128 0xb
+ 1091 0179 3B       		.uleb128 0x3b
+ 1092 017a 0B       		.uleb128 0xb
+ 1093 017b 49       		.uleb128 0x49
+ 1094 017c 13       		.uleb128 0x13
+ 1095 017d 3F       		.uleb128 0x3f
+ 1096 017e 19       		.uleb128 0x19
+ 1097 017f 3C       		.uleb128 0x3c
+ 1098 0180 19       		.uleb128 0x19
+ 1099 0181 00       		.byte	0
+ 1100 0182 00       		.byte	0
+ 1101 0183 00       		.byte	0
+ 1102              		.section	.debug_loc,"",%progbits
+ 1103              	.Ldebug_loc0:
+ 1104              	.LLST0:
+ 1105 0000 00000000 		.4byte	.LVL3
+ 1106 0004 02000000 		.4byte	.LVL4
+ 1107 0008 0100     		.2byte	0x1
+ 1108 000a 50       		.byte	0x50
+ 1109 000b 02000000 		.4byte	.LVL4
+ 1110 000f 10000000 		.4byte	.LFE6
+ 1111 0013 0400     		.2byte	0x4
+ 1112 0015 F3       		.byte	0xf3
+ 1113 0016 01       		.uleb128 0x1
+ 1114 0017 50       		.byte	0x50
+ 1115 0018 9F       		.byte	0x9f
+ 1116 0019 00000000 		.4byte	0
+ 1117 001d 00000000 		.4byte	0
+ 1118              	.LLST1:
+ 1119 0021 04000000 		.4byte	.LVL5
+ 1120 0025 06000000 		.4byte	.LVL6
+ 1121 0029 0500     		.2byte	0x5
+ 1122 002b 70       		.byte	0x70
+ 1123 002c 00       		.sleb128 0
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 28
+
+
+ 1124 002d 35       		.byte	0x35
+ 1125 002e 25       		.byte	0x25
+ 1126 002f 9F       		.byte	0x9f
+ 1127 0030 00000000 		.4byte	0
+ 1128 0034 00000000 		.4byte	0
+ 1129              	.LLST2:
+ 1130 0038 00000000 		.4byte	.LVL11
+ 1131 003c 07000000 		.4byte	.LVL12-1
+ 1132 0040 0100     		.2byte	0x1
+ 1133 0042 50       		.byte	0x50
+ 1134 0043 07000000 		.4byte	.LVL12-1
+ 1135 0047 1A000000 		.4byte	.LFE1
+ 1136 004b 0100     		.2byte	0x1
+ 1137 004d 54       		.byte	0x54
+ 1138 004e 00000000 		.4byte	0
+ 1139 0052 00000000 		.4byte	0
+ 1140              		.section	.debug_aranges,"",%progbits
+ 1141 0000 7C000000 		.4byte	0x7c
+ 1142 0004 0200     		.2byte	0x2
+ 1143 0006 00000000 		.4byte	.Ldebug_info0
+ 1144 000a 04       		.byte	0x4
+ 1145 000b 00       		.byte	0
+ 1146 000c 0000     		.2byte	0
+ 1147 000e 0000     		.2byte	0
+ 1148 0010 00000000 		.4byte	.LFB3
+ 1149 0014 0C000000 		.4byte	.LFE3-.LFB3
+ 1150 0018 00000000 		.4byte	.LFB4
+ 1151 001c 0C000000 		.4byte	.LFE4-.LFB4
+ 1152 0020 00000000 		.4byte	.LFB5
+ 1153 0024 0C000000 		.4byte	.LFE5-.LFB5
+ 1154 0028 00000000 		.4byte	.LFB6
+ 1155 002c 10000000 		.4byte	.LFE6-.LFB6
+ 1156 0030 00000000 		.4byte	.LFB7
+ 1157 0034 0C000000 		.4byte	.LFE7-.LFB7
+ 1158 0038 00000000 		.4byte	.LFB8
+ 1159 003c 0C000000 		.4byte	.LFE8-.LFB8
+ 1160 0040 00000000 		.4byte	.LFB9
+ 1161 0044 10000000 		.4byte	.LFE9-.LFB9
+ 1162 0048 00000000 		.4byte	.LFB10
+ 1163 004c 0C000000 		.4byte	.LFE10-.LFB10
+ 1164 0050 00000000 		.4byte	.LFB0
+ 1165 0054 1C000000 		.4byte	.LFE0-.LFB0
+ 1166 0058 00000000 		.4byte	.LFB1
+ 1167 005c 1A000000 		.4byte	.LFE1-.LFB1
+ 1168 0060 00000000 		.4byte	.LFB2
+ 1169 0064 14000000 		.4byte	.LFE2-.LFB2
+ 1170 0068 00000000 		.4byte	.LFB11
+ 1171 006c 0C000000 		.4byte	.LFE11-.LFB11
+ 1172 0070 00000000 		.4byte	.LFB12
+ 1173 0074 0C000000 		.4byte	.LFE12-.LFB12
+ 1174 0078 00000000 		.4byte	0
+ 1175 007c 00000000 		.4byte	0
+ 1176              		.section	.debug_ranges,"",%progbits
+ 1177              	.Ldebug_ranges0:
+ 1178 0000 00000000 		.4byte	.LFB3
+ 1179 0004 0C000000 		.4byte	.LFE3
+ 1180 0008 00000000 		.4byte	.LFB4
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 29
+
+
+ 1181 000c 0C000000 		.4byte	.LFE4
+ 1182 0010 00000000 		.4byte	.LFB5
+ 1183 0014 0C000000 		.4byte	.LFE5
+ 1184 0018 00000000 		.4byte	.LFB6
+ 1185 001c 10000000 		.4byte	.LFE6
+ 1186 0020 00000000 		.4byte	.LFB7
+ 1187 0024 0C000000 		.4byte	.LFE7
+ 1188 0028 00000000 		.4byte	.LFB8
+ 1189 002c 0C000000 		.4byte	.LFE8
+ 1190 0030 00000000 		.4byte	.LFB9
+ 1191 0034 10000000 		.4byte	.LFE9
+ 1192 0038 00000000 		.4byte	.LFB10
+ 1193 003c 0C000000 		.4byte	.LFE10
+ 1194 0040 00000000 		.4byte	.LFB0
+ 1195 0044 1C000000 		.4byte	.LFE0
+ 1196 0048 00000000 		.4byte	.LFB1
+ 1197 004c 1A000000 		.4byte	.LFE1
+ 1198 0050 00000000 		.4byte	.LFB2
+ 1199 0054 14000000 		.4byte	.LFE2
+ 1200 0058 00000000 		.4byte	.LFB11
+ 1201 005c 0C000000 		.4byte	.LFE11
+ 1202 0060 00000000 		.4byte	.LFB12
+ 1203 0064 0C000000 		.4byte	.LFE12
+ 1204 0068 00000000 		.4byte	0
+ 1205 006c 00000000 		.4byte	0
+ 1206              		.section	.debug_line,"",%progbits
+ 1207              	.Ldebug_line0:
+ 1208 0000 38010000 		.section	.debug_str,"MS",%progbits,1
+ 1208      02004B00 
+ 1208      00000201 
+ 1208      FB0E0D00 
+ 1208      01010101 
+ 1209              	.LASF17:
+ 1210 0000 72656733 		.ascii	"reg32\000"
+ 1210      3200
+ 1211              	.LASF37:
+ 1212 0006 4C6F6F70 		.ascii	"Loop_Interrupt_GetState\000"
+ 1212      5F496E74 
+ 1212      65727275 
+ 1212      70745F47 
+ 1212      65745374 
+ 1213              	.LASF21:
+ 1214 001e 4C6F6F70 		.ascii	"Loop_Interrupt_SetPriority\000"
+ 1214      5F496E74 
+ 1214      65727275 
+ 1214      70745F53 
+ 1214      65745072 
+ 1215              	.LASF6:
+ 1216 0039 73686F72 		.ascii	"short unsigned int\000"
+ 1216      7420756E 
+ 1216      7369676E 
+ 1216      65642069 
+ 1216      6E7400
+ 1217              	.LASF35:
+ 1218 004c 47656E65 		.ascii	"Generated_Source\\PSoC5\\Loop_Interrupt.c\000"
+ 1218      72617465 
+ 1218      645F536F 
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 30
+
+
+ 1218      75726365 
+ 1218      5C50536F 
+ 1219              	.LASF29:
+ 1220 0074 4C6F6F70 		.ascii	"Loop_Interrupt_Start\000"
+ 1220      5F496E74 
+ 1220      65727275 
+ 1220      70745F53 
+ 1220      74617274 
+ 1221              	.LASF24:
+ 1222 0089 4C6F6F70 		.ascii	"Loop_Interrupt_GetVector\000"
+ 1222      5F496E74 
+ 1222      65727275 
+ 1222      70745F47 
+ 1222      65745665 
+ 1223              	.LASF14:
+ 1224 00a2 666C6F61 		.ascii	"float\000"
+ 1224      7400
+ 1225              	.LASF36:
+ 1226 00a8 433A5C55 		.ascii	"C:\\Users\\pajoh\\projects\\USB\\cypress\\USB_data\\"
+ 1226      73657273 
+ 1226      5C70616A 
+ 1226      6F685C70 
+ 1226      726F6A65 
+ 1227 00d5 5553425F 		.ascii	"USB_first.cydsn\000"
+ 1227      66697273 
+ 1227      742E6379 
+ 1227      64736E00 
+ 1228              	.LASF4:
+ 1229 00e5 756E7369 		.ascii	"unsigned char\000"
+ 1229      676E6564 
+ 1229      20636861 
+ 1229      7200
+ 1230              	.LASF34:
+ 1231 00f3 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1231      43313120 
+ 1231      352E342E 
+ 1231      31203230 
+ 1231      31363036 
+ 1232 0126 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1232      20726576 
+ 1232      6973696F 
+ 1232      6E203233 
+ 1232      37373135 
+ 1233 0159 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1233      66756E63 
+ 1233      74696F6E 
+ 1233      2D736563 
+ 1233      74696F6E 
+ 1234              	.LASF33:
+ 1235 0181 4C6F6F70 		.ascii	"Loop_Interrupt_ClearPending\000"
+ 1235      5F496E74 
+ 1235      65727275 
+ 1235      70745F43 
+ 1235      6C656172 
+ 1236              	.LASF8:
+ 1237 019d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1237      20756E73 
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 31
+
+
+ 1237      69676E65 
+ 1237      6420696E 
+ 1237      7400
+ 1238              	.LASF12:
+ 1239 01af 75696E74 		.ascii	"uint8\000"
+ 1239      3800
+ 1240              	.LASF23:
+ 1241 01b5 7072696F 		.ascii	"priority\000"
+ 1241      72697479 
+ 1241      00
+ 1242              	.LASF15:
+ 1243 01be 646F7562 		.ascii	"double\000"
+ 1243      6C6500
+ 1244              	.LASF32:
+ 1245 01c5 4C6F6F70 		.ascii	"Loop_Interrupt_SetPending\000"
+ 1245      5F496E74 
+ 1245      65727275 
+ 1245      70745F53 
+ 1245      65745065 
+ 1246              	.LASF31:
+ 1247 01df 4C6F6F70 		.ascii	"Loop_Interrupt_Stop\000"
+ 1247      5F496E74 
+ 1247      65727275 
+ 1247      70745F53 
+ 1247      746F7000 
+ 1248              	.LASF13:
+ 1249 01f3 75696E74 		.ascii	"uint32\000"
+ 1249      333200
+ 1250              	.LASF0:
+ 1251 01fa 756E7369 		.ascii	"unsigned int\000"
+ 1251      676E6564 
+ 1251      20696E74 
+ 1251      00
+ 1252              	.LASF22:
+ 1253 0207 61646472 		.ascii	"address\000"
+ 1253      65737300 
+ 1254              	.LASF9:
+ 1255 020f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1255      206C6F6E 
+ 1255      6720756E 
+ 1255      7369676E 
+ 1255      65642069 
+ 1256              	.LASF27:
+ 1257 0226 4C6F6F70 		.ascii	"Loop_Interrupt_Enable\000"
+ 1257      5F496E74 
+ 1257      65727275 
+ 1257      70745F45 
+ 1257      6E61626C 
+ 1258              	.LASF18:
+ 1259 023c 63796973 		.ascii	"cyisraddress\000"
+ 1259      72616464 
+ 1259      72657373 
+ 1259      00
+ 1260              	.LASF30:
+ 1261 0249 4C6F6F70 		.ascii	"Loop_Interrupt_StartEx\000"
+ 1261      5F496E74 
+ 1261      65727275 
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 32
+
+
+ 1261      70745F53 
+ 1261      74617274 
+ 1262              	.LASF10:
+ 1263 0260 73697A65 		.ascii	"sizetype\000"
+ 1263      74797065 
+ 1263      00
+ 1264              	.LASF1:
+ 1265 0269 6C6F6E67 		.ascii	"long long int\000"
+ 1265      206C6F6E 
+ 1265      6720696E 
+ 1265      7400
+ 1266              	.LASF11:
+ 1267 0277 63686172 		.ascii	"char\000"
+ 1267      00
+ 1268              	.LASF19:
+ 1269 027c 72616D56 		.ascii	"ramVectorTable\000"
+ 1269      6563746F 
+ 1269      72546162 
+ 1269      6C6500
+ 1270              	.LASF16:
+ 1271 028b 72656738 		.ascii	"reg8\000"
+ 1271      00
+ 1272              	.LASF25:
+ 1273 0290 4C6F6F70 		.ascii	"Loop_Interrupt_GetPriority\000"
+ 1273      5F496E74 
+ 1273      65727275 
+ 1273      70745F47 
+ 1273      65745072 
+ 1274              	.LASF5:
+ 1275 02ab 73686F72 		.ascii	"short int\000"
+ 1275      7420696E 
+ 1275      7400
+ 1276              	.LASF26:
+ 1277 02b5 4C6F6F70 		.ascii	"Loop_Interrupt_Interrupt\000"
+ 1277      5F496E74 
+ 1277      65727275 
+ 1277      70745F49 
+ 1277      6E746572 
+ 1278              	.LASF20:
+ 1279 02ce 4C6F6F70 		.ascii	"Loop_Interrupt_SetVector\000"
+ 1279      5F496E74 
+ 1279      65727275 
+ 1279      70745F53 
+ 1279      65745665 
+ 1280              	.LASF7:
+ 1281 02e7 6C6F6E67 		.ascii	"long int\000"
+ 1281      20696E74 
+ 1281      00
+ 1282              	.LASF2:
+ 1283 02f0 6C6F6E67 		.ascii	"long double\000"
+ 1283      20646F75 
+ 1283      626C6500 
+ 1284              	.LASF3:
+ 1285 02fc 7369676E 		.ascii	"signed char\000"
+ 1285      65642063 
+ 1285      68617200 
+ 1286              	.LASF38:
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccjZLVbA.s 			page 33
+
+
+ 1287 0308 6D61696E 		.ascii	"main_flag\000"
+ 1287      5F666C61 
+ 1287      6700
+ 1288              	.LASF28:
+ 1289 0312 4C6F6F70 		.ascii	"Loop_Interrupt_Disable\000"
+ 1289      5F496E74 
+ 1289      65727275 
+ 1289      70745F44 
+ 1289      69736162 
+ 1290              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

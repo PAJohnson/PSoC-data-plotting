@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="USB_data\USB_first\Generated_Source\PSoC5\Loop_Interrupt\Loop_Interrupt.c">
+<ExpandedNodeIds>
+<v>USB_data</v>
+<v>USB_data\USB_first</v>
+<v>USB_data\USB_first\TopDesign</v>
+<v>USB_data\USB_first\USB_first.cydwr</v>
+<v>USB_data\USB_first\USB_first.cydwr\Pins</v>
+<v>USB_data\USB_first\USB_first.cydwr\Analog</v>
+<v>USB_data\USB_first\USB_first.cydwr\Clocks</v>
+<v>USB_data\USB_first\USB_first.cydwr\Interrupts</v>
+<v>USB_data\USB_first\USB_first.cydwr\DMA</v>
+<v>USB_data\USB_first\USB_first.cydwr\System</v>
+<v>USB_data\USB_first\USB_first.cydwr\Directives</v>
+<v>USB_data\USB_first\USB_first.cydwr\Flash Security</v>
+<v>USB_data\USB_first\USB_first.cydwr\EEPROM</v>
+<v>USB_data\USB_first\Header Files</v>
+<v>USB_data\USB_first\Header Files\cyapicallbacks.h</v>
+<v>USB_data\USB_first\Header Files\datalogger.h</v>
+<v>USB_data\USB_first\Header Files\usb.h</v>
+<v>USB_data\USB_first\Source Files</v>
+<v>USB_data\USB_first\Source Files\datalogger.c</v>
+<v>USB_data\USB_first\Source Files\main.c</v>
+<v>USB_data\USB_first\Source Files\usb.c</v>
+<v>USB_data\USB_first\Generated_Source</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\Loop_Interrupt</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\USBFS_Dm</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\USBFS_Dp</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>USB_data\USB_first\USB_first.cydwr\EEPROM</v>
+<v>USB_data\USB_first\Header Files</v>
+<v>USB_data\USB_first\Header Files\cyapicallbacks.h</v>
+<v>USB_data\USB_first\Header Files\datalogger.h</v>
+<v>USB_data\USB_first\Header Files\usb.h</v>
+<v>USB_data\USB_first\Source Files</v>
+<v>USB_data\USB_first\Source Files\datalogger.c</v>
+<v>USB_data\USB_first\Source Files\main.c</v>
+<v>USB_data\USB_first\Source Files\usb.c</v>
+<v>USB_data\USB_first\Generated_Source</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\ADC_DelSig_1</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\ADC_DelSig_1_AMux</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\ADC_DelSig_1_Ext_CP_Clk</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\ADC_DelSig_1_IRQ</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\ADC_DelSig_1_theACLK</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\cy_boot</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\Em_EEPROM_Dynamic</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\Loop_Clock</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\Loop_Interrupt</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\Loop_Interrupt\Loop_Interrupt.c</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\Loop_Interrupt\Loop_Interrupt.h</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\Pin_1</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\SW2_2</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\USBFS</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\USBFS_Dm</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\USBFS_Dm\USBFS_Dm.c</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\USBFS_Dm\USBFS_Dm.h</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\USBFS_Dm\USBFS_Dm_aliases.h</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\USBFS_Dp</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\USBFS_Dp\USBFS_Dp.c</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\USBFS_Dp\USBFS_Dp.h</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\USBFS_Dp\USBFS_Dp_aliases.h</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\cycodeshareexport.ld</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\cycodeshareimport.ld</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\cycodeshareimport.scat</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\cydevice.h</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\cydevice_trm.h</v>
+<v>USB_data\USB_first\Generated_Source\PSoC5\cydevicegnu.inc</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>USB_data</v>
+<v>USB_data\USB_first</v>
+<v>USB_data\USB_first\TopDesign</v>
+<v>USB_data\USB_first\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>USB_data</v>
+<v>USB_data\USB_first</v>
+<v>USB_data\USB_first\TopDesign</v>
+<v>USB_data\USB_first\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>USB_data</v>
+<v>USB_data\USB_first</v>
+<v>USB_data\USB_first\CortexM3</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_AMux.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_Ext_CP_Clk.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_INT.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_IRQ.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_PM.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_theACLK.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\datalogger.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\Loop_Clock.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\Loop_Interrupt.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_1.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\SW2_2.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\usb.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_audio.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_boot.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_cdc.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_cls.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_descr.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_Dm.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_Dp.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_drv.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_episr.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_hid.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_midi.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_msc.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_pm.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_std.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_vnd.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\USB_first.elf</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\USB_first.hex</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\USB_first.map</v>
+<v>USB_data\USB_first\USB_first.gpdsc</v>
+<v>USB_data\USB_first\USB_first.rpt</v>
+<v>USB_data\USB_first\USB_first_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>USB_data</v>
+<v>USB_data\USB_first</v>
+<v>USB_data\USB_first\CortexM3</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_AMux.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_Ext_CP_Clk.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_INT.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_IRQ.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_PM.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_theACLK.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\datalogger.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\Loop_Clock.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\Loop_Interrupt.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_1.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\SW2_2.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\usb.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_audio.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_boot.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_cdc.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_cls.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_descr.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_Dm.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_Dp.lst</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>USB_data</v>
+<v>USB_data\USB_first</v>
+<v>USB_data\USB_first\PSoC 5LP Architecture TRM</v>
+<v>USB_data\USB_first\CY8C58LP Family Datasheet</v>
+<v>USB_data\USB_first\System Reference Guides</v>
+<v>USB_data\USB_first\System Reference Guides\cy_boot_v5_70</v>
+<v>USB_data\USB_first\ADC_DelSig_v3_30.pdf</v>
+<v>USB_data\USB_first\cy_clock_v2_20.pdf</v>
+<v>USB_data\USB_first\cy_isr_v1_70.pdf</v>
+<v>USB_data\USB_first\cy_pins_v2_20</v>
+<v>USB_data\USB_first\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>USB_data\USB_first\USBFS_v3_20.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>USB_data</v>
+<v>USB_data\USB_first</v>
+<v>USB_data\USB_first\PSoC 5LP Architecture TRM</v>
+<v>USB_data\USB_first\CY8C58LP Family Datasheet</v>
+<v>USB_data\USB_first\System Reference Guides</v>
+<v>USB_data\USB_first\System Reference Guides\cy_boot_v5_70</v>
+<v>USB_data\USB_first\ADC_DelSig_v3_30.pdf</v>
+<v>USB_data\USB_first\cy_clock_v2_20.pdf</v>
+<v>USB_data\USB_first\cy_isr_v1_70.pdf</v>
+<v>USB_data\USB_first\cy_pins_v2_20</v>
+<v>USB_data\USB_first\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>USB_data\USB_first\USBFS_v3_20.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\USB_first.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\USB_first.cydsn\USB_first.cydwr" />
+<name v=".\USB_first.cydsn\main.c" />
+<name v=".\USB_first.cydsn\Generated_Source\PSoC5\USBFS.c" />
+<name v=".\USB_first.cydsn\datalogger.c" />
+<name v=".\USB_first.cydsn\datalogger.h" />
+<name v=".\USB_first.cydsn\usb.h" />
+<name v=".\USB_first.cydsn\usb.c" />
+<name v=".\USB_first.cydsn\Generated_Source\PSoC5\Loop_Interrupt.c" />
+<name v=".\USB_first.cydsn\Generated_Source\PSoC5\ADC_DelSig_1.c" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1119, 597" SelectedTabbedMdiWindow="69325d44-45da-4a08-8f3a-32922f47cc9e"><DocumentWindow Key="C:\Users\pajoh\projects\USB\cypress\USB_data\USB_first.cydsn\TopDesign\TopDesign.cysch" Guid="64f36c09-5684-49ac-aaff-1b4069c8d9fd" /><DocumentWindow Key="C:\Users\pajoh\projects\USB\cypress\USB_data\USB_first.cydsn\USB_first.cydwr" Guid="f426aef3-58ba-4a76-9229-52ff5a9a492d" /><DocumentWindow Key="C:\Users\pajoh\projects\USB\cypress\USB_data\USB_first.cydsn\main.c" Guid="69325d44-45da-4a08-8f3a-32922f47cc9e" /><DocumentWindow Key="C:\Users\pajoh\projects\USB\cypress\USB_data\USB_first.cydsn\Generated_Source\PSoC5\USBFS.c" Guid="9ec47fbb-bda0-46a6-af6c-afb5049dc73f" /><DocumentWindow Key="C:\Users\pajoh\projects\USB\cypress\USB_data\USB_first.cydsn\datalogger.c" Guid="e42b19d9-a884-41d2-b149-085e9f27b634" /><DocumentWindow Key="C:\Users\pajoh\projects\USB\cypress\USB_data\USB_first.cydsn\datalogger.h" Guid="e5ffc03d-73b2-4328-8333-70569a740556" /><DocumentWindow Key="C:\Users\pajoh\projects\USB\cypress\USB_data\USB_first.cydsn\usb.h" Guid="fce47d15-b249-4f2b-adab-f8d59725c584" /><DocumentWindow Key="C:\Users\pajoh\projects\USB\cypress\USB_data\USB_first.cydsn\usb.c" Guid="2b1b495e-b24e-4285-922e-c9f13b5ce06f" /><DocumentWindow Key="C:\Users\pajoh\projects\USB\cypress\USB_data\USB_first.cydsn\Generated_Source\PSoC5\Loop_Interrupt.c" Guid="38c1a1c7-f8aa-4a7a-bac2-147ff784fe80" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="a7a995c6-37f5-4f83-b964-4e27fa05cfb7" /><DocumentWindow Key="C:\Users\pajoh\projects\USB\cypress\USB_data\USB_first.cydsn\Generated_Source\PSoC5\ADC_DelSig_1.c" Guid="658d3eec-87b3-4cc7-9a20-95a2d2539338" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>
