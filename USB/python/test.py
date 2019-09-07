@@ -83,7 +83,7 @@ while 1:
 		message = epInCmd.read(64,1000)
 		print(message[0])
 		
-	if cmd == "PARVAL":
+	if cmd == "PARGET":
 		value = 0
 		arg = input()
 		epOutCmd.write([0,0,0,12,int(arg)])
@@ -96,5 +96,34 @@ while 1:
 			
 		print(value)
 		
-
+	if cmd == "PARSET":
+		value = 0
+		print("PARNUM?")
+		parnum = input()
+		print("VALUE?")
+		val = int(input())
+		#get size of parameter
+		epOutCmd.write([0,0,0,12,int(parnum)])
+		message = epInCmd.read(64,1000)
+		size = int(int(message[0])/int(8))
+		#pack commands into message
+		message[0] = 0
+		message[1] = 0
+		message[2] = 0
+		message[3] = 14
+		message[4] = int(parnum)
+		valb = val.to_bytes(size, byteorder="little")
+		for i in range(len(valb)):
+			message[i+5] = valb[i]
+			
+		epOutCmd.write(message)
+		
+	if cmd == "PARSAVE":
+		print("CONFIRM? Y/N")
+		confirm = input()
+		if confirm == "Y":
+			epOutCmd.write([0,0,0,15])
+			
+		
+	
 

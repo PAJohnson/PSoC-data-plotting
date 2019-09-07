@@ -29,7 +29,9 @@
 #define RESET       0x0000000A
 #define NUMPARS     0x0000000B
 #define PARSIZE     0x0000000C
-#define PARVAL      0x0000000D
+#define PARGET      0x0000000D
+#define PARSET      0x0000000E
+#define PARSAVE     0x0000000F
     
 struct usb_cmd_ts{
     int state;   

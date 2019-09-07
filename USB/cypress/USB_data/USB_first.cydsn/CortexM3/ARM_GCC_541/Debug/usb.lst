@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
   28:usb.c         ****         usb_commands(usb_s);
   29:usb.c         ****         usb_response(usb_s);
   30:usb.c         ****         usb_stream(usb_s);
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 2
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 2
 
 
   31:usb.c         ****     }
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
   49:usb.c         ****         usb_s->usb_out.response[i] = 0;   
   62              		.loc 1 49 0 is_stmt 1 discriminator 3
   63 001a C218     		adds	r2, r0, r3
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 3
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 3
 
 
   64 001c 0021     		movs	r1, #0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  108              	.LVL10:
  109              	.L6:
  110 0012 08BD     		pop	{r3, pc}
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 4
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 4
 
 
  111              		.cfi_endproc
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  154 0022 82F85010 		strb	r1, [r2, #80]
   66:usb.c         ****         for(i = 0; i < 64; i++){
  155              		.loc 1 66 0 discriminator 3
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 5
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 5
 
 
  156 0026 0133     		adds	r3, r3, #1
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  200              		.loc 1 76 0
  201              		.cfi_startproc
  202              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 6
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 6
 
 
  203              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  243              		.loc 1 89 0
  244 0038 237C     		ldrb	r3, [r4, #16]	@ zero_extendqisi2
  245 003a C3EB0363 		rsb	r3, r3, r3, lsl #24
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 7
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 7
 
 
  246 003e 1344     		add	r3, r3, r2
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  263              		.loc 1 126 0
  264 0052 38BD     		pop	{r3, r4, r5, pc}
  265              	.LVL28:
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 8
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 8
 
 
  266              	.L19:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  311              	.LVL34:
   23:usb.c         ****             init = 1;
  312              		.loc 1 23 0
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 9
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 9
 
 
  313 001a 0420     		movs	r0, #4
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  363 000a 04       		.byte	0x4
  364 000b 01       		.uleb128 0x1
  365 000c 6C000000 		.4byte	.LASF50
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 10
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 10
 
 
  366 0010 0C       		.byte	0xc
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  420 0079 D9020000 		.4byte	.LASF9
  421 007d 02       		.uleb128 0x2
  422 007e 04       		.byte	0x4
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 11
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 11
 
 
  423 007f 07       		.byte	0x7
@@ -634,12 +634,12 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  453 00bd 96020000 		.4byte	.LASF18
  454 00c1 04       		.byte	0x4
  455 00c2 05       		.byte	0x5
- 456 00c3 22       		.byte	0x22
+ 456 00c3 24       		.byte	0x24
  457 00c4 D5000000 		.4byte	0xd5
  458 00c8 07       		.uleb128 0x7
  459 00c9 12000000 		.4byte	.LASF20
  460 00cd 05       		.byte	0x5
- 461 00ce 23       		.byte	0x23
+ 461 00ce 25       		.byte	0x25
  462 00cf 68000000 		.4byte	0x68
  463 00d3 00       		.byte	0
  464 00d4 00       		.byte	0
@@ -647,18 +647,18 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  466 00d6 28010000 		.4byte	.LASF53
  467 00da 00       		.byte	0
  468 00db 05       		.byte	0x5
- 469 00dc 26       		.byte	0x26
+ 469 00dc 28       		.byte	0x28
  470 00dd 06       		.uleb128 0x6
  471 00de FF020000 		.4byte	.LASF19
  472 00e2 08       		.byte	0x8
  473 00e3 05       		.byte	0x5
- 474 00e4 2A       		.byte	0x2a
+ 474 00e4 2C       		.byte	0x2c
  475 00e5 0E010000 		.4byte	0x10e
  476 00e9 07       		.uleb128 0x7
  477 00ea 00000000 		.4byte	.LASF21
  478 00ee 05       		.byte	0x5
- 479 00ef 2C       		.byte	0x2c
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 12
+ 479 00ef 2E       		.byte	0x2e
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 12
 
 
  480 00f0 BC000000 		.4byte	0xbc
@@ -666,13 +666,13 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  482 00f5 07       		.uleb128 0x7
  483 00f6 E1010000 		.4byte	.LASF22
  484 00fa 05       		.byte	0x5
- 485 00fb 2D       		.byte	0x2d
+ 485 00fb 2F       		.byte	0x2f
  486 00fc 96000000 		.4byte	0x96
  487 0100 04       		.byte	0x4
  488 0101 07       		.uleb128 0x7
  489 0102 FA000000 		.4byte	.LASF23
  490 0106 05       		.byte	0x5
- 491 0107 2E       		.byte	0x2e
+ 491 0107 30       		.byte	0x30
  492 0108 96000000 		.4byte	0x96
  493 010c 05       		.byte	0x5
  494 010d 00       		.byte	0
@@ -680,24 +680,24 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  496 010f 41010000 		.4byte	.LASF24
  497 0113 48       		.byte	0x48
  498 0114 05       		.byte	0x5
- 499 0115 31       		.byte	0x31
+ 499 0115 33       		.byte	0x33
  500 0116 3F010000 		.4byte	0x13f
  501 011a 07       		.uleb128 0x7
  502 011b 62000000 		.4byte	.LASF25
  503 011f 05       		.byte	0x5
- 504 0120 34       		.byte	0x34
+ 504 0120 36       		.byte	0x36
  505 0121 3F010000 		.4byte	0x13f
  506 0125 00       		.byte	0
  507 0126 07       		.uleb128 0x7
  508 0127 67000000 		.4byte	.LASF26
  509 012b 05       		.byte	0x5
- 510 012c 35       		.byte	0x35
+ 510 012c 37       		.byte	0x37
  511 012d 68000000 		.4byte	0x68
  512 0131 04       		.byte	0x4
  513 0132 07       		.uleb128 0x7
  514 0133 31000000 		.4byte	.LASF27
  515 0137 05       		.byte	0x5
- 516 0138 38       		.byte	0x38
+ 516 0138 3A       		.byte	0x3a
  517 0139 45010000 		.4byte	0x145
  518 013d 08       		.byte	0x8
  519 013e 00       		.byte	0
@@ -715,21 +715,21 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  531 0156 57000000 		.4byte	.LASF28
  532 015a 41       		.byte	0x41
  533 015b 05       		.byte	0x5
- 534 015c 3B       		.byte	0x3b
+ 534 015c 3D       		.byte	0x3d
  535 015d 7A010000 		.4byte	0x17a
  536 0161 07       		.uleb128 0x7
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 13
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 13
 
 
  537 0162 EF010000 		.4byte	.LASF29
  538 0166 05       		.byte	0x5
- 539 0167 3D       		.byte	0x3d
+ 539 0167 3F       		.byte	0x3f
  540 0168 45010000 		.4byte	0x145
  541 016c 00       		.byte	0
  542 016d 07       		.uleb128 0x7
  543 016e A1020000 		.4byte	.LASF30
  544 0172 05       		.byte	0x5
- 545 0173 3E       		.byte	0x3e
+ 545 0173 40       		.byte	0x40
  546 0174 96000000 		.4byte	0x96
  547 0178 40       		.byte	0x40
  548 0179 00       		.byte	0
@@ -737,30 +737,30 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  550 017b 0A030000 		.4byte	.LASF31
  551 017f 94       		.byte	0x94
  552 0180 05       		.byte	0x5
- 553 0181 41       		.byte	0x41
+ 553 0181 43       		.byte	0x43
  554 0182 B7010000 		.4byte	0x1b7
  555 0186 07       		.uleb128 0x7
  556 0187 B1020000 		.4byte	.LASF32
  557 018b 05       		.byte	0x5
- 558 018c 42       		.byte	0x42
+ 558 018c 44       		.byte	0x44
  559 018d D5000000 		.4byte	0xd5
  560 0191 00       		.byte	0
  561 0192 07       		.uleb128 0x7
  562 0193 4F000000 		.4byte	.LASF33
  563 0197 05       		.byte	0x5
- 564 0198 43       		.byte	0x43
+ 564 0198 45       		.byte	0x45
  565 0199 DD000000 		.4byte	0xdd
  566 019d 00       		.byte	0
  567 019e 07       		.uleb128 0x7
  568 019f AA020000 		.4byte	.LASF34
  569 01a3 05       		.byte	0x5
- 570 01a4 44       		.byte	0x44
+ 570 01a4 46       		.byte	0x46
  571 01a5 0E010000 		.4byte	0x10e
  572 01a9 08       		.byte	0x8
  573 01aa 07       		.uleb128 0x7
  574 01ab 0A000000 		.4byte	.LASF35
  575 01af 05       		.byte	0x5
- 576 01b0 45       		.byte	0x45
+ 576 01b0 47       		.byte	0x47
  577 01b1 55010000 		.4byte	0x155
  578 01b5 50       		.byte	0x50
  579 01b6 00       		.byte	0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  591 01d1 01       		.byte	0x1
  592 01d2 22       		.byte	0x22
  593 01d3 E7010000 		.4byte	0x1e7
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 14
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 14
 
 
  594 01d7 01       		.uleb128 0x1
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  648 0241 01       		.byte	0x1
  649 0242 3D       		.byte	0x3d
  650 0243 E7010000 		.4byte	0x1e7
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 15
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 15
 
 
  651 0247 4B000000 		.4byte	.LLST2
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  705 02a6 D4010000 		.4byte	.LASF41
  706 02aa 01       		.byte	0x1
  707 02ab 4C       		.byte	0x4c
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 16
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 16
 
 
  708 02ac 00000000 		.4byte	.LFB69
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  762 0315 89010000 		.4byte	.LASF42
  763 0319 01       		.byte	0x1
  764 031a 0F       		.byte	0xf
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 17
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 17
 
 
  765 031b 00000000 		.4byte	.LFB64
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  819 038d 2C000000 		.4byte	.LVL37
  820 0391 A5020000 		.4byte	0x2a5
  821 0395 13       		.uleb128 0x13
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 18
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 18
 
 
  822 0396 32000000 		.4byte	.LVL38
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  876 0408 4B010000 		.4byte	.LASF49
  877 040c 4B010000 		.4byte	.LASF49
  878 0410 06       		.byte	0x6
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 19
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 19
 
 
  879 0411 3301     		.2byte	0x133
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  933 0032 03       		.uleb128 0x3
  934 0033 08       		.uleb128 0x8
  935 0034 00       		.byte	0
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 20
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 20
 
 
  936 0035 00       		.byte	0
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  990 006b 0B       		.uleb128 0xb
  991 006c 00       		.byte	0
  992 006d 00       		.byte	0
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 21
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 21
 
 
  993 006e 09       		.uleb128 0x9
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  1047 00a5 00       		.byte	0
  1048 00a6 03       		.uleb128 0x3
  1049 00a7 0E       		.uleb128 0xe
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 22
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 22
 
 
  1050 00a8 3A       		.uleb128 0x3a
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  1104 00e2 9142     		.uleb128 0x2111
  1105 00e4 18       		.uleb128 0x18
  1106 00e5 00       		.byte	0
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 23
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 23
 
 
  1107 00e6 00       		.byte	0
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  1161 0120 03       		.uleb128 0x3
  1162 0121 0E       		.uleb128 0xe
  1163 0122 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 24
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 24
 
 
  1164 0123 0B       		.uleb128 0xb
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  1218              	.LLST1:
  1219 002a 00000000 		.4byte	.LVL8
  1220 002e 0E000000 		.4byte	.LVL9
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 25
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 25
 
 
  1221 0032 0100     		.2byte	0x1
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  1275 00bc 9F       		.byte	0x9f
  1276 00bd 40000000 		.4byte	.LVL25
  1277 00c1 4C000000 		.4byte	.LVL27
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 26
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 26
 
 
  1278 00c5 0100     		.2byte	0x1
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  1332 0131 50       		.byte	0x50
  1333 0132 2B000000 		.4byte	.LVL37-1
  1334 0136 3A000000 		.4byte	.LVL40
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 27
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 27
 
 
  1335 013a 0100     		.2byte	0x1
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  1386      FB0E0D00 
  1386      01010101 
  1387              	.LASF21:
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 28
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 28
 
 
  1388 0000 7573625F 		.ascii	"usb_cmd_s\000"
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  1415      6E203233 
  1415      37373135 
  1416 00d2 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 29
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 29
 
 
  1416      66756E63 
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  1438      7400
  1439              	.LASF42:
  1440 0189 7573625F 		.ascii	"usb_task\000"
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 30
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 30
 
 
  1440      7461736B 
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  1461      325F7400 
  1462              	.LASF10:
  1463 025f 73697A65 		.ascii	"sizetype\000"
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 31
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 31
 
 
  1463      74797065 
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 1
  1491      65642063 
  1491      68617200 
  1492              	.LASF1:
-ARM GAS  C:\Users\pajoh\AppData\Local\Temp\cc9xSSlD.s 			page 32
+ARM GAS  C:\Users\pajoh\AppData\Local\Temp\ccmXQYrk.s 			page 32
 
 
  1493 02f1 756E7369 		.ascii	"unsigned char\000"

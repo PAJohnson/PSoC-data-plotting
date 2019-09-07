@@ -83,18 +83,6 @@ int main(void)
     add_parameter(&test_param_2,UINT32,&parameter_s);
     add_parameter(&test_param_3,UINT32,&parameter_s);
     
-    uint32 set_test_1 = 100;
-    uint32 set_test_2 = 200;
-    uint32 set_test_3 = 300;
-    
-    set_parameter(0,&set_test_1,&parameter_s);
-    set_parameter(1,&set_test_2,&parameter_s);
-    set_parameter(2,&set_test_3,&parameter_s);
-    
-    get_parameter(0,&test_param,&parameter_s);
-    get_parameter(1,&test_param_2,&parameter_s);
-    get_parameter(2,&test_param_3,&parameter_s);
-    
     /* enumeration is done, enable out endpoint for receive data from Host */
     Loop_Interrupt_Start();
     sample_count = 0;
