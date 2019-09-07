@@ -27,6 +27,9 @@
 #define START       0x00000008
 #define STOP        0x00000009
 #define RESET       0x0000000A
+#define NUMPARS     0x0000000B
+#define PARSIZE     0x0000000C
+#define PARVAL      0x0000000D
     
 struct usb_cmd_ts{
     int state;   

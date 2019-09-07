@@ -29,6 +29,7 @@
 #include "project.h"
 #include "stdio.h"
 #include "datalogger.h"
+#include "parameters.h"
 
 #define getName(var) #var
 
@@ -41,17 +42,26 @@ char * name;
 
 Log_ts log_s;
 struct usb_ts usb_s;
+parameter_ts parameter_s;
 uint8 dumvar1 = 0;
 uint16 dumvar2 = 0;
 uint32 dumvar3 = 0;
 
 volatile uint8 main_flag;
 
+const uint8 emEeprom[Em_EEPROM_PHYSICAL_SIZE]
+        __ALIGNED(CY_FLASH_SIZEOF_ROW) = {0u};
+        
+uint32 test_param = 0xAABBCCDD;
+uint32 test_param_2 = 0;
+uint32 test_param_3;
 
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
 
+    Em_EEPROM_Init((uint32)&emEeprom[0]);
+    
     name = getName(analogRead);
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     ADC_DelSig_1_Start();
@@ -64,8 +74,26 @@ int main(void)
     attach_variable(&analogRead,UINT16,"analogRead",&log_s);
     attach_variable(&dumvar3,UINT32,"dumvar3",&log_s);
     
+    //usb initialization
     usb_set_stream(&usb_s,get_buffer(&log_s));
     
+    //parameter initialization
+    init_parameters(&parameter_s);
+    add_parameter(&test_param,UINT32,&parameter_s);
+    add_parameter(&test_param_2,UINT32,&parameter_s);
+    add_parameter(&test_param_3,UINT32,&parameter_s);
+    
+    uint32 set_test_1 = 100;
+    uint32 set_test_2 = 200;
+    uint32 set_test_3 = 300;
+    
+    set_parameter(0,&set_test_1,&parameter_s);
+    set_parameter(1,&set_test_2,&parameter_s);
+    set_parameter(2,&set_test_3,&parameter_s);
+    
+    get_parameter(0,&test_param,&parameter_s);
+    get_parameter(1,&test_param_2,&parameter_s);
+    get_parameter(2,&test_param_3,&parameter_s);
     
     /* enumeration is done, enable out endpoint for receive data from Host */
     Loop_Interrupt_Start();
@@ -95,6 +123,11 @@ int main(void)
                 analogRead = ADC_DelSig_1_GetResult16();   
             }
             
+            //----------------------------
+            //parameter
+            //----------------------------
+            get_parameter_command(&parameter_s, &usb_s);
+            usb_response(&usb_s);
         }
     }
 }

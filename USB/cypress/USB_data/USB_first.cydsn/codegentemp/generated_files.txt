@@ -55,6 +55,8 @@
   <file name="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\codegentemp\Loop_Clock.h" value="HEADER;;;;;Loop_Clock" />
   <file name="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\codegentemp\Loop_Interrupt.c" value="SOURCE_C;CortexM3;;;;Loop_Interrupt" />
   <file name="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\codegentemp\Loop_Interrupt.h" value="HEADER;;;;;Loop_Interrupt" />
+  <file name="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\codegentemp\Em_EEPROM.c" value="SOURCE_C;CortexM3;;;;Em_EEPROM" />
+  <file name="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\codegentemp\Em_EEPROM.h" value="HEADER;;;;;Em_EEPROM" />
   <file name="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\codegentemp\USBFS_Dm_aliases.h" value="HEADER;;;;;USBFS_Dm" />
   <file name="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\codegentemp\USBFS_Dm.c" value="SOURCE_C;CortexM3;;;;USBFS_Dm" />
   <file name="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\codegentemp\USBFS_Dm.h" value="HEADER;;;;;USBFS_Dm" />

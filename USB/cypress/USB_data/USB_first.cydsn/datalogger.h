@@ -15,27 +15,27 @@
 #include "stdio.h"
 #include "CyLib.h"
 #include "usb.h"
+#include "shared_types.h"
     
 #define LOG_SIZE 32
 #define LOG_BUFF_SIZE 64
     
 //do a better implementation of type handling.
     
-enum types_e{
-    UINT8,
-    INT8,
-    UINT16,
-    INT16,
-    UINT32,
-    INT32,
-    UINT64,
-    INT64,
-    FLOAT,
-    DOUBLE,
-    CHAR
-};
-    
 // data structures
+
+
+
+//this type and the functions that go with it don't make sense!
+//not great to use a circular buffer here, plus this isn't even
+//a circular buffer, as implemented.
+//a deque would be interesting. Could make one out of a real
+//circular buffer fairly easily.
+typedef struct circbuff{
+    uint8 data[LOG_BUFF_SIZE];
+    int data_index;
+    int data_size;
+}CircBuff_ts;
 
 typedef struct var{
     void * var_ptr;
@@ -43,12 +43,6 @@ typedef struct var{
     char name[64];
 }Var_ts;
 
-typedef struct circbuff{
-    uint8 data[LOG_BUFF_SIZE];
-    int data_index;
-    int data_size;
-}CircBuff_ts;
-    
 typedef struct log{
     Var_ts vars[LOG_SIZE];
     CircBuff_ts CircBuff;

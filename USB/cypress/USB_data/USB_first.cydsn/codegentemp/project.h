@@ -34,6 +34,7 @@
 #include "Pin_1.h"
 #include "Loop_Clock.h"
 #include "Loop_Interrupt.h"
+#include "Em_EEPROM.h"
 #include "USBFS_Dm_aliases.h"
 #include "USBFS_Dm.h"
 #include "USBFS_Dp_aliases.h"

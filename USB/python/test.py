@@ -72,4 +72,29 @@ while 1:
 	if cmd == "STOP":
 		epOutCmd.write([0,0,0,9])
 		
+	if cmd == "NUMPAR":
+		epOutCmd.write([0,0,0,11])
+		message = epInCmd.read(64,1000)
+		print(message[0])
+	
+	if cmd == "PARSIZE":
+		arg = input()
+		epOutCmd.write([0,0,0,12,int(arg)])
+		message = epInCmd.read(64,1000)
+		print(message[0])
+		
+	if cmd == "PARVAL":
+		value = 0
+		arg = input()
+		epOutCmd.write([0,0,0,12,int(arg)])
+		message = epInCmd.read(64,1000)
+		size = int(message[0])/int(8)
+		epOutCmd.write([0,0,0,13,int(arg)])
+		message = epInCmd.read(64,1000)
+		for i in range(int(size)):
+			value = message[i]*256**i + value
+			
+		print(value)
+		
+
 

@@ -1,4 +1,4 @@
-C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\USB_first.cyprj|6f47b011-2880-496f-8a1c-77f89321467b
+C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\USB_first.cyprj|cb1fc370-468e-4817-a27e-98a60f025ae5
 C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|f02a1252-86dc-494e-9468-543fc2bb174d
 C:\Users\pajoh\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|af97ebca-ee9a-4009-9d54-36818ab6d22d
 C:\Users\pajoh\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\Downloads ( 4.1).cyprj|9bbcebf4-3c8f-4ca4-9e57-081d44151a8c
