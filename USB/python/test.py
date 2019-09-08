@@ -7,6 +7,60 @@ import matplotlib.animation as animation
 import time
 import csv
 
+def numvars(epIn,epOut):
+	epOut.write([0,0,0,1])
+	message = epIn.read(64,1000)
+	return message[0]
+	
+def varsize(epIn,epOut,num):
+	epOut.write([0,0,0,2,int(num)])
+	message = epIn.read(64,1000)
+	return message[0]
+	
+def varname(epIn,epOut,num):
+	epOut.write([0,0,0,3,int(num)])
+	message = epIn.read(64,1000)
+	return message
+	
+def numpar(epIn,epOut):
+	epOut.write([0,0,0,11])
+	message = epIn.read(64,1000)
+	return message[0]
+	
+def parsize(epIn,epOut,num):
+	epOut.write([0,0,0,12,int(num)])
+	message = epIn.read(64,1000)
+	return message[0]
+	
+def parget(epIn,epOut,num):
+	value = 0
+	size = int(parsize(epIn,epOut,num)/8)
+	epOut.write([0,0,0,13,int(num)])
+	message = epIn.read(64,1000)
+	for i in range(int(size)):
+		value = message[i]*256**i + value
+	
+	return value
+	
+def parset(epIn,epOut,num,val):
+	size = parsize(epInCmd,epOutCmd,num)
+	message = array.array('B',64 * [0])
+	message[0] = 0
+	message[1] = 0
+	message[2] = 0
+	message[3] = 14
+	message[4] = int(num)
+	valb = val.to_bytes(size, byteorder="little")
+	for i in range(len(valb)):
+		message[i+5] = valb[i]
+			
+	epOutCmd.write(message)
+	
+def parsave(epIn,epOut):
+	epOutCmd.write([0,0,0,15])
+	
+
+
 # search for our device by product and vendor ID
 dev = usb.core.find(idVendor=0x4B4, idProduct=0x10)
 
@@ -33,9 +87,6 @@ assert epOutCmd is not None
 value = 0
 data_hist = []
 
-csvfile = open('test.csv', 'w', newline='')
-spamwriter = csv.writer(csvfile, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
-
 assert epInStream is not None
 assert epInCmd is not None
 while 1:
@@ -47,21 +98,15 @@ while 1:
 	print("Command: ")
 	cmd = input()
 	if cmd == "NUMVARS":
-		epOutCmd.write([0,0,0,1])
-		message = epInCmd.read(64,1000)
-		print(message[0])
+		print(numvars(epInCmd,epOutCmd))
 
 	if cmd == "VARSIZE":
 		arg = input()
-		epOutCmd.write([0,0,0,2,int(arg)])
-		message = epInCmd.read(64,1000)
-		print(message[0])
+		print(varsize(epInCmd,epOutCmd,arg))
 
 	if cmd == "VARNAME":
 		arg = input()
-		epOutCmd.write([0,0,0,3,int(arg)])
-		message = epInCmd.read(64,1000)
-		print(''.join(map(chr,list(message))))
+		print(''.join(map(chr,list(varname(epInCmd,epOutCmd,arg)))))
 		
 	if cmd == "START":
 		epOutCmd.write([0,0,0,8])
@@ -69,61 +114,60 @@ while 1:
 			message = epInStream.read(64,1000)
 			print(message[1]+message[2]*255)
 			
+		
+	
+
 	if cmd == "STOP":
 		epOutCmd.write([0,0,0,9])
-		
+
 	if cmd == "NUMPAR":
-		epOutCmd.write([0,0,0,11])
-		message = epInCmd.read(64,1000)
-		print(message[0])
-	
+		print(numpar(epInCmd,epOutCmd))
+
 	if cmd == "PARSIZE":
 		arg = input()
-		epOutCmd.write([0,0,0,12,int(arg)])
-		message = epInCmd.read(64,1000)
-		print(message[0])
-		
+		print(parsize(epInCmd,epOutCmd,arg))
+
+
 	if cmd == "PARGET":
-		value = 0
 		arg = input()
-		epOutCmd.write([0,0,0,12,int(arg)])
-		message = epInCmd.read(64,1000)
-		size = int(message[0])/int(8)
-		epOutCmd.write([0,0,0,13,int(arg)])
-		message = epInCmd.read(64,1000)
-		for i in range(int(size)):
-			value = message[i]*256**i + value
-			
-		print(value)
-		
+		print(parget(epInCmd,epOutCmd,arg))
+
 	if cmd == "PARSET":
 		value = 0
 		print("PARNUM?")
 		parnum = input()
 		print("VALUE?")
 		val = int(input())
-		#get size of parameter
-		epOutCmd.write([0,0,0,12,int(parnum)])
-		message = epInCmd.read(64,1000)
-		size = int(int(message[0])/int(8))
-		#pack commands into message
-		message[0] = 0
-		message[1] = 0
-		message[2] = 0
-		message[3] = 14
-		message[4] = int(parnum)
-		valb = val.to_bytes(size, byteorder="little")
-		for i in range(len(valb)):
-			message[i+5] = valb[i]
-			
-		epOutCmd.write(message)
+		parset(epInCmd,epOutCmd,parnum,val)
+
 		
 	if cmd == "PARSAVE":
 		print("CONFIRM? Y/N")
 		confirm = input()
 		if confirm == "Y":
-			epOutCmd.write([0,0,0,15])
+			parsave(epInCmd,epOutCmd)
 			
 		
-	
+	if cmd == "GETALLPARS":
+		#get all parameters and save to a file
+		print("File name?")
+		filename = input()
+		
+		#get number of parameters
+		number_pars = int(numpar(epInCmd,epOutCmd))
 
+		#open csv file
+		#format for writing is par#,size,value\n
+		csvfile = open(filename, 'w', newline='')
+		csvwriter = csv.writer(csvfile, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+		
+		for i in range(number_pars):
+			#get size for each par, print line to csv
+			size = int(parsize(epInCmd,epOutCmd,i))
+			#get value of par i
+			value = int(parget(epInCmd,epOutCmd,i))
+			
+			csvwriter.writerow([i,size,value])
+		
+		csvfile.close()
+		
