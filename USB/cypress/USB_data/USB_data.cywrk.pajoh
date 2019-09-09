@@ -163,6 +163,43 @@
 <VisibleNodeIds>
 <v>USB_data</v>
 <v>USB_data\USB_first</v>
+<v>USB_data\USB_first\CortexM3</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_AMux.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_Ext_CP_Clk.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_INT.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_IRQ.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_PM.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_theACLK.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\datalogger.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\Em_EEPROM.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\Loop_Clock.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\Loop_Interrupt.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\parameters.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_1.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\SW2_2.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\usb.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_audio.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_boot.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_cdc.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_cls.lst</v>
+<v>USB_data\USB_first\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_descr.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -217,6 +254,7 @@
 <name v=".\USB_first.cydsn\shared_types.h" />
 <name v=".\USB_first.cydsn\usb.h" />
 <name v=".\USB_first.cydsn\usb.c" />
+<name v=".\USB_first.cydsn\Generated_Source\PSoC5\cy_em_eeprom.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -224,7 +262,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1209, 534" SelectedTabbedMdiWindow="e7901f54-6560-4593-b5fc-338a76ae1cee"><DocumentWindow Key="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\main.c" Guid="03e8ca8f-9a95-4bfe-a3a0-e2ece33aba07" /><DocumentWindow Key="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\parameters.c" Guid="e7901f54-6560-4593-b5fc-338a76ae1cee" /><DocumentWindow Key="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\parameters.h" Guid="19023ea7-74d5-45b3-8287-ff6d6c18802b" /><DocumentWindow Key="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\datalogger.h" Guid="d09357d7-c1db-45bd-b305-53012090f44f" /><DocumentWindow Key="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\datalogger.c" Guid="42ce68fe-f434-46ae-93fe-be1a90c1ee68" /><DocumentWindow Key="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\shared_types.h" Guid="78a3aa11-fbde-462c-9697-512883fdb9f8" /><DocumentWindow Key="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\usb.h" Guid="4735fbb6-2183-4a47-aa7d-b20d530baed5" /><DocumentWindow Key="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\usb.c" Guid="3ce95d41-1200-4433-8711-4ee09585c414" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1209, 534" SelectedTabbedMdiWindow="03e8ca8f-9a95-4bfe-a3a0-e2ece33aba07"><DocumentWindow Key="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\main.c" Guid="03e8ca8f-9a95-4bfe-a3a0-e2ece33aba07" /><DocumentWindow Key="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\parameters.c" Guid="e7901f54-6560-4593-b5fc-338a76ae1cee" /><DocumentWindow Key="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\parameters.h" Guid="19023ea7-74d5-45b3-8287-ff6d6c18802b" /><DocumentWindow Key="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\datalogger.h" Guid="d09357d7-c1db-45bd-b305-53012090f44f" /><DocumentWindow Key="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\datalogger.c" Guid="42ce68fe-f434-46ae-93fe-be1a90c1ee68" /><DocumentWindow Key="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\shared_types.h" Guid="78a3aa11-fbde-462c-9697-512883fdb9f8" /><DocumentWindow Key="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\usb.h" Guid="4735fbb6-2183-4a47-aa7d-b20d530baed5" /><DocumentWindow Key="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\usb.c" Guid="3ce95d41-1200-4433-8711-4ee09585c414" /><DocumentWindow Key="C:\Users\pajoh\projects\PSoC-data-plotting\USB\cypress\USB_data\USB_first.cydsn\Generated_Source\PSoC5\cy_em_eeprom.h" Guid="738b5508-ace0-41b3-9249-4bc5c4fa99ef" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
