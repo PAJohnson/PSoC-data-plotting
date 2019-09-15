@@ -183,11 +183,11 @@ void get_command_usb(Log_ts * log, struct usb_ts * usb_s){
             break;
             
             case VARSIZE:
-                //size of variable in bits?
+                //size of variable in bytes
                 //variable number is the arg, argument is first byte after command
                 argument = usb_s->usb_in.command[4];
                 if(argument <= log->num_vars){
-                    usb_s->usb_out.response[0] = 8*var_size(log->vars[argument].type);
+                    usb_s->usb_out.response[0] = var_size(log->vars[argument].type);
                 }
                 usb_s->usb_out.out_flag = 1;
                 usb_s->usb_pub.cmd_flag = 0;

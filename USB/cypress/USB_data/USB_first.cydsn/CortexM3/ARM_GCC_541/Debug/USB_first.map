@@ -718,374 +718,375 @@ END GROUP
                 0x0000032c        0xc .\CortexM3\ARM_GCC_541\Debug\datalogger.o
                 0x0000032c                clear_log
  .text.get_command_usb
-                0x00000338       0xc4 .\CortexM3\ARM_GCC_541\Debug\datalogger.o
+                0x00000338       0xc0 .\CortexM3\ARM_GCC_541\Debug\datalogger.o
                 0x00000338                get_command_usb
  .text.usb_init
-                0x000003fc       0x30 .\CortexM3\ARM_GCC_541\Debug\usb.o
-                0x000003fc                usb_init
+                0x000003f8       0x30 .\CortexM3\ARM_GCC_541\Debug\usb.o
+                0x000003f8                usb_init
  .text.usb_stream
-                0x0000042c       0x14 .\CortexM3\ARM_GCC_541\Debug\usb.o
-                0x0000042c                usb_stream
+                0x00000428       0x14 .\CortexM3\ARM_GCC_541\Debug\usb.o
+                0x00000428                usb_stream
  .text.usb_response
-                0x00000440       0x30 .\CortexM3\ARM_GCC_541\Debug\usb.o
-                0x00000440                usb_response
+                0x0000043c       0x30 .\CortexM3\ARM_GCC_541\Debug\usb.o
+                0x0000043c                usb_response
  .text.usb_set_stream
-                0x00000470        0x4 .\CortexM3\ARM_GCC_541\Debug\usb.o
-                0x00000470                usb_set_stream
+                0x0000046c        0x4 .\CortexM3\ARM_GCC_541\Debug\usb.o
+                0x0000046c                usb_set_stream
  .text.usb_commands
-                0x00000474       0x5c .\CortexM3\ARM_GCC_541\Debug\usb.o
-                0x00000474                usb_commands
+                0x00000470       0x5c .\CortexM3\ARM_GCC_541\Debug\usb.o
+                0x00000470                usb_commands
  .text.usb_task
-                0x000004d0       0x40 .\CortexM3\ARM_GCC_541\Debug\usb.o
-                0x000004d0                usb_task
+                0x000004cc       0x40 .\CortexM3\ARM_GCC_541\Debug\usb.o
+                0x000004cc                usb_task
  .text.get_parameter_offset
-                0x00000510       0x24 .\CortexM3\ARM_GCC_541\Debug\parameters.o
-                0x00000510                get_parameter_offset
+                0x0000050c       0x24 .\CortexM3\ARM_GCC_541\Debug\parameters.o
+                0x0000050c                get_parameter_offset
  .text._set_parameter
-                0x00000534       0x24 .\CortexM3\ARM_GCC_541\Debug\parameters.o
-                0x00000534                _set_parameter
+                0x00000530       0x24 .\CortexM3\ARM_GCC_541\Debug\parameters.o
+                0x00000530                _set_parameter
  .text.set_parameter
-                0x00000558       0x28 .\CortexM3\ARM_GCC_541\Debug\parameters.o
-                0x00000558                set_parameter
+                0x00000554       0x28 .\CortexM3\ARM_GCC_541\Debug\parameters.o
+                0x00000554                set_parameter
  .text._save_parameters
-                0x00000580       0x18 .\CortexM3\ARM_GCC_541\Debug\parameters.o
-                0x00000580                _save_parameters
+                0x0000057c       0x18 .\CortexM3\ARM_GCC_541\Debug\parameters.o
+                0x0000057c                _save_parameters
  .text._read_parameters
-                0x00000598       0x18 .\CortexM3\ARM_GCC_541\Debug\parameters.o
-                0x00000598                _read_parameters
+                0x00000594       0x18 .\CortexM3\ARM_GCC_541\Debug\parameters.o
+                0x00000594                _read_parameters
  .text.init_parameters
-                0x000005b0       0x28 .\CortexM3\ARM_GCC_541\Debug\parameters.o
-                0x000005b0                init_parameters
+                0x000005ac       0x28 .\CortexM3\ARM_GCC_541\Debug\parameters.o
+                0x000005ac                init_parameters
  .text.add_parameter
-                0x000005d8       0x2c .\CortexM3\ARM_GCC_541\Debug\parameters.o
-                0x000005d8                add_parameter
+                0x000005d4       0x2c .\CortexM3\ARM_GCC_541\Debug\parameters.o
+                0x000005d4                add_parameter
  .text.get_parameter_command
-                0x00000604       0xfc .\CortexM3\ARM_GCC_541\Debug\parameters.o
-                0x00000604                get_parameter_command
+                0x00000600       0xfc .\CortexM3\ARM_GCC_541\Debug\parameters.o
+                0x00000600                get_parameter_command
  .text.CyClockStartupError
-                0x00000700        0x4 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000006fc        0x4 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.cfg_write_bytes32
-                0x00000704       0x34 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000700       0x34 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.AnalogSetDefault
-                0x00000738       0x40 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000734       0x40 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.CYMEMZERO
-                0x00000778        0xc .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000774        0xc .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.CYCONFIGCPY
-                0x00000784        0x8 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000780        0x8 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.ClockSetup
-                0x0000078c       0xf4 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000788       0xf4 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.ADC_DelSig_1_AMux_Set
-                0x00000880       0x1c .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
-                0x00000880                ADC_DelSig_1_AMux_Set
+                0x0000087c       0x1c .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x0000087c                ADC_DelSig_1_AMux_Set
  .text.ADC_DelSig_1_AMux_Unset
-                0x0000089c       0x1c .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
-                0x0000089c                ADC_DelSig_1_AMux_Unset
+                0x00000898       0x1c .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000898                ADC_DelSig_1_AMux_Unset
  .text.cyfitter_cfg
-                0x000008b8       0xf8 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
-                0x000008b8                cyfitter_cfg
+                0x000008b4       0xf8 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000008b4                cyfitter_cfg
  .text.IntDefaultHandler
-                0x000009b0       0x10 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                0x000009b0                IntDefaultHandler
- .text.Start_c  0x000009c0       0x4c .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                0x000009c0                Start_c
+                0x000009ac       0x10 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x000009ac                IntDefaultHandler
+ .text.Start_c  0x000009bc       0x4c .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x000009bc                Start_c
  .text.initialize_psoc
-                0x00000a0c       0x68 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                0x00000a0c                initialize_psoc
+                0x00000a08       0x68 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x00000a08                initialize_psoc
  .text.USBFS_Init
-                0x00000a74      0x140 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS.o)
-                0x00000a74                USBFS_Init
+                0x00000a70      0x140 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS.o)
+                0x00000a70                USBFS_Init
  .text.USBFS_InitComponent
-                0x00000bb4       0xb8 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS.o)
-                0x00000bb4                USBFS_InitComponent
+                0x00000bb0       0xb8 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS.o)
+                0x00000bb0                USBFS_InitComponent
  .text.USBFS_Start
-                0x00000c6c       0x24 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS.o)
-                0x00000c6c                USBFS_Start
+                0x00000c68       0x24 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS.o)
+                0x00000c68                USBFS_Start
  .text.USBFS_ReInitComponent
-                0x00000c90       0x4c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS.o)
-                0x00000c90                USBFS_ReInitComponent
+                0x00000c8c       0x4c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS.o)
+                0x00000c8c                USBFS_ReInitComponent
  .text.USBFS_GetConfiguration
-                0x00000cdc        0xc .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS.o)
-                0x00000cdc                USBFS_GetConfiguration
+                0x00000cd8        0xc .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS.o)
+                0x00000cd8                USBFS_GetConfiguration
  .text.USBFS_GetEPState
-                0x00000ce8       0x14 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS.o)
-                0x00000ce8                USBFS_GetEPState
+                0x00000ce4       0x14 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS.o)
+                0x00000ce4                USBFS_GetEPState
  .text.USBFS_GetEPCount
-                0x00000cfc       0x28 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS.o)
-                0x00000cfc                USBFS_GetEPCount
+                0x00000cf8       0x28 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS.o)
+                0x00000cf8                USBFS_GetEPCount
  .text.USBFS_LoadInEP
-                0x00000d24       0x94 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS.o)
-                0x00000d24                USBFS_LoadInEP
+                0x00000d20       0x94 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS.o)
+                0x00000d20                USBFS_LoadInEP
  .text.USBFS_EnableOutEP
-                0x00000db8       0x2c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS.o)
-                0x00000db8                USBFS_EnableOutEP
+                0x00000db4       0x2c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS.o)
+                0x00000db4                USBFS_EnableOutEP
  .text.USBFS_ReadOutEP
-                0x00000de4       0x50 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS.o)
-                0x00000de4                USBFS_ReadOutEP
+                0x00000de0       0x50 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS.o)
+                0x00000de0                USBFS_ReadOutEP
  .text.USBFS_LoadEP0
-                0x00000e34       0x98 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
-                0x00000e34                USBFS_LoadEP0
+                0x00000e30       0x98 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
+                0x00000e30                USBFS_LoadEP0
  .text.USBFS_InitZeroLengthControlTransfer
-                0x00000ecc       0x34 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
-                0x00000ecc                USBFS_InitZeroLengthControlTransfer
+                0x00000ec8       0x34 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
+                0x00000ec8                USBFS_InitZeroLengthControlTransfer
  .text.USBFS_ControlReadDataStage
-                0x00000f00        0x8 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
-                0x00000f00                USBFS_ControlReadDataStage
+                0x00000efc        0x8 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
+                0x00000efc                USBFS_ControlReadDataStage
  .text.USBFS_ControlWriteDataStage
-                0x00000f08       0x84 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
-                0x00000f08                USBFS_ControlWriteDataStage
+                0x00000f04       0x84 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
+                0x00000f04                USBFS_ControlWriteDataStage
  .text.USBFS_InitNoDataControlTransfer
-                0x00000f8c       0x2c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
-                0x00000f8c                USBFS_InitNoDataControlTransfer
+                0x00000f88       0x2c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
+                0x00000f88                USBFS_InitNoDataControlTransfer
  .text.USBFS_UpdateStatusBlock
-                0x00000fb8       0x24 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
-                0x00000fb8                USBFS_UpdateStatusBlock
+                0x00000fb4       0x24 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
+                0x00000fb4                USBFS_UpdateStatusBlock
  .text.USBFS_HandleSetup
-                0x00000fdc       0x5c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
-                0x00000fdc                USBFS_HandleSetup
+                0x00000fd8       0x5c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
+                0x00000fd8                USBFS_HandleSetup
  .text.USBFS_ControlReadStatusStage
-                0x00001038       0x38 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
-                0x00001038                USBFS_ControlReadStatusStage
+                0x00001034       0x38 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
+                0x00001034                USBFS_ControlReadStatusStage
  .text.USBFS_HandleOUT
-                0x00001070       0x38 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
-                0x00001070                USBFS_HandleOUT
+                0x0000106c       0x38 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
+                0x0000106c                USBFS_HandleOUT
  .text.USBFS_ControlWriteStatusStage
-                0x000010a8       0x20 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
-                0x000010a8                USBFS_ControlWriteStatusStage
+                0x000010a4       0x20 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
+                0x000010a4                USBFS_ControlWriteStatusStage
  .text.USBFS_NoDataControlStatusStage
-                0x000010c8       0x40 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
-                0x000010c8                USBFS_NoDataControlStatusStage
+                0x000010c4       0x40 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
+                0x000010c4                USBFS_NoDataControlStatusStage
  .text.USBFS_HandleIN
-                0x00001108       0x2c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
-                0x00001108                USBFS_HandleIN
+                0x00001104       0x2c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
+                0x00001104                USBFS_HandleIN
  .text.USBFS_EP_0_ISR
-                0x00001134       0xb8 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
-                0x00001134                USBFS_EP_0_ISR
+                0x00001130       0xb8 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
+                0x00001130                USBFS_EP_0_ISR
  .text.USBFS_InitializeStatusBlock
-                0x000011ec       0x24 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
-                0x000011ec                USBFS_InitializeStatusBlock
+                0x000011e8       0x24 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
+                0x000011e8                USBFS_InitializeStatusBlock
  .text.USBFS_InitControlRead
-                0x00001210       0x50 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
-                0x00001210                USBFS_InitControlRead
+                0x0000120c       0x50 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_drv.o)
+                0x0000120c                USBFS_InitControlRead
  .text.USBFS_EP_1_ISR
-                0x00001260       0x30 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_episr.o)
-                0x00001260                USBFS_EP_1_ISR
+                0x0000125c       0x30 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_episr.o)
+                0x0000125c                USBFS_EP_1_ISR
  .text.USBFS_EP_2_ISR
-                0x00001290       0x34 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_episr.o)
-                0x00001290                USBFS_EP_2_ISR
+                0x0000128c       0x34 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_episr.o)
+                0x0000128c                USBFS_EP_2_ISR
  .text.USBFS_EP_3_ISR
-                0x000012c4       0x3c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_episr.o)
-                0x000012c4                USBFS_EP_3_ISR
+                0x000012c0       0x3c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_episr.o)
+                0x000012c0                USBFS_EP_3_ISR
  .text.USBFS_EP_4_ISR
-                0x00001300       0x3c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_episr.o)
-                0x00001300                USBFS_EP_4_ISR
+                0x000012fc       0x3c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_episr.o)
+                0x000012fc                USBFS_EP_4_ISR
  .text.USBFS_BUS_RESET_ISR
-                0x0000133c        0x8 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_episr.o)
-                0x0000133c                USBFS_BUS_RESET_ISR
+                0x00001338        0x8 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_episr.o)
+                0x00001338                USBFS_BUS_RESET_ISR
  .text.USBFS_DP_ISR
-                0x00001344        0x8 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_pm.o)
-                0x00001344                USBFS_DP_ISR
+                0x00001340        0x8 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_pm.o)
+                0x00001340                USBFS_DP_ISR
  .text.USBFS_ConfigReg
-                0x0000134c       0xa4 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_std.o)
-                0x0000134c                USBFS_ConfigReg
+                0x00001348       0xa4 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_std.o)
+                0x00001348                USBFS_ConfigReg
  .text.USBFS_GetConfigTablePtr
-                0x000013f0       0x28 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_std.o)
-                0x000013f0                USBFS_GetConfigTablePtr
+                0x000013ec       0x28 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_std.o)
+                0x000013ec                USBFS_GetConfigTablePtr
  .text.USBFS_ConfigAltChanged
-                0x00001418      0x11c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_std.o)
-                0x00001418                USBFS_ConfigAltChanged
+                0x00001414      0x11c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_std.o)
+                0x00001414                USBFS_ConfigAltChanged
  .text.USBFS_GetDeviceTablePtr
-                0x00001534       0x18 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_std.o)
-                0x00001534                USBFS_GetDeviceTablePtr
+                0x00001530       0x18 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_std.o)
+                0x00001530                USBFS_GetDeviceTablePtr
  .text.USBFS_GetInterfaceClassTablePtr
-                0x0000154c       0x28 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_std.o)
-                0x0000154c                USBFS_GetInterfaceClassTablePtr
+                0x00001548       0x28 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_std.o)
+                0x00001548                USBFS_GetInterfaceClassTablePtr
  .text.USBFS_Config
-                0x00001574      0x1c4 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_std.o)
-                0x00001574                USBFS_Config
+                0x00001570      0x1c4 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_std.o)
+                0x00001570                USBFS_Config
  .text.USBFS_SetEndpointHalt
-                0x00001738       0x64 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_std.o)
-                0x00001738                USBFS_SetEndpointHalt
+                0x00001734       0x64 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_std.o)
+                0x00001734                USBFS_SetEndpointHalt
  .text.USBFS_ClearEndpointHalt
-                0x0000179c       0xac .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_std.o)
-                0x0000179c                USBFS_ClearEndpointHalt
+                0x00001798       0xac .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_std.o)
+                0x00001798                USBFS_ClearEndpointHalt
  .text.USBFS_ValidateAlternateSetting
-                0x00001848       0x4c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_std.o)
-                0x00001848                USBFS_ValidateAlternateSetting
+                0x00001844       0x4c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_std.o)
+                0x00001844                USBFS_ValidateAlternateSetting
  .text.USBFS_HandleStandardRqst
-                0x00001894      0x328 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_std.o)
-                0x00001894                USBFS_HandleStandardRqst
+                0x00001890      0x328 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_std.o)
+                0x00001890                USBFS_HandleStandardRqst
  .text.USBFS_HandleVendorRqst
-                0x00001bbc       0x18 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_vnd.o)
-                0x00001bbc                USBFS_HandleVendorRqst
+                0x00001bb8       0x18 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_vnd.o)
+                0x00001bb8                USBFS_HandleVendorRqst
  .text.USBFS_Dp_ClearInterrupt
-                0x00001bd4       0x10 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_Dp.o)
-                0x00001bd4                USBFS_Dp_ClearInterrupt
+                0x00001bd0       0x10 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(USBFS_Dp.o)
+                0x00001bd0                USBFS_Dp_ClearInterrupt
  .text.FindLastWrittenRow
-                0x00001be4       0x30 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(cy_em_eeprom.o)
+                0x00001be0       0x30 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(cy_em_eeprom.o)
  .text.GetRowAddrBySeqNum
-                0x00001c14       0x1c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(cy_em_eeprom.o)
+                0x00001c10       0x1c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(cy_em_eeprom.o)
  .text.GetNextRowToWrite
-                0x00001c30       0x5c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(cy_em_eeprom.o)
+                0x00001c2c       0x5c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(cy_em_eeprom.o)
  .text.CalcChecksum
-                0x00001c8c       0x3c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(cy_em_eeprom.o)
+                0x00001c88       0x3c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(cy_em_eeprom.o)
  .text.CheckRanges
-                0x00001cc8       0x34 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(cy_em_eeprom.o)
+                0x00001cc4       0x34 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(cy_em_eeprom.o)
  .text.GetAddresses
-                0x00001cfc       0x90 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(cy_em_eeprom.o)
+                0x00001cf8       0x90 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(cy_em_eeprom.o)
  .text.WriteRow
-                0x00001d8c       0x2c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(cy_em_eeprom.o)
+                0x00001d88       0x2c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(cy_em_eeprom.o)
  .text.FillChecksum
-                0x00001db8       0x6c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(cy_em_eeprom.o)
+                0x00001db4       0x6c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(cy_em_eeprom.o)
  .text.CheckCrcAndCopy
-                0x00001e24       0x78 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(cy_em_eeprom.o)
+                0x00001e20       0x78 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(cy_em_eeprom.o)
  .text.Cy_Em_EEPROM_Init
-                0x00001e9c       0x98 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(cy_em_eeprom.o)
-                0x00001e9c                Cy_Em_EEPROM_Init
+                0x00001e98       0x98 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(cy_em_eeprom.o)
+                0x00001e98                Cy_Em_EEPROM_Init
  .text.Cy_Em_EEPROM_Read
-                0x00001f34      0x1f4 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(cy_em_eeprom.o)
-                0x00001f34                Cy_Em_EEPROM_Read
+                0x00001f30      0x1f4 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(cy_em_eeprom.o)
+                0x00001f30                Cy_Em_EEPROM_Read
  .text.Cy_Em_EEPROM_Write
-                0x00002128      0x16c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(cy_em_eeprom.o)
-                0x00002128                Cy_Em_EEPROM_Write
+                0x00002124      0x16c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(cy_em_eeprom.o)
+                0x00002124                Cy_Em_EEPROM_Write
  .text.CySetTempInt
-                0x00002294       0x60 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CyFlash.o)
+                0x00002290       0x60 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CyFlash.o)
  .text.CyFlashGetSpcAlgorithm
-                0x000022f4       0x4c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CyFlash.o)
-                0x000022f4                CyFlashGetSpcAlgorithm
+                0x000022f0       0x4c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CyFlash.o)
+                0x000022f0                CyFlashGetSpcAlgorithm
  .text.CySetTemp
-                0x00002340       0x14 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CyFlash.o)
-                0x00002340                CySetTemp
+                0x0000233c       0x14 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CyFlash.o)
+                0x0000233c                CySetTemp
  .text.CyWriteRowFull
-                0x00002354       0xf8 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CyFlash.o)
-                0x00002354                CyWriteRowFull
+                0x00002350       0xf8 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CyFlash.o)
+                0x00002350                CyWriteRowFull
  .text.CyWriteRowData
-                0x0000244c       0x14 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CyFlash.o)
-                0x0000244c                CyWriteRowData
- .text.CyHalt   0x00002460        0x4 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CyLib.o)
-                0x00002460                CyHalt
+                0x00002448       0x14 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CyFlash.o)
+                0x00002448                CyWriteRowData
+ .text.CyHalt   0x0000245c        0x4 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CyLib.o)
+                0x0000245c                CyHalt
  .text.CyDelayUs
-                0x00002464       0x14 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CyLib.o)
-                0x00002464                CyDelayUs
+                0x00002460       0x14 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CyLib.o)
+                0x00002460                CyDelayUs
  .text.CyFlushCache
-                0x00002478       0x44 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CyLib.o)
-                0x00002478                CyFlushCache
+                0x00002474       0x44 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CyLib.o)
+                0x00002474                CyFlushCache
  .text.CyIntSetVector
-                0x000024bc       0x28 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CyLib.o)
-                0x000024bc                CyIntSetVector
+                0x000024b8       0x28 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CyLib.o)
+                0x000024b8                CyIntSetVector
  .text.CyIntSetPriority
-                0x000024e4       0x30 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CyLib.o)
-                0x000024e4                CyIntSetPriority
+                0x000024e0       0x30 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CyLib.o)
+                0x000024e0                CyIntSetPriority
  .text.CySpcStart
-                0x00002514       0x24 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CySpc.o)
-                0x00002514                CySpcStart
+                0x00002510       0x24 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CySpc.o)
+                0x00002510                CySpcStart
  .text.CySpcReadData
-                0x00002538       0x34 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CySpc.o)
-                0x00002538                CySpcReadData
+                0x00002534       0x34 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CySpc.o)
+                0x00002534                CySpcReadData
  .text.CySpcLoadRowFull
-                0x0000256c       0x80 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CySpc.o)
-                0x0000256c                CySpcLoadRowFull
+                0x00002568       0x80 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CySpc.o)
+                0x00002568                CySpcLoadRowFull
  .text.CySpcWriteRow
-                0x000025ec       0x4c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CySpc.o)
-                0x000025ec                CySpcWriteRow
+                0x000025e8       0x4c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CySpc.o)
+                0x000025e8                CySpcWriteRow
  .text.CySpcGetTemp
-                0x00002638       0x3c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CySpc.o)
-                0x00002638                CySpcGetTemp
+                0x00002634       0x3c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CySpc.o)
+                0x00002634                CySpcGetTemp
  .text.CySpcLock
-                0x00002674       0x4c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CySpc.o)
-                0x00002674                CySpcLock
+                0x00002670       0x4c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CySpc.o)
+                0x00002670                CySpcLock
  .text.CySpcUnlock
-                0x000026c0       0x38 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CySpc.o)
-                0x000026c0                CySpcUnlock
+                0x000026bc       0x38 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CySpc.o)
+                0x000026bc                CySpcUnlock
  .text.CySpcGetAlgorithm
-                0x000026f8       0x28 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CySpc.o)
-                0x000026f8                CySpcGetAlgorithm
+                0x000026f4       0x28 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CySpc.o)
+                0x000026f4                CySpcGetAlgorithm
  .text.ADC_DelSig_1_GainCompensation
-                0x00002720       0xe0 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1.o)
+                0x0000271c       0xe0 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1.o)
  .text.ADC_DelSig_1_SetDSMRef0Reg
-                0x00002800       0x4c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1.o)
+                0x000027fc       0x4c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1.o)
  .text.ADC_DelSig_1_InitConfig
-                0x0000284c      0x344 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1.o)
+                0x00002848      0x344 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1.o)
  .text.ADC_DelSig_1_Init
-                0x00002b90      0x108 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1.o)
-                0x00002b90                ADC_DelSig_1_Init
+                0x00002b8c      0x108 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1.o)
+                0x00002b8c                ADC_DelSig_1_Init
  .text.ADC_DelSig_1_Enable
-                0x00002c98       0xd8 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1.o)
-                0x00002c98                ADC_DelSig_1_Enable
+                0x00002c94       0xd8 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1.o)
+                0x00002c94                ADC_DelSig_1_Enable
  .text.ADC_DelSig_1_Start
-                0x00002d70       0x28 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1.o)
-                0x00002d70                ADC_DelSig_1_Start
+                0x00002d6c       0x28 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1.o)
+                0x00002d6c                ADC_DelSig_1_Start
  .text.ADC_DelSig_1_StartConvert
-                0x00002d98       0x10 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1.o)
-                0x00002d98                ADC_DelSig_1_StartConvert
+                0x00002d94       0x10 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1.o)
+                0x00002d94                ADC_DelSig_1_StartConvert
  .text.ADC_DelSig_1_IsEndConversion
-                0x00002da8       0x30 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1.o)
-                0x00002da8                ADC_DelSig_1_IsEndConversion
+                0x00002da4       0x30 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1.o)
+                0x00002da4                ADC_DelSig_1_IsEndConversion
  .text.ADC_DelSig_1_GetResult16
-                0x00002dd8       0x50 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1.o)
-                0x00002dd8                ADC_DelSig_1_GetResult16
+                0x00002dd4       0x50 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1.o)
+                0x00002dd4                ADC_DelSig_1_GetResult16
  .text.ADC_DelSig_1_ISR1
-                0x00002e28        0x4 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_INT.o)
-                0x00002e28                ADC_DelSig_1_ISR1
+                0x00002e24        0x4 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_INT.o)
+                0x00002e24                ADC_DelSig_1_ISR1
  .text.ADC_DelSig_1_ISR2
-                0x00002e2c        0x4 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_INT.o)
-                0x00002e2c                ADC_DelSig_1_ISR2
+                0x00002e28        0x4 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_INT.o)
+                0x00002e28                ADC_DelSig_1_ISR2
  .text.ADC_DelSig_1_ISR3
-                0x00002e30        0x4 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_INT.o)
-                0x00002e30                ADC_DelSig_1_ISR3
+                0x00002e2c        0x4 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_INT.o)
+                0x00002e2c                ADC_DelSig_1_ISR3
  .text.ADC_DelSig_1_ISR4
-                0x00002e34        0x4 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_INT.o)
-                0x00002e34                ADC_DelSig_1_ISR4
+                0x00002e30        0x4 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_INT.o)
+                0x00002e30                ADC_DelSig_1_ISR4
  .text.ADC_DelSig_1_AMux_Start
-                0x00002e38       0x20 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_AMux.o)
-                0x00002e38                ADC_DelSig_1_AMux_Start
+                0x00002e34       0x20 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_AMux.o)
+                0x00002e34                ADC_DelSig_1_AMux_Start
  .text.ADC_DelSig_1_AMux_Select
-                0x00002e58       0x18 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_AMux.o)
-                0x00002e58                ADC_DelSig_1_AMux_Select
+                0x00002e54       0x18 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_AMux.o)
+                0x00002e54                ADC_DelSig_1_AMux_Select
  .text.ADC_DelSig_1_Ext_CP_Clk_GetDividerRegister
-                0x00002e70        0xc .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_Ext_CP_Clk.o)
-                0x00002e70                ADC_DelSig_1_Ext_CP_Clk_GetDividerRegister
+                0x00002e6c        0xc .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_Ext_CP_Clk.o)
+                0x00002e6c                ADC_DelSig_1_Ext_CP_Clk_GetDividerRegister
  .text.ADC_DelSig_1_Ext_CP_Clk_SetModeRegister
-                0x00002e7c       0x14 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_Ext_CP_Clk.o)
-                0x00002e7c                ADC_DelSig_1_Ext_CP_Clk_SetModeRegister
+                0x00002e78       0x14 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_Ext_CP_Clk.o)
+                0x00002e78                ADC_DelSig_1_Ext_CP_Clk_SetModeRegister
  .text.ADC_DelSig_1_Ext_CP_Clk_GetSourceRegister
-                0x00002e90       0x10 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_Ext_CP_Clk.o)
-                0x00002e90                ADC_DelSig_1_Ext_CP_Clk_GetSourceRegister
+                0x00002e8c       0x10 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_Ext_CP_Clk.o)
+                0x00002e8c                ADC_DelSig_1_Ext_CP_Clk_GetSourceRegister
  .text.ADC_DelSig_1_Ext_CP_Clk_SetDividerRegister
-                0x00002ea0       0xd8 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_Ext_CP_Clk.o)
-                0x00002ea0                ADC_DelSig_1_Ext_CP_Clk_SetDividerRegister
+                0x00002e9c       0xd8 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_Ext_CP_Clk.o)
+                0x00002e9c                ADC_DelSig_1_Ext_CP_Clk_SetDividerRegister
  .text.ADC_DelSig_1_theACLK_GetDividerRegister
-                0x00002f78        0xc .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_theACLK.o)
-                0x00002f78                ADC_DelSig_1_theACLK_GetDividerRegister
+                0x00002f74        0xc .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_theACLK.o)
+                0x00002f74                ADC_DelSig_1_theACLK_GetDividerRegister
  .text.ADC_DelSig_1_theACLK_SetModeRegister
-                0x00002f84       0x14 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_theACLK.o)
-                0x00002f84                ADC_DelSig_1_theACLK_SetModeRegister
+                0x00002f80       0x14 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_theACLK.o)
+                0x00002f80                ADC_DelSig_1_theACLK_SetModeRegister
  .text.ADC_DelSig_1_theACLK_GetSourceRegister
-                0x00002f98       0x10 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_theACLK.o)
-                0x00002f98                ADC_DelSig_1_theACLK_GetSourceRegister
+                0x00002f94       0x10 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_theACLK.o)
+                0x00002f94                ADC_DelSig_1_theACLK_GetSourceRegister
  .text.ADC_DelSig_1_theACLK_SetDividerRegister
-                0x00002fa8       0xd8 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_theACLK.o)
-                0x00002fa8                ADC_DelSig_1_theACLK_SetDividerRegister
+                0x00002fa4       0xd8 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(ADC_DelSig_1_theACLK.o)
+                0x00002fa4                ADC_DelSig_1_theACLK_SetDividerRegister
  .text.Loop_Interrupt_Interrupt
-                0x00003080        0xc .\CortexM3\ARM_GCC_541\Debug\USB_first.a(Loop_Interrupt.o)
-                0x00003080                Loop_Interrupt_Interrupt
+                0x0000307c        0xc .\CortexM3\ARM_GCC_541\Debug\USB_first.a(Loop_Interrupt.o)
+                0x0000307c                Loop_Interrupt_Interrupt
  .text.Loop_Interrupt_SetVector
-                0x0000308c        0xc .\CortexM3\ARM_GCC_541\Debug\USB_first.a(Loop_Interrupt.o)
-                0x0000308c                Loop_Interrupt_SetVector
+                0x00003088        0xc .\CortexM3\ARM_GCC_541\Debug\USB_first.a(Loop_Interrupt.o)
+                0x00003088                Loop_Interrupt_SetVector
  .text.Loop_Interrupt_SetPriority
-                0x00003098       0x10 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(Loop_Interrupt.o)
-                0x00003098                Loop_Interrupt_SetPriority
+                0x00003094       0x10 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(Loop_Interrupt.o)
+                0x00003094                Loop_Interrupt_SetPriority
  .text.Loop_Interrupt_Enable
-                0x000030a8        0xc .\CortexM3\ARM_GCC_541\Debug\USB_first.a(Loop_Interrupt.o)
-                0x000030a8                Loop_Interrupt_Enable
+                0x000030a4        0xc .\CortexM3\ARM_GCC_541\Debug\USB_first.a(Loop_Interrupt.o)
+                0x000030a4                Loop_Interrupt_Enable
  .text.Loop_Interrupt_Disable
-                0x000030b4        0xc .\CortexM3\ARM_GCC_541\Debug\USB_first.a(Loop_Interrupt.o)
-                0x000030b4                Loop_Interrupt_Disable
+                0x000030b0        0xc .\CortexM3\ARM_GCC_541\Debug\USB_first.a(Loop_Interrupt.o)
+                0x000030b0                Loop_Interrupt_Disable
  .text.Loop_Interrupt_Start
-                0x000030c0       0x1c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(Loop_Interrupt.o)
-                0x000030c0                Loop_Interrupt_Start
+                0x000030bc       0x1c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(Loop_Interrupt.o)
+                0x000030bc                Loop_Interrupt_Start
  .text.Em_EEPROM_Init
-                0x000030dc       0x2c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(Em_EEPROM.o)
-                0x000030dc                Em_EEPROM_Init
+                0x000030d8       0x2c .\CortexM3\ARM_GCC_541\Debug\USB_first.a(Em_EEPROM.o)
+                0x000030d8                Em_EEPROM_Init
+ *fill*         0x00003104        0x4 
  .text          0x00003108       0x20 .\CortexM3\ARM_GCC_541\Debug\USB_first.a(CyBootAsmGnu.o)
                 0x00003108                CyDelayCycles
                 0x00003118                CyEnterCriticalSection

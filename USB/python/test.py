@@ -21,14 +21,12 @@ while 1:
 		print(''.join(map(chr,list(psoc.varname(arg)))))
 		
 	if cmd == "START":
-		epOutCmd.write([0,0,0,8])
-		while 1:
-			message = epInStream.read(64,1000)
-			print(message[1]+message[2]*255)
-			
+		psoc.startStream()
+		psoc.startLog()
 
 	if cmd == "STOP":
-		epOutCmd.write([0,0,0,9])
+		psoc.stopStream()
+		psoc.stopLog()
 
 	if cmd == "NUMPAR":
 		print(psoc.numpar())
